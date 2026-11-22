@@ -56,6 +56,12 @@ describe('GalaxyHud', () => {
     await legendItems[0].trigger('click');
     expect(wrapper.emitted('filter-role')).toHaveLength(1);
 
+    const clearBtns = wrapper.findAll('.hud-filter-clear');
+    if (clearBtns.length > 0) {
+      await clearBtns[0].trigger('click');
+      expect(wrapper.emitted('filter-cluster')?.at(-1)).toEqual([null]);
+    }
+
     expect(wrapper.find('.galaxy-hud').exists()).toBe(true);
     await wrapper.get('.hud-fold-btn').trigger('click');
     expect(wrapper.find('.hud-pill').exists()).toBe(true);

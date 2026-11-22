@@ -4,6 +4,7 @@ import { defineComponent } from 'vue';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { makeGraph, makeNode } from '@/test-utils/fixtures';
 import App from './App.vue';
+import GalaxyHud from './components/graph/GalaxyHud.vue';
 import NoteDrawer from './components/NoteDrawer.vue';
 import OrbitGraph from './components/graph/OrbitGraph.vue';
 
@@ -189,6 +190,68 @@ describe('App', () => {
     expect(wrapper.find('.state-layer').exists()).toBe(false);
     expect(wrapper.text()).toContain('天体视界探测仪');
     expect(fetchMock).toHaveBeenCalledTimes(2);
+    wrapper.unmount();
+  });
+
+  it('全局搜索支持输入筛选、键盘上下选择与 Enter 跃迁', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse(payload)));
+    const wrapper = mountApp();
+    await flushPromises();
+
+    // 快捷键 Cmd+K
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }));
+    await flushPromises();
+
+    const input = wrapper.get('.search-input');
+    await input.setValue('WASM');
+    await flushPromises();
+
+    const items = wrapper.findAll('.search-item');
+    expect(items.length).toBe(1);
+    expect(items[0].text()).toContain('WebAssembly');
+
+    // 键盘下选、上选并回车
+    await input.trigger('keydown', { key: 'ArrowDown' });
+    await input.trigger('keydown', { key: 'ArrowUp' });
+    await input.trigger('keydown', { key: 'Enter' });
+    expect(graphSpies.exploreNode).toHaveBeenCalledWith('语言/WebAssembly');
+
+    // 鼠标点击搜索项
+    await input.setValue('预算');
+    await flushPromises();
+    await wrapper.get('.search-item').trigger('mousedown');
+    expect(graphSpies.exploreNode).toHaveBeenCalledWith('工程/性能预算');
+
+    // Esc 与 blur 兜底
+    await input.setValue('WASM');
+    await flushPromises();
+    await input.trigger('keydown', { key: 'Escape' });
+    await input.trigger('blur');
+    wrapper.unmount();
+  });
+
+  it('联动图谱筛选与双链 hover 脉冲高亮', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse(payload)));
+    const wrapper = mountApp();
+    await flushPromises();
+
+    // HUD 筛选星团与角色
+    const hud = wrapper.findComponent(GalaxyHud);
+    hud.vm.$emit('filter-cluster', 'c0');
+    expect(graphSpies.setFilter).toHaveBeenCalledWith({ clusterId: 'c0' });
+
+    hud.vm.$emit('filter-role', 'core');
+    expect(graphSpies.setFilter).toHaveBeenCalledWith({ role: 'core' });
+
+    // 抽屉双链悬停联动脉冲
+    const drawer = wrapper.findComponent(NoteDrawer);
+    drawer.vm.$emit('hover-link', 'WASM');
+    expect(graphSpies.highlightNode).toHaveBeenCalledWith('语言/WebAssembly');
+
+    drawer.vm.$emit('hover-link-end');
+    expect(graphSpies.highlightNode).toHaveBeenCalledWith(null);
+
+    drawer.vm.$emit('close');
     wrapper.unmount();
   });
 });

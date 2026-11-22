@@ -23,5 +23,8 @@ describe('GraphToolbar', () => {
     await buttons[4].trigger('click');
     expect(wrapper.find('.help-popover').exists()).toBe(true);
     expect(wrapper.text()).toContain('深空观测指南');
+
+    await wrapper.get('.help-close').trigger('click');
+    expect(wrapper.find('.help-popover').exists()).toBe(false);
   });
 });

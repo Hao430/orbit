@@ -94,4 +94,16 @@ describe('NoteDrawer', () => {
     expect(wrapper.emitted('hover-link-end')).toHaveLength(1);
     wrapper.unmount();
   });
+
+  it('点击外部链接调用 window.open', async () => {
+    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null);
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(textResponse('正文 [外链](https://example.com)')));
+    const wrapper = mountDrawer();
+    await flushPromises();
+
+    const link = wrapper.get('.prose a');
+    await link.trigger('click');
+    expect(openSpy).toHaveBeenCalledWith('https://example.com', '_blank', 'noopener,noreferrer');
+    wrapper.unmount();
+  });
 });

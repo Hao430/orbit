@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { asStringList, extractSummary, parseFrontmatter, toPlainText } from './frontmatter.ts';
+import { asStringList, deriveSummary, extractSummary, parseFrontmatter, toPlainText } from './frontmatter.ts';
 
 describe('parseFrontmatter', () => {
   it('解析标量、行内数组与块数组', () => {
@@ -64,7 +64,7 @@ describe('asStringList', () => {
   });
 });
 
-describe('toPlainText / extractSummary', () => {
+describe('toPlainText / extractSummary / deriveSummary', () => {
   it('剥掉 Markdown 噪音并保留双链文字', () => {
     const text = toPlainText('## 标题\n\n见 [[渲染管线|管线]] 与 [[WebAssembly]]。\n\n> 引用');
     expect(text).toBe('标题 见 管线 与 WebAssembly。 引用');
@@ -79,5 +79,20 @@ describe('toPlainText / extractSummary', () => {
     const summary = extractSummary('很长的一段文字'.repeat(40), 20);
     expect(summary.endsWith('…')).toBe(true);
     expect(summary.length).toBe(21);
+  });
+
+  it('deriveSummary 跳过表格与列表并在标点断句', () => {
+    const body = [
+      '# 笔记标题',
+      '| a | b |',
+      '|---|---|',
+      '- 列表',
+      '第一段文字，这是用来测试自动推导摘要逻辑的完整长段落，其长度必须超过限制以便触发智能截断断句逻辑。',
+    ].join('\n\n');
+    const summary = deriveSummary(body, '笔记标题', 40, 20);
+    expect(summary).toContain('第一段文字');
+    expect(/([，。；]|…)$/.test(summary)).toBe(true);
+    expect(deriveSummary('短文本')).toBe('短文本');
+    expect(deriveSummary('')).toBe('');
   });
 });

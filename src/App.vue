@@ -220,6 +220,7 @@ onBeforeUnmount(() => {
             class="search-input"
             placeholder="搜索星体词条… (⌘K)"
             @focus="searchOpen = true"
+            @input="searchOpen = true"
             @blur="handleSearchBlur"
             @keydown="handleSearchKeydown"
           />
