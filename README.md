@@ -61,6 +61,8 @@ aliases: [渲染管线]          # 双链别名解析
 正文里可用 [[目标笔记]]、[[目标|别名]]、[[目标#章节]] 或标准 .md 链接。
 ```
 
+完整字段表、链接解析顺序与角色判定见 [`docs/templates/README.md`](docs/templates/README.md)；可直接复制 [`wiki-note.md`](docs/templates/wiki-note.md) 或 [`wiki-hub.md`](docs/templates/wiki-hub.md)。
+
 构建产物：
 
 - `public/graph.json`：节点度量、星团、坐标、摘要、正文路径
