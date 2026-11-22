@@ -1,0 +1,51 @@
+/**
+ * 深空设计令牌，来源：docs/dev/COSMIC_DESIGN_AND_COLOR_SYSTEM.md
+ * 组件中禁止硬编码十六进制颜色，一律引用这里的语义 token。
+ */
+:root {
+  /* 深空基底 */
+  --space-void: #06070a;
+  --space-backdrop: #0a0c13;
+  --space-surface: #111420;
+  --space-surface-elevated: #171b2c;
+  --space-grid: rgba(255, 255, 255, 0.025);
+  --space-grid-subtle: rgba(148, 163, 184, 0.04);
+
+  /* 恒星谱系：角色 -> 核心色 / 光晕色 */
+  --star-core: #38bdf8;
+  --star-core-halo: rgba(56, 189, 248, 0.28);
+  --star-main: #818cf8;
+  --star-main-halo: rgba(129, 140, 248, 0.24);
+  --star-nebula: #34d399;
+  --star-nebula-halo: rgba(52, 211, 153, 0.25);
+  --star-archive: #fbbf24;
+  --star-archive-halo: rgba(251, 191, 36, 0.22);
+  --star-bridge: #fb7185;
+  --star-bridge-halo: rgba(251, 113, 133, 0.32);
+  --star-dust: #cbd5e1;
+  --star-dust-halo: rgba(203, 213, 225, 0.12);
+
+  /* 引力丝状纽带 */
+  --filament-idle: rgba(148, 163, 184, 0.18);
+  --filament-backbone: rgba(129, 140, 248, 0.35);
+  --filament-active: #67e8f9;
+  --filament-active-glow: rgba(103, 232, 249, 0.45);
+  --filament-secondary: rgba(148, 163, 184, 0.08);
+
+  /* 文字语义 */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* 动效曲线 */
+  --ease-gravity: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-pulse: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-collapse: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* 空间层级 */
+  --z-canvas: 1;
+  --z-hud-legend: 100;
+  --z-floating-controls: 200;
+  --z-inspector: 300;
+  --z-modal: 400;
+}

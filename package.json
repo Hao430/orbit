@@ -1,0 +1,38 @@
+{
+  "name": "orbit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "graph:build": "node scripts/build-graph.ts",
+    "predev": "pnpm graph:build",
+    "build": "vue-tsc -b && vite build",
+    "prebuild": "pnpm graph:build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@antv/g6": "^5.1.1",
+    "dompurify": "^3.4.18",
+    "markdown-it": "^15.0.3",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@antv/algorithm": "^0.1.26",
+    "@types/d3-force": "^3.0.10",
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/tsconfig": "^0.9.1",
+    "d3-force": "^3.0.1",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.1",
+    "vue-tsc": "^3.3.14"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
