@@ -15,7 +15,7 @@ interface Props {
 const props = defineProps<Props>();
 const emit = defineEmits<{ (e: 'reset'): void }>();
 
-const roles = computed(() => Object.values(ROLE_TONES));
+const roles = Object.values(ROLE_TONES);
 const coverage = computed(() => {
   if (props.totalNodes === 0) return 0;
   return Math.round((props.visibleNodes / props.totalNodes) * 100);
@@ -23,7 +23,7 @@ const coverage = computed(() => {
 </script>
 
 <template>
-  <aside class="galaxy-hud">
+  <aside class="galaxy-hud" role="region" aria-label="天体视界探测仪">
     <header class="hud-head">
       <span class="hud-indicator" />
       <div class="hud-heading">

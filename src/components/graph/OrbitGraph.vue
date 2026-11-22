@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
   CanvasEvent,
   Graph,
@@ -12,7 +12,7 @@ import {
 } from '@antv/g6';
 import type { CelestialEdge, CelestialGraph, CelestialNode } from '@/types/celestial';
 import { edgeStyle, nodeStyle, type Hop } from '@/utils/graph-visual';
-import { clusterHue, withAlpha } from '@/utils/palette';
+import { CLUSTER_HUES, clusterHue, withAlpha } from '@/utils/palette';
 import {
   createHorizonState,
   snapshotHorizon,
@@ -53,6 +53,8 @@ let shownEdgeHops = new Map<string, Hop>();
 let applyToken = 0;
 let revealTimer: number | undefined;
 let hoverTimer: number | undefined;
+let isDraggingNode = false;
+let dragTimer: number | undefined;
 
 const ORIGIN = { x: 1000, y: 600 };
 const HOP2_DELAY = 160;
@@ -94,9 +96,11 @@ function buildGraphData(snapshot: HorizonSnapshot): GraphData {
 
 const HULL_MIN_NODES = 4;
 const HULL_MAX_CLUSTERS = 16;
-const hullClusters = props.data.clusters
+let hullClusters = props.data.clusters
   .filter((cluster) => cluster.nodeCount >= HULL_MIN_NODES)
   .slice(0, HULL_MAX_CLUSTERS);
+
+const CLUSTER_FALLBACK = CLUSTER_HUES[0];
 
 function hullOptions(): CustomPluginOption[] {
   return hullClusters.map((cluster) => {
@@ -118,18 +122,50 @@ function hullOptions(): CustomPluginOption[] {
   });
 }
 
-const CLUSTER_FALLBACK = '#38bdf8';
-
 function updateHulls(): void {
   if (!graphInstance) return;
+  const membersByCluster = new Map<string, string[]>();
+  for (const id of shownHops.keys()) {
+    const clusterId = nodeById.get(id)?.clusterId;
+    if (clusterId) {
+      let list = membersByCluster.get(clusterId);
+      if (!list) {
+        list = [];
+        membersByCluster.set(clusterId, list);
+      }
+      list.push(id);
+    }
+  }
   for (const cluster of hullClusters) {
-    const members = [...shownHops.keys()].filter((id) => nodeById.get(id)?.clusterId === cluster.id);
+    const members = membersByCluster.get(cluster.id) ?? [];
     graphInstance.updatePlugin({
       key: 'hull-' + cluster.id,
       members: members.length >= 3 ? members : [],
     });
   }
 }
+
+watch(
+  () => props.data,
+  (newData) => {
+    nodeById.clear();
+    for (const node of newData.nodes) nodeById.set(node.id, node);
+    edgeById.clear();
+    for (const edge of newData.edges) edgeById.set(edge.id, edge);
+    backbone.clear();
+    for (const node of newData.nodes) {
+      if (node.backbone) backbone.add(node.id);
+    }
+    clusterTone.clear();
+    newData.clusters.forEach((cluster, index) => {
+      clusterTone.set(cluster.id, clusterHue(index));
+    });
+    hullClusters = newData.clusters
+      .filter((cluster) => cluster.nodeCount >= HULL_MIN_NODES)
+      .slice(0, HULL_MAX_CLUSTERS);
+  },
+  { deep: false },
+);
 
 function emitStats(): void {
   emit('stats', {
@@ -149,6 +185,7 @@ function clearRevealTimer(): void {
 async function applySnapshot(next: HorizonSnapshot, animate: boolean): Promise<void> {
   const graph = graphInstance;
   if (!graph) return;
+  clearRevealTimer();
   const token = ++applyToken;
 
   const removedEdgeIds = [...shownEdgeHops.keys()].filter((id) => !next.edges.has(id));
@@ -241,6 +278,7 @@ async function applySnapshot(next: HorizonSnapshot, animate: boolean): Promise<v
 }
 
 async function handleNodeClick(event: IElementEvent): Promise<void> {
+  if (isDraggingNode) return;
   const id = event.target?.id;
   if (!id) return;
   const node = nodeById.get(id);
@@ -267,6 +305,29 @@ function clearHoverTimer(): void {
 }
 
 function bindEvents(graph: Graph): void {
+  graph.on(NodeEvent.DRAG_START, () => {
+    isDraggingNode = true;
+    clearHoverTimer();
+    emit('hover-end');
+  });
+
+  graph.on(NodeEvent.DRAG_END, (event: IElementEvent) => {
+    const id = event.target?.id;
+    if (id) {
+      const position = graph.getElementPosition?.(id);
+      const node = nodeById.get(id);
+      if (node && position) {
+        node.x = position[0];
+        node.y = position[1];
+      }
+    }
+    updateHulls();
+    if (dragTimer !== undefined) window.clearTimeout(dragTimer);
+    dragTimer = window.setTimeout(() => {
+      isDraggingNode = false;
+    }, 60);
+  });
+
   graph.on(NodeEvent.CLICK, (event: IElementEvent) => {
     void handleNodeClick(event);
   });
@@ -277,7 +338,7 @@ function bindEvents(graph: Graph): void {
 
   graph.on(NodeEvent.POINTER_OVER, (event: IElementEvent) => {
     const id = event.target?.id;
-    if (!id) return;
+    if (!id || !nodeById.has(id)) return;
     clearHoverTimer();
     const point = { x: event.client.x, y: event.client.y };
     hoverTimer = window.setTimeout(() => {
@@ -346,10 +407,16 @@ onMounted(async () => {
     },
     behaviors: [
       'drag-canvas',
+      { type: 'drag-element', dropEffect: 'move', shadow: false },
       { type: 'zoom-canvas', sensitivity: 1.15 },
-      { type: 'hover-activate', degree: 1, state: 'active', inactiveState: 'inactive' },
+      {
+        type: 'hover-activate',
+        degree: 1,
+        state: 'active',
+        inactiveState: 'inactive',
+        enable: () => !isDraggingNode,
+      },
       { type: 'auto-adapt-label', sortNode: { type: 'degree' }, padding: 8 },
-      'optimize-viewport-transform',
     ],
     plugins: hullOptions(),
   });
@@ -367,6 +434,10 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   clearRevealTimer();
   clearHoverTimer();
+  if (dragTimer !== undefined) {
+    window.clearTimeout(dragTimer);
+    dragTimer = undefined;
+  }
   if (graphInstance) {
     graphInstance.destroy();
     graphInstance = null;
@@ -416,11 +487,16 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode });
 .orbit-graph {
   position: absolute;
   inset: 0;
+  cursor: grab;
   background:
     radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.07), transparent 42%),
     radial-gradient(circle at 78% 72%, rgba(168, 85, 247, 0.08), transparent 48%),
     radial-gradient(circle at 55% 45%, rgba(52, 211, 153, 0.04), transparent 55%),
     var(--space-void);
+}
+
+.orbit-graph:active {
+  cursor: grabbing;
 }
 
 .orbit-graph::before {

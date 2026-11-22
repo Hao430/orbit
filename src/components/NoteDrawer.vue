@@ -55,7 +55,14 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown));
 </script>
 
 <template>
-  <aside v-if="node" class="note-drawer" :class="{ 'is-open': open }">
+  <aside
+    v-if="node"
+    class="note-drawer"
+    :class="{ 'is-open': open }"
+    role="dialog"
+    :aria-label="node.title + ' 天体档案'"
+    aria-modal="false"
+  >
     <header class="drawer-head">
       <span class="drawer-dot" :style="{ background: tone?.core, boxShadow: '0 0 14px ' + tone?.core }" />
       <div class="drawer-heading">

@@ -1,11 +1,12 @@
 import type { CelestialNode } from '@/types/celestial';
 
-function normalize(value: string): string {
+export function normalizeNoteKey(value: string): string {
   return value
     .trim()
     .replace(/\\/g, '/')
     .replace(/^\.\//, '')
     .replace(/^\/+/, '')
+    .replace(/\/+$/, '')
     .replace(/\.md$/i, '')
     .toLowerCase();
 }
@@ -20,7 +21,7 @@ export function createNoteLookup(
   const byKey = new Map<string, CelestialNode>();
 
   const add = (key: string, node: CelestialNode): void => {
-    const normalized = normalize(key);
+    const normalized = normalizeNoteKey(key);
     if (!normalized || byKey.has(normalized)) return;
     byKey.set(normalized, node);
   };
@@ -33,9 +34,9 @@ export function createNoteLookup(
   }
 
   return (raw: string): CelestialNode | undefined => {
-    const direct = byKey.get(normalize(raw));
+    const direct = byKey.get(normalizeNoteKey(raw));
     if (direct) return direct;
     const base = raw.split('/').pop() ?? raw;
-    return byKey.get(normalize(base));
+    return byKey.get(normalizeNoteKey(base));
   };
 }

@@ -54,6 +54,12 @@ class MockGraph {
     this.zoomRatios.push(ratio);
   }
 
+  getElementPosition(id: string): [number, number] | undefined {
+    const node = this.data.nodes.find((item) => item.id === id);
+    if (!node?.style) return undefined;
+    return [Number(node.style.x ?? 0), Number(node.style.y ?? 0)];
+  }
+
   addNodeData(nodes: MockNodeRecord[]): void {
     for (const node of nodes) {
       const index = this.data.nodes.findIndex((item) => item.id === node.id);
@@ -113,6 +119,8 @@ vi.mock('@antv/g6', () => ({
     CLICK: 'node:click',
     POINTER_OVER: 'node:pointerover',
     POINTER_OUT: 'node:pointerout',
+    DRAG_START: 'node:dragstart',
+    DRAG_END: 'node:dragend',
   },
   CanvasEvent: { CLICK: 'canvas:click' },
 }));
@@ -247,6 +255,23 @@ describe('OrbitGraph', () => {
     await exposed.fitView();
     expect(graph.zoomRatios).toEqual([1.2, 0.8]);
     expect(graph.fitCalls).toBe(3);
+    wrapper.unmount();
+  });
+
+  it('拖拽星体不会误触发点击展开', async () => {
+    const { wrapper, graph } = await mountGraph();
+    graph.emit('node:dragstart', { target: { id: 'a' } });
+    graph.emit('node:dragend', { target: { id: 'a' } });
+    graph.emit('node:click', { target: { id: 'a' } });
+    await flushPromises();
+
+    expect(wrapper.emitted('select')).toBeUndefined();
+    expect(graph.data.nodes.map((node) => node.id).sort()).toEqual(['a', 'b']);
+
+    await vi.advanceTimersByTimeAsync(100);
+    graph.emit('node:click', { target: { id: 'a' } });
+    await flushPromises();
+    expect(wrapper.emitted('select')).toBeDefined();
     wrapper.unmount();
   });
 

@@ -6,6 +6,7 @@ import type { SimulationLinkDatum, SimulationNodeDatum } from 'd3-force';
 import { louvain } from '@antv/algorithm';
 import { buildDegreeMap, computeBetweenness, pickBackbone } from '../src/utils/topology.ts';
 import { computeCelestialMetrics } from '../src/utils/celestial-math.ts';
+import { normalizeNoteKey } from '../src/utils/note-lookup.ts';
 import { asStringList, extractSummary, parseFrontmatter } from './lib/frontmatter.ts';
 import { extractMarkdownDocLinks, extractWikiLinks } from './lib/wiki-links.ts';
 import type { CelestialCluster, CelestialEdge, CelestialGraph, CelestialNode, StarRole } from '../src/types/celestial.ts';
@@ -64,16 +65,7 @@ function toId(dir: string, file: string): string {
   return relative(dir, file).split(sep).join('/').replace(/\.md$/i, '');
 }
 
-function normalizeKey(value: string): string {
-  return value
-    .trim()
-    .replace(/\\/g, '/')
-    .replace(/^\.\//, '')
-    .replace(/^\/+/, '')
-    .replace(/\.md$/i, '')
-    .replace(/\/+$/, '')
-    .toLowerCase();
-}
+const normalizeKey = normalizeNoteKey;
 
 function hash01(value: string): number {
   let hash = 2166136261;

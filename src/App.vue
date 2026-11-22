@@ -18,25 +18,29 @@ const drawerOpen = ref(false);
 const hover = ref<{ node: CelestialNode; x: number; y: number } | null>(null);
 const stats = ref({ visibleNodes: 0, visibleEdges: 0, centers: 0 });
 
+const nodeMap = computed(() => {
+  if (!graph.value) return new Map<string, CelestialNode>();
+  return new Map(graph.value.nodes.map((node) => [node.id, node]));
+});
+
+const clusterMap = computed(() => {
+  if (!graph.value) return new Map<string, string>();
+  return new Map(graph.value.clusters.map((cluster) => [cluster.id, cluster.label]));
+});
+
 const selectedNode = computed<CelestialNode | null>(() => {
-  if (!graph.value || !selectedId.value) return null;
-  return graph.value.nodes.find((node) => node.id === selectedId.value) ?? null;
+  if (!selectedId.value) return null;
+  return nodeMap.value.get(selectedId.value) ?? null;
 });
 
 const selectedClusterLabel = computed(() => {
-  if (!graph.value || !selectedNode.value) return '';
-  return (
-    graph.value.clusters.find((cluster) => cluster.id === selectedNode.value?.clusterId)?.label ??
-    '未归类'
-  );
+  if (!selectedNode.value) return '';
+  return clusterMap.value.get(selectedNode.value.clusterId) ?? '未归类';
 });
 
 const hoverClusterLabel = computed(() => {
-  if (!graph.value || !hover.value) return '';
-  return (
-    graph.value.clusters.find((cluster) => cluster.id === hover.value?.node.clusterId)?.label ??
-    '未归类'
-  );
+  if (!hover.value) return '';
+  return clusterMap.value.get(hover.value.node.clusterId) ?? '未归类';
 });
 
 const generatedAt = computed(() => {
@@ -106,7 +110,7 @@ onMounted(() => {
 
 <template>
   <div class="orbit-shell">
-    <header class="app-header">
+    <header class="app-header" role="banner">
       <div class="brand">
         <div class="brand-mark">
           <img :src="logoMark" alt="Orbit 标志" />
@@ -130,7 +134,7 @@ onMounted(() => {
       </div>
     </header>
 
-    <main class="app-main">
+    <main class="app-main" role="main">
       <OrbitGraph
         v-if="graph"
         ref="graphRef"
@@ -186,7 +190,8 @@ onMounted(() => {
 
       <footer v-if="graph" class="floating-hints">
         <span>滚轮缩放</span>
-        <span>拖拽平移</span>
+        <span>画布拖拽平移</span>
+        <span>星体拖拽重排</span>
         <span>悬停 280ms 预览摘要</span>
         <span>单击展开 1–2 阶引力视界</span>
         <span>抽屉内双链可跳转</span>

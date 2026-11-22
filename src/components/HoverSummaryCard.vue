@@ -25,7 +25,7 @@ const position = computed(() => {
 </script>
 
 <template>
-  <div class="hover-card" :style="position">
+  <div class="hover-card" :style="position" role="tooltip" aria-live="polite">
     <div class="hover-card__head">
       <span class="hover-card__dot" :style="{ background: tone.core, boxShadow: '0 0 12px ' + tone.core }" />
       <span class="hover-card__cluster">{{ clusterLabel }}</span>

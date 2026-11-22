@@ -3,11 +3,11 @@
  * 代码块 / 行内代码里的内容保持原样。
  */
 
-const CODE_SEGMENT = /(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\n]*`)/g;
-const WIKILINK = /!?\[\[([^\]\n]+)\]\]/g;
+export const CODE_SEGMENT = /(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\n]*`)/g;
+export const WIKILINK = /!?\[\[([^\]\n]+)\]\]/g;
 
-function isExternal(target: string): boolean {
-  return /^[a-z][a-z0-9+.-]*:/i.test(target);
+export function isExternal(target: string): boolean {
+  return /^[a-z][a-z0-9+.-]*:/i.test(target) || target.startsWith('//');
 }
 
 function replaceInProse(text: string): string {

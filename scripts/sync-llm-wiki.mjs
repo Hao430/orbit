@@ -23,6 +23,9 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { asStringList, deriveSummary, parseFrontmatter } from './lib/frontmatter.ts';
+
+const toList = asStringList;
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -62,130 +65,6 @@ function walk(dir) {
     files.push(full);
   }
   return files;
-}
-
-// ---------------------------------------------------------------------------
-// frontmatter：只解析契约需要的键
-// ---------------------------------------------------------------------------
-
-const DELIMITER = '---';
-
-function unquote(value) {
-  const trimmed = value.trim();
-  if (
-    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
-    (trimmed.startsWith("'") && trimmed.endsWith("'"))
-  ) {
-    return trimmed.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
-  }
-  return trimmed;
-}
-
-function parseList(value) {
-  const inner = value.trim().slice(1, -1).trim();
-  if (!inner) return [];
-  const out = [];
-  let current = '';
-  let inQuote = false;
-  for (const char of inner) {
-    if (char === '"') inQuote = !inQuote;
-    if (char === ',' && !inQuote) {
-      out.push(current);
-      current = '';
-      continue;
-    }
-    current += char;
-  }
-  out.push(current);
-  return out.map(unquote).filter(Boolean);
-}
-
-function parseFrontmatter(raw) {
-  const text = raw.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
-  if (!text.startsWith(DELIMITER + '\n')) return { data: {}, body: text, hasFrontmatter: false };
-
-  const lines = text.split('\n');
-  let closing = -1;
-  for (let i = 1; i < lines.length; i += 1) {
-    const line = lines[i].trim();
-    if (line === DELIMITER || line === '...') { closing = i; break; }
-  }
-  if (closing < 0) return { data: {}, body: text, hasFrontmatter: false };
-
-  const data = {};
-  let pendingKey = null;
-  let pendingList = [];
-  const flush = () => {
-    if (pendingKey) data[pendingKey] = pendingList.slice();
-    pendingKey = null;
-    pendingList = [];
-  };
-
-  for (let i = 1; i < closing; i += 1) {
-    const line = lines[i];
-    if (!line.trim() || line.trim().startsWith('#')) continue;
-    if (/^\s+-\s+/.test(line) && pendingKey) {
-      pendingList.push(unquote(line.trim().replace(/^-\s*/, '')));
-      continue;
-    }
-    flush();
-    const match = line.match(/^([\w-]+)\s*:\s*(.*)$/);
-    if (!match) continue;
-    const key = match[1];
-    const value = match[2].trim();
-    if (!value) { pendingKey = key; pendingList = []; continue; }
-    data[key] = value.startsWith('[') && value.endsWith(']') ? parseList(value) : unquote(value);
-  }
-  flush();
-
-  const body = lines.slice(closing + 1).join('\n').replace(/^\n+/, '');
-  return { data, body, hasFrontmatter: true };
-}
-
-function toList(value) {
-  if (!value) return [];
-  if (Array.isArray(value)) return value.map((v) => String(v).trim()).filter(Boolean);
-  return [String(value).trim()].filter(Boolean);
-}
-
-function toPlainText(markdown) {
-  return markdown
-    .replace(/```[\s\S]*?```/g, ' ')
-    .replace(/~~~[\s\S]*?~~~/g, ' ')
-    .replace(/`[^`\n]*`/g, ' ')
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
-    .replace(/\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]/g, (_m, target, alias) => alias || target)
-    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-    .replace(/^#{1,6}\s+/gm, '')
-    .replace(/^\s*>\s?/gm, '')
-    .replace(/[*_~]/g, '')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\|/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-/** 回收摘要：跳过标题、表格、列表块，取第一段散文，按句读截到 40–80 字 */
-function deriveSummary(body, title, maxLength = SUMMARY_MAX) {
-  const paragraphs = body
-    .split(/\n{2,}/)
-    .map((block) => {
-      const firstLine = block.split('\n')[0].trim();
-      if (/^#{1,6}\s/.test(firstLine)) return '';
-      if (/^\|/.test(firstLine)) return '';
-      if (/^[-*+]\s/.test(firstLine)) return '';
-      return toPlainText(block);
-    })
-    .filter((text) => text.length > 0 && text !== title);
-
-  const source = paragraphs.find((text) => text.length >= 30) ?? paragraphs[0] ?? '';
-  if (!source) return '';
-  if (source.length <= maxLength) return source;
-
-  const clipped = source.slice(0, maxLength);
-  const lastBreak = Math.max(clipped.lastIndexOf('，'), clipped.lastIndexOf('。'), clipped.lastIndexOf('；'));
-  if (lastBreak >= SUMMARY_MIN) return clipped.slice(0, lastBreak + 1);
-  return clipped.trimEnd() + '…';
 }
 
 // ---------------------------------------------------------------------------

@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import type { CelestialNode } from '@/types/celestial';
-import { createNoteLookup } from './note-lookup';
+import { createNoteLookup, normalizeNoteKey } from './note-lookup';
+
+describe('normalizeNoteKey', () => {
+  it('处理各种前缀、后缀、反斜杠与空格', () => {
+    expect(normalizeNoteKey('  ./wiki/path/note.md/  ')).toBe('wiki/path/note');
+    expect(normalizeNoteKey('\\path\\note.MD')).toBe('path/note');
+    expect(normalizeNoteKey('note')).toBe('note');
+  });
+});
 
 const makeNode = (id: string, title: string, aliases: string[] = []): CelestialNode => ({
   id,

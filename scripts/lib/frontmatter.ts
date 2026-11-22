@@ -16,6 +16,7 @@ export interface FrontmatterData {
 export interface ParsedDocument {
   data: FrontmatterData;
   body: string;
+  hasFrontmatter: boolean;
 }
 
 const DELIMITER = '---';
@@ -25,7 +26,9 @@ function parseScalar(value: string): string {
   const quoted =
     (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
     (trimmed.startsWith("'") && trimmed.endsWith("'"));
-  if (quoted && trimmed.length >= 2) return trimmed.slice(1, -1);
+  if (quoted && trimmed.length >= 2) {
+    return trimmed.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+  }
   if (trimmed === 'null' || trimmed === '~') return '';
   return trimmed;
 }
@@ -41,7 +44,7 @@ function parseInlineList(value: string): string[] {
 
 export function parseFrontmatter(raw: string): ParsedDocument {
   const text = raw.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
-  if (!text.startsWith(DELIMITER + '\n')) return { data: {}, body: text };
+  if (!text.startsWith(DELIMITER + '\n')) return { data: {}, body: text, hasFrontmatter: false };
 
   const lines = text.split('\n');
   let closing = -1;
@@ -52,7 +55,7 @@ export function parseFrontmatter(raw: string): ParsedDocument {
       break;
     }
   }
-  if (closing < 0) return { data: {}, body: text };
+  if (closing < 0) return { data: {}, body: text, hasFrontmatter: false };
 
   const data: FrontmatterData = {};
   let pendingKey: string | null = null;
@@ -93,7 +96,7 @@ export function parseFrontmatter(raw: string): ParsedDocument {
   flush();
 
   const body = lines.slice(closing + 1).join('\n').replace(/^\n+/, '');
-  return { data, body };
+  return { data, body, hasFrontmatter: true };
 }
 
 export function asStringList(value: string | string[] | undefined): string[] {
@@ -131,4 +134,39 @@ export function extractSummary(body: string, maxLength = 140): string {
   const first = paragraphs.find((text) => text.length >= 12) ?? paragraphs[0] ?? '';
   if (first.length <= maxLength) return first;
   return first.slice(0, maxLength).trimEnd() + '…';
+}
+
+/**
+ * 契约摘要推导：跳过标题、表格、列表块，优先取正文第一段散文，
+ * 并在指定字数区间内寻找标点断句。
+ */
+export function deriveSummary(
+  body: string,
+  title?: string,
+  maxLength = 80,
+  minLength = 40,
+): string {
+  const paragraphs = body
+    .split(/\n{2,}/)
+    .map((block) => {
+      const firstLine = block.split('\n')[0].trim();
+      if (/^#{1,6}\s/.test(firstLine)) return '';
+      if (/^\|/.test(firstLine)) return '';
+      if (/^[-*+]\s/.test(firstLine)) return '';
+      return toPlainText(block);
+    })
+    .filter((text) => text.length > 0 && text !== title);
+
+  const source = paragraphs.find((text) => text.length >= 30) ?? paragraphs[0] ?? '';
+  if (!source) return '';
+  if (source.length <= maxLength) return source;
+
+  const clipped = source.slice(0, maxLength);
+  const lastBreak = Math.max(
+    clipped.lastIndexOf('，'),
+    clipped.lastIndexOf('。'),
+    clipped.lastIndexOf('；'),
+  );
+  if (lastBreak >= minLength) return clipped.slice(0, lastBreak + 1);
+  return clipped.trimEnd() + '…';
 }
