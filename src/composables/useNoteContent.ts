@@ -2,7 +2,7 @@ import { ref } from 'vue';
 import { renderMarkdown } from '@/utils/markdown';
 
 /** 抽屉正文按需拉取 public/wiki/*.md，避免把 2k 篇笔记塞进首屏 JSON */
-export function useNoteContent() {
+export function useNoteContent(titleResolver?: (target: string) => string | undefined) {
   const html = ref('');
   const loading = ref(false);
   const error = ref<string | null>(null);
@@ -24,7 +24,7 @@ export function useNoteContent() {
       if (!response.ok) throw new Error('正文加载失败（' + response.status + '）');
       const source = await response.text();
       if (current !== requestId) return;
-      html.value = renderMarkdown(source);
+      html.value = renderMarkdown(source, titleResolver);
     } catch (cause) {
       if (current !== requestId) return;
       html.value = '';

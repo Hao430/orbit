@@ -54,6 +54,14 @@ class MockGraph {
     this.zoomRatios.push(ratio);
   }
 
+  getZoom(): number {
+    return 1;
+  }
+
+  getViewportByCanvas(point: [number, number]): [number, number] {
+    return point;
+  }
+
   getElementPosition(id: string): [number, number] | undefined {
     const node = this.data.nodes.find((item) => item.id === id);
     if (!node?.style) return undefined;
@@ -123,6 +131,10 @@ vi.mock('@antv/g6', () => ({
     DRAG_END: 'node:dragend',
   },
   CanvasEvent: { CLICK: 'canvas:click' },
+  GraphEvent: {
+    AFTER_TRANSFORM: 'aftertransform',
+    AFTER_RENDER: 'afterrender',
+  },
 }));
 
 const { default: OrbitGraph } = await import('./OrbitGraph.vue');
@@ -279,6 +291,20 @@ describe('OrbitGraph', () => {
     const { wrapper, graph } = await mountGraph();
     graph.emit('canvas:click', {});
     expect(wrapper.emitted('canvas-click')).toHaveLength(1);
+
+    const exposed = wrapper.vm as unknown as {
+      highlightNode: (id: string | null) => void;
+      setFilter: (filter: { clusterId?: string | null }) => void;
+    };
+    exposed.highlightNode('a');
+    await flushPromises();
+    expect(wrapper.find('.radar-ping').exists()).toBe(true);
+
+    exposed.highlightNode(null);
+    await flushPromises();
+    expect(wrapper.find('.radar-ping').exists()).toBe(false);
+
+    exposed.setFilter({ clusterId: 'c0' });
 
     wrapper.unmount();
     expect(graph.destroys).toBe(1);

@@ -3,6 +3,7 @@ import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
   CanvasEvent,
   Graph,
+  GraphEvent,
   NodeEvent,
   type CustomPluginOption,
   type EdgeData,
@@ -55,6 +56,101 @@ let revealTimer: number | undefined;
 let hoverTimer: number | undefined;
 let isDraggingNode = false;
 let dragTimer: number | undefined;
+
+const activeRings = ref<Array<{ id: string; cx: number; cy: number; r1: number; r2: number }>>([]);
+const highlightTargetPos = ref<{ x: number; y: number } | null>(null);
+let currentHighlightId: string | null = null;
+
+function updateRings(): void {
+  if (!graphInstance) {
+    activeRings.value = [];
+    return;
+  }
+  const zoom = typeof graphInstance.getZoom === 'function' ? graphInstance.getZoom() : 1;
+  const rings: Array<{ id: string; cx: number; cy: number; r1: number; r2: number }> = [];
+  for (const centerId of horizon.centers) {
+    try {
+      const pos = graphInstance.getElementPosition?.(centerId) as [number, number] | undefined;
+      if (!pos || !Array.isArray(pos)) continue;
+      const vp = (typeof graphInstance.getViewportByCanvas === 'function'
+        ? graphInstance.getViewportByCanvas(pos)
+        : pos) as [number, number];
+      if (vp && Array.isArray(vp)) {
+        rings.push({
+          id: centerId,
+          cx: vp[0],
+          cy: vp[1],
+          r1: 85 * zoom,
+          r2: 175 * zoom,
+        });
+      }
+    } catch {
+      // ignore
+    }
+  }
+  activeRings.value = rings;
+}
+
+function refreshHighlight(): void {
+  if (!currentHighlightId || !graphInstance) {
+    highlightTargetPos.value = null;
+    return;
+  }
+  try {
+    const pos = graphInstance.getElementPosition?.(currentHighlightId) as [number, number] | undefined;
+    if (!pos || !Array.isArray(pos)) {
+      highlightTargetPos.value = null;
+      return;
+    }
+    const vp = (typeof graphInstance.getViewportByCanvas === 'function'
+      ? graphInstance.getViewportByCanvas(pos)
+      : pos) as [number, number];
+    if (vp && Array.isArray(vp)) {
+      highlightTargetPos.value = { x: vp[0], y: vp[1] };
+    }
+  } catch {
+    highlightTargetPos.value = null;
+  }
+}
+
+function highlightNode(id: string | null): void {
+  currentHighlightId = id;
+  refreshHighlight();
+}
+
+function setFilter(filter: { clusterId?: string | null; role?: string | null }): void {
+  if (!graphInstance) return;
+  const { clusterId, role } = filter;
+  const hasFilter = Boolean(clusterId || role);
+  for (const [id, hop] of shownHops) {
+    const node = nodeById.get(id);
+    if (!node) continue;
+    const matchCluster = !clusterId || node.clusterId === clusterId;
+    const matchRole = !role || node.role === role;
+    const matches = matchCluster && matchRole;
+    const targetOpacity = hasFilter ? (matches ? 1 : 0.15) : 1;
+    graphInstance.updateNodeData?.([{
+      id,
+      style: {
+        opacity: targetOpacity,
+        labelOpacity: hasFilter ? (matches ? 1 : 0) : (hop === 2 ? 0 : 1),
+      },
+    }]);
+  }
+  for (const [id] of shownEdgeHops) {
+    const edge = edgeById.get(id);
+    if (!edge) continue;
+    const sNode = nodeById.get(edge.source);
+    const tNode = nodeById.get(edge.target);
+    const sMatch = !clusterId || sNode?.clusterId === clusterId;
+    const tMatch = !clusterId || tNode?.clusterId === clusterId;
+    const targetOpacity = hasFilter ? (sMatch && tMatch ? 0.8 : 0.05) : 1;
+    graphInstance.updateEdgeData?.([{
+      id,
+      style: { opacity: targetOpacity },
+    }]);
+  }
+}
 
 const ORIGIN = { x: 1000, y: 600 };
 const HOP2_DELAY = 160;
@@ -322,6 +418,8 @@ function bindEvents(graph: Graph): void {
       }
     }
     updateHulls();
+    updateRings();
+    refreshHighlight();
     if (dragTimer !== undefined) window.clearTimeout(dragTimer);
     dragTimer = window.setTimeout(() => {
       isDraggingNode = false;
@@ -334,6 +432,16 @@ function bindEvents(graph: Graph): void {
 
   graph.on(CanvasEvent.CLICK, () => {
     emit('canvas-click');
+  });
+
+  graph.on(GraphEvent.AFTER_TRANSFORM, () => {
+    updateRings();
+    refreshHighlight();
+  });
+
+  graph.on(GraphEvent.AFTER_RENDER, () => {
+    updateRings();
+    refreshHighlight();
   });
 
   graph.on(NodeEvent.POINTER_OVER, (event: IElementEvent) => {
@@ -461,6 +569,7 @@ async function resetHorizon(): Promise<void> {
   horizon = createHorizonState();
   await applySnapshot(snapshotHorizon(horizon, props.data.edges, backbone), false);
   emit('select', { node: null, active: false });
+  updateRings();
   await graphInstance?.fitView();
 }
 
@@ -473,17 +582,36 @@ async function exploreNode(id: string): Promise<boolean> {
   }
   emit('select', { node, active: true });
   await graphInstance.focusElement(id, { duration: 520, easing: 'ease-in-out' });
+  updateRings();
   return true;
 }
 
-defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode });
+defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode, highlightNode, setFilter });
 </script>
 
 <template>
-  <div ref="containerRef" class="orbit-graph" />
+  <div class="orbit-graph-container">
+    <div ref="containerRef" class="orbit-graph" />
+    <svg v-if="activeRings.length || highlightTargetPos" class="orbit-overlay" aria-hidden="true">
+      <g v-for="ring in activeRings" :key="ring.id">
+        <circle :cx="ring.cx" :cy="ring.cy" :r="ring.r1" class="orbit-ring orbit-ring--inner" />
+        <circle :cx="ring.cx" :cy="ring.cy" :r="ring.r2" class="orbit-ring orbit-ring--outer" />
+      </g>
+      <g v-if="highlightTargetPos" class="radar-ping-group">
+        <circle :cx="highlightTargetPos.x" :cy="highlightTargetPos.y" r="24" class="radar-ping" />
+        <circle :cx="highlightTargetPos.x" :cy="highlightTargetPos.y" r="6" class="radar-ping-core" />
+      </g>
+    </svg>
+  </div>
 </template>
 
 <style scoped>
+.orbit-graph-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
 .orbit-graph {
   position: absolute;
   inset: 0;
@@ -493,6 +621,20 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode });
     radial-gradient(circle at 78% 72%, rgba(168, 85, 247, 0.08), transparent 48%),
     radial-gradient(circle at 55% 45%, rgba(52, 211, 153, 0.04), transparent 55%),
     var(--space-void);
+  background-size: 130% 130%;
+  animation: nebula-drift 30s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-drift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 .orbit-graph:active {
@@ -509,5 +651,72 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode });
     linear-gradient(90deg, var(--space-grid) 1px, transparent 1px);
   background-size: 120px 120px;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.9), transparent 78%);
+  animation: grid-breathe 10s ease-in-out infinite alternate;
+}
+
+@keyframes grid-breathe {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+.orbit-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.orbit-ring {
+  fill: none;
+  transition: r 120ms ease, cx 120ms ease, cy 120ms ease;
+}
+
+.orbit-ring--inner {
+  stroke: rgba(103, 232, 249, 0.32);
+  stroke-width: 1.2px;
+  stroke-dasharray: 4 6;
+  filter: drop-shadow(0 0 6px rgba(103, 232, 249, 0.35));
+}
+
+.orbit-ring--outer {
+  stroke: rgba(129, 140, 248, 0.22);
+  stroke-width: 1px;
+  stroke-dasharray: 6 9;
+  filter: drop-shadow(0 0 8px rgba(129, 140, 248, 0.22));
+}
+
+.radar-ping-group {
+  pointer-events: none;
+}
+
+.radar-ping {
+  fill: none;
+  stroke: #67e8f9;
+  stroke-width: 2px;
+  animation: ping-pulse 1.4s ease-out infinite;
+}
+
+.radar-ping-core {
+  fill: #67e8f9;
+  filter: drop-shadow(0 0 10px #67e8f9);
+}
+
+@keyframes ping-pulse {
+  0% {
+    r: 8px;
+    opacity: 1;
+    stroke-width: 2.5px;
+  }
+  100% {
+    r: 42px;
+    opacity: 0;
+    stroke-width: 0.5px;
+  }
 }
 </style>

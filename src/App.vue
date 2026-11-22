@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import logoLarge from '@/assets/brand/logo.webp';
 import logoMark from '@/assets/brand/logo-mark.webp';
 import GalaxyHud from '@/components/graph/GalaxyHud.vue';
@@ -9,6 +9,7 @@ import HoverSummaryCard from '@/components/HoverSummaryCard.vue';
 import NoteDrawer from '@/components/NoteDrawer.vue';
 import { useCelestialGraph } from '@/composables/useCelestialGraph';
 import type { CelestialNode } from '@/types/celestial';
+import { roleTone } from '@/utils/palette';
 
 const { graph, loading, error, resolveNote, load } = useCelestialGraph();
 
@@ -17,6 +18,11 @@ const selectedId = ref<string | null>(null);
 const drawerOpen = ref(false);
 const hover = ref<{ node: CelestialNode; x: number; y: number } | null>(null);
 const stats = ref({ visibleNodes: 0, visibleEdges: 0, centers: 0 });
+
+const searchQuery = ref('');
+const searchOpen = ref(false);
+const activeSearchIndex = ref(0);
+const searchInputRef = ref<HTMLInputElement | null>(null);
 
 const nodeMap = computed(() => {
   if (!graph.value) return new Map<string, CelestialNode>();
@@ -48,6 +54,62 @@ const generatedAt = computed(() => {
   return new Date(graph.value.meta.generatedAt).toLocaleDateString('zh-CN');
 });
 
+const searchResults = computed(() => {
+  const query = searchQuery.value.trim().toLowerCase();
+  if (!query || !graph.value) return [];
+  return graph.value.nodes
+    .filter((node) => {
+      const matchTitle = node.title.toLowerCase().includes(query);
+      const matchId = node.id.toLowerCase().includes(query);
+      const matchAliases = (node.aliases ?? []).some((a) => a.toLowerCase().includes(query));
+      const matchSummary = (node.summary ?? '').toLowerCase().includes(query);
+      return matchTitle || matchId || matchAliases || matchSummary;
+    })
+    .slice(0, 8);
+});
+
+function handleKeydown(e: KeyboardEvent): void {
+  if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+    e.preventDefault();
+    searchInputRef.value?.focus();
+    searchOpen.value = true;
+  }
+}
+
+function selectSearchResult(node: CelestialNode): void {
+  searchOpen.value = false;
+  searchQuery.value = '';
+  void graphRef.value?.exploreNode(node.id);
+}
+
+function handleSearchKeydown(e: KeyboardEvent): void {
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (searchResults.value.length > 0) {
+      activeSearchIndex.value = (activeSearchIndex.value + 1) % searchResults.value.length;
+    }
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (searchResults.value.length > 0) {
+      activeSearchIndex.value =
+        (activeSearchIndex.value - 1 + searchResults.value.length) % searchResults.value.length;
+    }
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    const item = searchResults.value[activeSearchIndex.value];
+    if (item) selectSearchResult(item);
+  } else if (e.key === 'Escape') {
+    searchOpen.value = false;
+    searchInputRef.value?.blur();
+  }
+}
+
+function handleSearchBlur(): void {
+  window.setTimeout(() => {
+    searchOpen.value = false;
+  }, 200);
+}
+
 function handleSelect(payload: { node: CelestialNode | null; active: boolean }): void {
   if (!payload.node) {
     drawerOpen.value = false;
@@ -68,6 +130,7 @@ function handleHoverEnd(): void {
 function handleCanvasClick(): void {
   drawerOpen.value = false;
   hover.value = null;
+  searchOpen.value = false;
 }
 
 function handleStats(payload: { visibleNodes: number; visibleEdges: number; centers: number }): void {
@@ -78,6 +141,25 @@ function handleNavigate(rawTarget: string): void {
   const target = resolveNote.value(rawTarget);
   if (!target) return;
   void graphRef.value?.exploreNode(target.id);
+}
+
+function handleHoverLink(rawTarget: string): void {
+  const target = resolveNote.value(rawTarget);
+  if (target) {
+    graphRef.value?.highlightNode(target.id);
+  }
+}
+
+function handleHoverLinkEnd(): void {
+  graphRef.value?.highlightNode(null);
+}
+
+function handleFilterCluster(clusterId: string | null): void {
+  graphRef.value?.setFilter({ clusterId });
+}
+
+function handleFilterRole(role: string | null): void {
+  graphRef.value?.setFilter({ role });
 }
 
 function handleReset(): void {
@@ -105,6 +187,11 @@ function closeDrawer(): void {
 
 onMounted(() => {
   void load();
+  window.addEventListener('keydown', handleKeydown);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', handleKeydown);
 });
 </script>
 
@@ -117,20 +204,48 @@ onMounted(() => {
         </div>
         <div class="brand-text">
           <h1>Orbit</h1>
-          <p>知识引力图谱 · Knowledge Gravity Graph</p>
         </div>
       </div>
 
-      <div v-if="graph" class="header-meta">
-        <span class="meta-chip">{{ graph.meta.nodeCount }} 星体</span>
-        <span class="meta-chip">{{ graph.meta.edgeCount }} 连线</span>
-        <span class="meta-chip">{{ graph.clusters.length }} 星团</span>
-        <span class="meta-chip meta-chip--muted">快照 {{ generatedAt }}</span>
+      <div class="header-search-wrap">
+        <div class="global-search" :class="{ 'is-focused': searchOpen }">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.35-4.35" stroke-linecap="round" />
+          </svg>
+          <input
+            ref="searchInputRef"
+            v-model="searchQuery"
+            type="text"
+            class="search-input"
+            placeholder="搜索星体词条… (⌘K)"
+            @focus="searchOpen = true"
+            @blur="handleSearchBlur"
+            @keydown="handleSearchKeydown"
+          />
+          <kbd class="search-kbd">⌘K</kbd>
+        </div>
+
+        <div v-if="searchOpen && searchResults.length > 0" class="search-dropdown">
+          <div
+            v-for="(item, idx) in searchResults"
+            :key="item.id"
+            class="search-item"
+            :class="{ 'is-active': idx === activeSearchIndex }"
+            @mousedown.prevent="selectSearchResult(item)"
+          >
+            <span class="search-item__dot" :style="{ background: roleTone(item.role).core }" />
+            <div class="search-item__info">
+              <span class="search-item__title">{{ item.title }}</span>
+              <span class="search-item__cluster">{{ clusterMap.get(item.clusterId) }}</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="header-status">
+        <span v-if="graph" class="header-updated">快照 {{ generatedAt }}</span>
         <span class="status-dot" />
-        <span>只读观测</span>
       </div>
     </header>
 
@@ -155,6 +270,8 @@ onMounted(() => {
         :centers="stats.centers"
         :clusters="graph.clusters"
         @reset="handleReset"
+        @filter-cluster="handleFilterCluster"
+        @filter-role="handleFilterRole"
       />
 
       <GraphToolbar
@@ -179,7 +296,6 @@ onMounted(() => {
           <span class="orbit-loader__ring" />
         </div>
         <p class="state-title">正在校准星图</p>
-        <p class="state-hint">读取构建期拓扑度量与力导向坐标…</p>
       </div>
 
       <div v-else-if="error" class="state-layer state-layer--error">
@@ -187,15 +303,6 @@ onMounted(() => {
         <p class="state-hint">{{ error }}</p>
         <button type="button" class="state-action" @click="load">重新校准</button>
       </div>
-
-      <footer v-if="graph" class="floating-hints">
-        <span>滚轮缩放</span>
-        <span>画布拖拽平移</span>
-        <span>星体拖拽重排</span>
-        <span>悬停 280ms 预览摘要</span>
-        <span>单击展开 1–2 阶引力视界</span>
-        <span>抽屉内双链可跳转</span>
-      </footer>
     </main>
 
     <NoteDrawer
@@ -203,8 +310,11 @@ onMounted(() => {
       :node="selectedNode"
       :open="drawerOpen"
       :cluster-label="selectedClusterLabel"
+      :title-resolver="(target: string) => resolveNote(target)?.title"
       @close="closeDrawer"
       @navigate="handleNavigate"
+      @hover-link="handleHoverLink"
+      @hover-link-end="handleHoverLinkEnd"
     />
   </div>
 </template>
@@ -248,6 +358,7 @@ onMounted(() => {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
     0 0 16px rgba(56, 189, 248, 0.16);
+  animation: brand-aura 4.5s ease-in-out infinite alternate;
 }
 
 .brand-mark img {
@@ -265,48 +376,191 @@ onMounted(() => {
   color: var(--text-primary);
 }
 
-.brand-text p {
-  margin: 1px 0 0;
-  font-size: 10px;
-  letter-spacing: 0.3px;
-  color: var(--text-muted);
+.header-search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
-.header-meta {
+.global-search {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 200ms var(--ease-gravity);
 }
 
-.meta-chip {
-  padding: 3px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.03);
-  font-size: 10px;
-  color: var(--text-secondary);
+.global-search:hover,
+.global-search.is-focused {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(103, 232, 249, 0.35);
+  box-shadow: 0 0 16px rgba(103, 232, 249, 0.12);
 }
 
-.meta-chip--muted {
+.search-icon {
+  width: 15px;
+  height: 15px;
   color: var(--text-muted);
+  flex: none;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-kbd {
+  flex: none;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--text-muted);
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 200;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(13, 16, 26, 0.92);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85);
+  animation: dropdown-in 180ms var(--ease-gravity);
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 160ms;
+}
+
+.search-item:hover,
+.search-item.is-active {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.search-item__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.search-item__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.search-item__title {
+  font-size: 13px;
+  font-weight: 550;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-item__cluster {
+  font-size: 10px;
+  color: var(--text-muted);
+  flex: none;
 }
 
 .header-status {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   margin-left: auto;
-  font-size: 10px;
-  letter-spacing: 0.6px;
+}
+
+.header-updated {
+  font-size: 11px;
   color: var(--text-muted);
 }
 
 .status-dot {
-  width: 6px;
-  height: 6px;
+  position: relative;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #34d399;
-  box-shadow: 0 0 8px #34d399;
+  box-shadow: 0 0 10px #34d399;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid #34d399;
+  animation: status-radar 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes brand-aura {
+  0% {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 14px rgba(56, 189, 248, 0.16);
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+  100% {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 24px rgba(56, 189, 248, 0.38);
+    border-color: rgba(56, 189, 248, 0.55);
+  }
+}
+
+@keyframes status-radar {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
 }
 
 .app-main {
@@ -380,37 +634,6 @@ onMounted(() => {
   animation: orbit-spin 1.6s linear infinite;
 }
 
-.floating-hints {
-  position: absolute;
-  left: 50%;
-  bottom: 22px;
-  z-index: 100;
-  display: flex;
-  gap: 14px;
-  padding: 6px 16px;
-  border-radius: 999px;
-  transform: translateX(-50%);
-  background: rgba(10, 12, 19, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.055);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  font-size: 10px;
-  color: var(--text-muted);
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.floating-hints span {
-  position: relative;
-}
-
-.floating-hints span + span::before {
-  content: '·';
-  position: absolute;
-  left: -9px;
-  color: rgba(255, 255, 255, 0.15);
-}
-
 @keyframes orbit-spin {
   to {
     transform: rotate(360deg);
@@ -419,21 +642,6 @@ onMounted(() => {
 
 @media (max-width: 1100px) {
   .header-meta {
-    display: none;
-  }
-
-  .floating-hints {
-    gap: 10px;
-    font-size: 9px;
-  }
-}
-
-@media (max-width: 760px) {
-  .floating-hints {
-    display: none;
-  }
-
-  .brand-text p {
     display: none;
   }
 }

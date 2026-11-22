@@ -14,7 +14,7 @@ aliases: ["零库存", "zero inventory"]
 | 条件 | 说明 |
 |---|---|
 | 可预测的班期 | 每天有按时出发、按时到达的班轮 |
-| 可移动的仓容 | [[artifacts/standard-container]] 本身就是仓库 |
+| 可移动的仓容 | [[artifacts/standard-container|标准集装箱]] 本身就是仓库 |
 | 足够低的运费 | 运费占零售价 1%~2% 时，多运几次也不心疼 |
 
 来源的关键转折句：

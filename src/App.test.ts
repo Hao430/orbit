@@ -44,6 +44,8 @@ const graphSpies = {
   zoomIn: vi.fn(async () => undefined),
   zoomOut: vi.fn(async () => undefined),
   fitView: vi.fn(async () => undefined),
+  highlightNode: vi.fn(),
+  setFilter: vi.fn(),
 };
 
 const orbitGraphStub = defineComponent({
@@ -79,7 +81,7 @@ describe('App', () => {
 
     expect(wrapper.find('.state-layer').exists()).toBe(false);
     expect(wrapper.findComponent(OrbitGraph).props('data')).toMatchObject({ meta: payload.meta });
-    expect(wrapper.get('.header-meta').text()).toContain('2 星体');
+    expect(wrapper.get('.header-updated').text()).toContain('快照');
     expect(wrapper.text()).toContain('天体视界探测仪');
     wrapper.unmount();
   });

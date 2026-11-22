@@ -38,7 +38,6 @@ const position = computed(() => {
       <span>介数 {{ node.betweenness }}</span>
       <span v-if="node.backbone">骨干星体</span>
     </div>
-    <p class="hover-card__hint">单击展开引力视界 · 抽屉查看全文</p>
   </div>
 </template>
 
@@ -47,18 +46,19 @@ const position = computed(() => {
   position: fixed;
   z-index: 250;
   width: 320px;
-  padding: 14px 16px 12px;
+  padding: 14px 16px;
   border-radius: 14px;
-  background: rgba(13, 16, 26, 0.82);
+  background: rgba(13, 16, 26, 0.85);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-top-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.2);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 18px 42px -12px rgba(0, 0, 0, 0.75);
   pointer-events: none;
-  animation: hover-card-in 220ms var(--ease-gravity);
+  animation: hover-card-in 240ms var(--ease-gravity);
+  transition: transform 180ms var(--ease-gravity), box-shadow 240ms var(--ease-gravity);
 }
 
 .hover-card__head {
@@ -73,6 +73,18 @@ const position = computed(() => {
   width: 7px;
   height: 7px;
   border-radius: 50%;
+  animation: dot-breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes dot-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
 }
 
 .hover-card__cluster {
@@ -87,6 +99,7 @@ const position = computed(() => {
   background: rgba(255, 255, 255, 0.04);
   font-size: 10px;
   color: var(--text-secondary);
+  transition: border-color 200ms var(--ease-gravity), background 200ms var(--ease-gravity);
 }
 
 .hover-card__title {
@@ -117,18 +130,10 @@ const position = computed(() => {
   color: var(--text-muted);
 }
 
-.hover-card__hint {
-  margin: 10px 0 0;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: 10px;
-  color: rgba(103, 232, 249, 0.7);
-}
-
 @keyframes hover-card-in {
   from {
     opacity: 0;
-    transform: translateY(6px) scale(0.98);
+    transform: translateY(8px) scale(0.96);
   }
   to {
     opacity: 1;

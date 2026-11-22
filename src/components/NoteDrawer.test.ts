@@ -76,4 +76,22 @@ describe('NoteDrawer', () => {
     expect(wrapper.get('.prose').text()).toContain('重试成功');
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
+
+  it('支持切换宽屏阅读模式与双链 hover 派发', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(textResponse('正文 [[目标星体]]')));
+    const wrapper = mountDrawer();
+    await flushPromises();
+
+    expect(wrapper.classes()).not.toContain('is-wide');
+    await wrapper.get('.drawer-expand').trigger('click');
+    expect(wrapper.classes()).toContain('is-wide');
+
+    const link = wrapper.get('.prose a');
+    await link.trigger('mouseover');
+    expect(wrapper.emitted('hover-link')?.[0]).toEqual(['目标星体']);
+
+    await link.trigger('mouseout');
+    expect(wrapper.emitted('hover-link-end')).toHaveLength(1);
+    wrapper.unmount();
+  });
 });

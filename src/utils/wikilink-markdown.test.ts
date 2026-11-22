@@ -22,6 +22,13 @@ describe('replaceWikiLinks', () => {
   it('外链式双链保持原样', () => {
     expect(replaceWikiLinks('[[https://example.com]]')).toBe('[[https://example.com]]');
   });
+
+  it('未提供别名时通过 titleResolver 替换为可读标题', () => {
+    const resolver = (target: string) => (target === 'artifacts/standard-container' ? '标准集装箱' : undefined);
+    expect(replaceWikiLinks('使用 [[artifacts/standard-container]] 运输', resolver)).toBe(
+      '使用 [标准集装箱](#orbit=artifacts%2Fstandard-container) 运输',
+    );
+  });
 });
 
 describe('parseOrbitHref', () => {

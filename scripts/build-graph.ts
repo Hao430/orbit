@@ -263,21 +263,42 @@ for (const note of notes) {
   for (const tag of note.tags) tags.set(tag, (tags.get(tag) ?? 0) + 1);
 }
 
-function pickClusterLabel(clusterId: string): string {
+function pickClusterLabel(clusterId: string, claimed: Set<string>): string {
   const tags = clusterTags.get(clusterId);
+  const repTitle = clusterLabelSource.get(clusterId)?.title;
   if (tags && tags.size > 0) {
-    const ranked = [...tags.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-    return ranked[0][0];
+    const ranked = [...tags.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .map(([t]) => t);
+    for (const tag of ranked) {
+      if (!claimed.has(tag) && tag !== '集装箱化') {
+        return tag;
+      }
+    }
   }
-  return clusterLabelSource.get(clusterId)?.title ?? clusterId;
+  if (repTitle && !claimed.has(repTitle)) {
+    return repTitle;
+  }
+  if (tags?.has('集装箱化') && !claimed.has('集装箱化')) {
+    return '集装箱化';
+  }
+  return repTitle ?? clusterId;
 }
 
-const usedLabels = new Map<string, number>();
+const claimedLabels = new Set<string>();
 const clusters: CelestialCluster[] = clusterIds.map((id) => {
-  const base = pickClusterLabel(id);
-  const count = (usedLabels.get(base) ?? 0) + 1;
-  usedLabels.set(base, count);
-  const label = count > 1 ? base + ' · ' + count : base;
+  let label = pickClusterLabel(id, claimedLabels);
+  if (claimedLabels.has(label)) {
+    const repTitle = clusterLabelSource.get(id)?.title;
+    if (repTitle && !claimedLabels.has(repTitle)) {
+      label = repTitle;
+    } else {
+      let suffix = 2;
+      while (claimedLabels.has(label + ' · ' + suffix)) suffix++;
+      label = label + ' · ' + suffix;
+    }
+  }
+  claimedLabels.add(label);
   return {
     id,
     label: label.length > 16 ? label.slice(0, 16) + '…' : label,

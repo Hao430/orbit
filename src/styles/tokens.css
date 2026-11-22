@@ -34,8 +34,8 @@
 
   /* 文字语义 */
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
 
   /* 动效曲线 */
   --ease-gravity: cubic-bezier(0.16, 1, 0.3, 1);

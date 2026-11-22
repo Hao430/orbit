@@ -10,21 +10,22 @@ export function isExternal(target: string): boolean {
   return /^[a-z][a-z0-9+.-]*:/i.test(target) || target.startsWith('//');
 }
 
-function replaceInProse(text: string): string {
+function replaceInProse(text: string, titleResolver?: (target: string) => string | undefined): string {
   return text.replace(WIKILINK, (match, inner: string) => {
     const [targetPart, aliasPart] = inner.split('|');
     const target = targetPart.split('#')[0].trim();
     if (!target || isExternal(target)) return match;
-    const label = (aliasPart ?? targetPart).trim() || target;
+    const resolvedTitle = titleResolver?.(target);
+    const label = (aliasPart ?? resolvedTitle ?? targetPart).trim() || target;
     const href = '#orbit=' + encodeURIComponent(target);
     return '[' + label + '](' + href + ')';
   });
 }
 
-export function replaceWikiLinks(source: string): string {
+export function replaceWikiLinks(source: string, titleResolver?: (target: string) => string | undefined): string {
   return source
     .split(CODE_SEGMENT)
-    .map((segment, index) => (index % 2 === 1 ? segment : replaceInProse(segment)))
+    .map((segment, index) => (index % 2 === 1 ? segment : replaceInProse(segment, titleResolver)))
     .join('');
 }
 

@@ -45,6 +45,25 @@ describe('GalaxyHud', () => {
     expect(wrapper.emitted('reset')).toHaveLength(1);
   });
 
+  it('点击星团与谱系派发筛选事件，并支持折叠收起', async () => {
+    const wrapper = mountHud();
+    const chips = wrapper.findAll('.cluster-chip');
+    await chips[0].trigger('click');
+    expect(wrapper.emitted('filter-cluster')?.[0]).toEqual(['c0']);
+    expect(chips[0].classes()).toContain('is-active');
+
+    const legendItems = wrapper.findAll('.legend li');
+    await legendItems[0].trigger('click');
+    expect(wrapper.emitted('filter-role')).toHaveLength(1);
+
+    expect(wrapper.find('.galaxy-hud').exists()).toBe(true);
+    await wrapper.get('.hud-fold-btn').trigger('click');
+    expect(wrapper.find('.hud-pill').exists()).toBe(true);
+
+    await wrapper.get('.hud-pill').trigger('click');
+    expect(wrapper.find('.galaxy-hud').exists()).toBe(true);
+  });
+
   it('空图时覆盖率为 0', () => {
     const wrapper = mount(GalaxyHud, {
       props: {
