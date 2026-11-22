@@ -106,6 +106,15 @@ docs/
 | 点击空白 | 关闭抽屉，保留已点亮星系 |
 | HUD「重置视界」 | 回到骨干星系 |
 
-## 部署
+## 部署与 CI
 
-`base` 已设为 `'./'`，`pnpm build` 后将 `dist/` 发布到 GitHub Pages 即可；构建期脚本会在打包前生成图谱产物。
+首次使用：仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，之后推送到 `main` 即自动发布。
+
+| Workflow | 触发 | 内容 |
+| :--- | :--- | :--- |
+| `.github/workflows/ci.yml` | Pull Request / 手动 | 覆盖率测试（阈值 90/80/90/90）+ 构建校验，上传 `coverage` artifact |
+| `.github/workflows/deploy.yml` | push `main` / 手动 | 测试 → 构建 → 上传 Pages artifact → 部署 |
+
+- Node 24 + pnpm 10，版本由 `package.json` 的 `packageManager` 锁定。
+- `base: './'` 让同一份产物同时适用于 `username.github.io` 与 `username.github.io/repo/`，无需按仓库名改配置。
+- 构建前自动执行 `graph:build`；`docs/wiki` 为空时使用 `scripts/fixtures/wiki` 的示例数据。
