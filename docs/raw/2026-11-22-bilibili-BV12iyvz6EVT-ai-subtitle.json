@@ -1,0 +1,6356 @@
+{
+  "font_size": 0.4,
+  "font_color": "#FFFFFF",
+  "background_alpha": 0.5,
+  "background_color": "#9C27B0",
+  "Stroke": "none",
+  "type": "AIsubtitle",
+  "lang": "zh",
+  "version": "v1.7.0.4",
+  "body": [
+    {
+      "from": 0.0,
+      "to": 2.86,
+      "sid": 1,
+      "location": 2,
+      "content": "一个铁皮箱子为什么改变了全球经济",
+      "music": 0.0
+    },
+    {
+      "from": 2.86,
+      "to": 4.94,
+      "sid": 2,
+      "location": 2,
+      "content": "如果问你过去100年里",
+      "music": 0.0
+    },
+    {
+      "from": 4.94,
+      "to": 7.48,
+      "sid": 3,
+      "location": 2,
+      "content": "对全球化影响最大的发明是什么",
+      "music": 0.0
+    },
+    {
+      "from": 7.48,
+      "to": 9.96,
+      "sid": 4,
+      "location": 2,
+      "content": "你第一时间想到的可能是互联网",
+      "music": 0.0
+    },
+    {
+      "from": 9.96,
+      "to": 10.88,
+      "sid": 5,
+      "location": 2,
+      "content": "智能手机",
+      "music": 0.0
+    },
+    {
+      "from": 10.88,
+      "to": 12.809,
+      "sid": 6,
+      "location": 2,
+      "content": "跨洋客机或者芯片",
+      "music": 0.0
+    },
+    {
+      "from": 12.809,
+      "to": 14.129,
+      "sid": 7,
+      "location": 2,
+      "content": "可还有一样东西",
+      "music": 0.0
+    },
+    {
+      "from": 14.129,
+      "to": 17.649,
+      "sid": 8,
+      "location": 2,
+      "content": "同样把全世界几10亿人的生活连在了一起",
+      "music": 0.0
+    },
+    {
+      "from": 17.649,
+      "to": 22.009,
+      "sid": 9,
+      "location": 2,
+      "content": "没错就是你在高速公路上经常看到的集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 22.009,
+      "to": 25.029,
+      "sid": 10,
+      "location": 2,
+      "content": "先把时间拨回1956年4月26日",
+      "music": 0.0
+    },
+    {
+      "from": 25.029,
+      "to": 27.049,
+      "sid": 11,
+      "location": 2,
+      "content": "美国新泽西州纽瓦克港",
+      "music": 0.0
+    },
+    {
+      "from": 27.049,
+      "to": 27.869,
+      "sid": 12,
+      "location": 2,
+      "content": "春天刚到",
+      "music": 0.0
+    },
+    {
+      "from": 27.869,
+      "to": 29.85,
+      "sid": 13,
+      "location": 2,
+      "content": "海风吹在脸上还有些凉",
+      "music": 0.0
+    },
+    {
+      "from": 29.85,
+      "to": 32.39,
+      "sid": 14,
+      "location": 2,
+      "content": "码头边停着一艘模样有点怪的船",
+      "music": 0.0
+    },
+    {
+      "from": 32.39,
+      "to": 35.15,
+      "sid": 15,
+      "location": 2,
+      "content": "它原本是一艘二战时期留下的旧游轮",
+      "music": 0.0
+    },
+    {
+      "from": 35.15,
+      "to": 36.629,
+      "sid": 16,
+      "location": 2,
+      "content": "叫理想X号",
+      "music": 0.0
+    },
+    {
+      "from": 36.629,
+      "to": 39.45,
+      "sid": 17,
+      "location": 2,
+      "content": "这一天甲板上加装了特制钢架",
+      "music": 0.0
+    },
+    {
+      "from": 39.45,
+      "to": 41.39,
+      "sid": 18,
+      "location": 2,
+      "content": "岸边的起重机正在作业",
+      "music": 0.0
+    },
+    {
+      "from": 41.39,
+      "to": 45.35,
+      "sid": 19,
+      "location": 2,
+      "content": "把58个银白色铝制货箱从卡车底盘上吊起",
+      "music": 0.0
+    },
+    {
+      "from": 45.35,
+      "to": 47.46,
+      "sid": 20,
+      "location": 2,
+      "content": "再稳稳放到游轮甲板上",
+      "music": 0.0
+    },
+    {
+      "from": 47.46,
+      "to": 48.34,
+      "sid": 21,
+      "location": 2,
+      "content": "站在岸边",
+      "music": 0.0
+    },
+    {
+      "from": 48.34,
+      "to": 51.88,
+      "sid": 22,
+      "location": 2,
+      "content": "盯着这一幕的是42岁的马尔科姆麦克莱恩",
+      "music": 0.0
+    },
+    {
+      "from": 51.88,
+      "to": 55.14,
+      "sid": 23,
+      "location": 2,
+      "content": "他出生在北卡罗来纳州一个普通农家",
+      "music": 0.0
+    },
+    {
+      "from": 55.14,
+      "to": 56.62,
+      "sid": 24,
+      "location": 2,
+      "content": "靠二手卡车起家",
+      "music": 0.0
+    },
+    {
+      "from": 56.62,
+      "to": 58.44,
+      "sid": 25,
+      "location": 2,
+      "content": "是个做公路运输的老板",
+      "music": 0.0
+    },
+    {
+      "from": 58.44,
+      "to": 59.76,
+      "sid": 26,
+      "location": 2,
+      "content": "可就在这一天",
+      "music": 0.0
+    },
+    {
+      "from": 59.76,
+      "to": 62.44,
+      "sid": 27,
+      "location": 2,
+      "content": "这个航运业的门外汉决定是一件事",
+      "music": 0.0
+    },
+    {
+      "from": 62.44,
+      "to": 63.92,
+      "sid": 28,
+      "location": 2,
+      "content": "把货装在箱子里",
+      "music": 0.0
+    },
+    {
+      "from": 63.92,
+      "to": 65.74,
+      "sid": 29,
+      "location": 2,
+      "content": "连箱一起吊上船",
+      "music": 0.0
+    },
+    {
+      "from": 65.74,
+      "to": 66.68,
+      "sid": 30,
+      "location": 2,
+      "content": "到了墓地港",
+      "music": 0.0
+    },
+    {
+      "from": 66.68,
+      "to": 68.009,
+      "sid": 31,
+      "location": 2,
+      "content": "再整箱掉下来",
+      "music": 0.0
+    },
+    {
+      "from": 68.009,
+      "to": 69.949,
+      "sid": 32,
+      "location": 2,
+      "content": "码头周围有船公司的人",
+      "music": 0.0
+    },
+    {
+      "from": 69.949,
+      "to": 72.389,
+      "sid": 33,
+      "location": 2,
+      "content": "铁路高管也有码头搬运工",
+      "music": 0.0
+    },
+    {
+      "from": 72.389,
+      "to": 73.589,
+      "sid": 34,
+      "location": 2,
+      "content": "对不少人来说",
+      "music": 0.0
+    },
+    {
+      "from": 73.589,
+      "to": 75.94,
+      "sid": 35,
+      "location": 2,
+      "content": "这件事实在看不出多大新意",
+      "music": 0.0
+    },
+    {
+      "from": 75.94,
+      "to": 78.36,
+      "sid": 36,
+      "location": 2,
+      "content": "不就是往船上放几个大箱子吗",
+      "music": 0.0
+    },
+    {
+      "from": 78.36,
+      "to": 81.37,
+      "sid": 37,
+      "location": 2,
+      "content": "一个能上锁的盒子到底能改变什么",
+      "music": 0.0
+    },
+    {
+      "from": 81.37,
+      "to": 83.33,
+      "sid": 38,
+      "location": 2,
+      "content": "那时候的码头很难找到",
+      "music": 0.0
+    },
+    {
+      "from": 83.33,
+      "to": 85.67,
+      "sid": 39,
+      "location": 2,
+      "content": "今天自动化港区的安静和整齐",
+      "music": 0.0
+    },
+    {
+      "from": 85.67,
+      "to": 89.72,
+      "sid": 40,
+      "location": 2,
+      "content": "岸边仓库船舱里到处都是人喊声",
+      "music": 0.0
+    },
+    {
+      "from": 89.72,
+      "to": 91.1,
+      "sid": 41,
+      "location": 2,
+      "content": "机器声混在一起",
+      "music": 0.0
+    },
+    {
+      "from": 91.1,
+      "to": 93.02,
+      "sid": 42,
+      "location": 2,
+      "content": "货物一件挨着一件的搬",
+      "music": 0.0
+    },
+    {
+      "from": 93.02,
+      "to": 96.65,
+      "sid": 43,
+      "location": 2,
+      "content": "当时许多制成品采用传统件杂货方式运输",
+      "music": 0.0
+    },
+    {
+      "from": 96.65,
+      "to": 97.83,
+      "sid": 44,
+      "location": 2,
+      "content": "咖啡豆装麻袋",
+      "music": 0.0
+    },
+    {
+      "from": 97.83,
+      "to": 98.93,
+      "sid": 45,
+      "location": 2,
+      "content": "威士忌装木桶",
+      "music": 0.0
+    },
+    {
+      "from": 98.93,
+      "to": 101.42,
+      "sid": 46,
+      "location": 2,
+      "content": "精密机床零件裹着油纸放进木箱",
+      "music": 0.0
+    },
+    {
+      "from": 101.42,
+      "to": 102.86,
+      "sid": 47,
+      "location": 2,
+      "content": "棉花自捆成大包",
+      "music": 0.0
+    },
+    {
+      "from": 102.86,
+      "to": 103.72,
+      "sid": 48,
+      "location": 2,
+      "content": "不同形状",
+      "music": 0.0
+    },
+    {
+      "from": 103.72,
+      "to": 106.87,
+      "sid": 49,
+      "location": 2,
+      "content": "不同重量的货都得设法装进同一个船舱",
+      "music": 0.0
+    },
+    {
+      "from": 106.87,
+      "to": 107.81,
+      "sid": 50,
+      "location": 2,
+      "content": "想象一下",
+      "music": 0.0
+    },
+    {
+      "from": 107.81,
+      "to": 110.43,
+      "sid": 51,
+      "location": 2,
+      "content": "如果你是1953年的一位美国商人",
+      "music": 0.0
+    },
+    {
+      "from": 110.43,
+      "to": 112.79,
+      "sid": 52,
+      "location": 2,
+      "content": "你想把一批来自芝加哥的打字机",
+      "music": 0.0
+    },
+    {
+      "from": 112.79,
+      "to": 114.37,
+      "sid": 53,
+      "location": 2,
+      "content": "卖到英国伦敦去",
+      "music": 0.0
+    },
+    {
+      "from": 114.37,
+      "to": 117.77,
+      "sid": 54,
+      "location": 2,
+      "content": "这批货要经历怎样的998 11难",
+      "music": 0.0
+    },
+    {
+      "from": 117.77,
+      "to": 120.17,
+      "sid": 55,
+      "location": 2,
+      "content": "首先你在芝加哥的工厂里",
+      "music": 0.0
+    },
+    {
+      "from": 120.17,
+      "to": 122.83,
+      "sid": 56,
+      "location": 2,
+      "content": "雇人把一台台打字机搬上一辆卡车",
+      "music": 0.0
+    },
+    {
+      "from": 122.83,
+      "to": 124.91,
+      "sid": 57,
+      "location": 2,
+      "content": "卡车开到芝加哥火车站",
+      "music": 0.0
+    },
+    {
+      "from": 124.91,
+      "to": 128.39,
+      "sid": 58,
+      "location": 2,
+      "content": "工人们再把打字机一台台从卡车上卸下来",
+      "music": 0.0
+    },
+    {
+      "from": 128.39,
+      "to": 129.75,
+      "sid": 59,
+      "location": 2,
+      "content": "搬进火车车厢",
+      "music": 0.0
+    },
+    {
+      "from": 129.75,
+      "to": 131.99,
+      "sid": 60,
+      "location": 2,
+      "content": "火车晃晃悠悠开到纽约港",
+      "music": 0.0
+    },
+    {
+      "from": 131.99,
+      "to": 135.07,
+      "sid": 61,
+      "location": 2,
+      "content": "工人们再把打字机从火车上卸下来",
+      "music": 0.0
+    },
+    {
+      "from": 135.07,
+      "to": 136.95,
+      "sid": 62,
+      "location": 2,
+      "content": "搬进码头的仓库里堆着",
+      "music": 0.0
+    },
+    {
+      "from": 136.95,
+      "to": 137.64,
+      "sid": 63,
+      "location": 2,
+      "content": "等船",
+      "music": 0.0
+    },
+    {
+      "from": 137.64,
+      "to": 138.96,
+      "sid": 64,
+      "location": 2,
+      "content": "等货轮靠岸了",
+      "music": 0.0
+    },
+    {
+      "from": 138.96,
+      "to": 141.14,
+      "sid": 65,
+      "location": 2,
+      "content": "真正的噩梦才刚刚开始",
+      "music": 0.0
+    },
+    {
+      "from": 141.14,
+      "to": 144.54,
+      "sid": 66,
+      "location": 2,
+      "content": "码头的搬运工们会把仓库里的打字机搬出来",
+      "music": 0.0
+    },
+    {
+      "from": 144.54,
+      "to": 146.91,
+      "sid": 67,
+      "location": 2,
+      "content": "放进一张巨大的绳索吊网里",
+      "music": 0.0
+    },
+    {
+      "from": 146.91,
+      "to": 148.77,
+      "sid": 68,
+      "location": 2,
+      "content": "起重机把吊网吊起来",
+      "music": 0.0
+    },
+    {
+      "from": 148.77,
+      "to": 149.51,
+      "sid": 69,
+      "location": 2,
+      "content": "送进货轮",
+      "music": 0.0
+    },
+    {
+      "from": 149.51,
+      "to": 150.62,
+      "sid": 70,
+      "location": 2,
+      "content": "黑漆漆的船舱",
+      "music": 0.0
+    },
+    {
+      "from": 150.62,
+      "to": 152.46,
+      "sid": 71,
+      "location": 2,
+      "content": "船舱里还有另一批工人",
+      "music": 0.0
+    },
+    {
+      "from": 152.46,
+      "to": 154.74,
+      "sid": 72,
+      "location": 2,
+      "content": "他们必须像玩俄罗斯方块一样",
+      "music": 0.0
+    },
+    {
+      "from": 154.74,
+      "to": 156.5,
+      "sid": 73,
+      "location": 2,
+      "content": "把大小不一的木箱",
+      "music": 0.0
+    },
+    {
+      "from": 156.5,
+      "to": 157.97,
+      "sid": 74,
+      "location": 2,
+      "content": "麻袋油桶",
+      "music": 0.0
+    },
+    {
+      "from": 157.97,
+      "to": 160.4,
+      "sid": 75,
+      "location": 2,
+      "content": "严丝合缝的马放在一起",
+      "music": 0.0
+    },
+    {
+      "from": 160.4,
+      "to": 162.16,
+      "sid": 76,
+      "location": 2,
+      "content": "这可不是一般的力气活",
+      "music": 0.0
+    },
+    {
+      "from": 162.16,
+      "to": 164.38,
+      "sid": 77,
+      "location": 2,
+      "content": "这是个极其讲究经验的技术活",
+      "music": 0.0
+    },
+    {
+      "from": 164.38,
+      "to": 166.079,
+      "sid": 78,
+      "location": 2,
+      "content": "因为大西洋上风浪大",
+      "music": 0.0
+    },
+    {
+      "from": 166.079,
+      "to": 168.319,
+      "sid": 79,
+      "location": 2,
+      "content": "如果货舱里的东西码得不平衡",
+      "music": 0.0
+    },
+    {
+      "from": 168.319,
+      "to": 169.359,
+      "sid": 80,
+      "location": 2,
+      "content": "或者没塞紧",
+      "music": 0.0
+    },
+    {
+      "from": 169.359,
+      "to": 170.98,
+      "sid": 81,
+      "location": 2,
+      "content": "船在海上一个摇晃",
+      "music": 0.0
+    },
+    {
+      "from": 170.98,
+      "to": 173.9,
+      "sid": 82,
+      "location": 2,
+      "content": "几百吨的货物就会在舱里翻江倒海",
+      "music": 0.0
+    },
+    {
+      "from": 173.9,
+      "to": 176.61,
+      "sid": 83,
+      "location": 2,
+      "content": "轻则把脆弱的打字机砸成废铁",
+      "music": 0.0
+    },
+    {
+      "from": 176.61,
+      "to": 179.75,
+      "sid": 84,
+      "location": 2,
+      "content": "重则直接导致整艘船重心偏移",
+      "music": 0.0
+    },
+    {
+      "from": 179.75,
+      "to": 180.92,
+      "sid": 85,
+      "location": 2,
+      "content": "倾覆沉没",
+      "music": 0.0
+    },
+    {
+      "from": 180.92,
+      "to": 182.32,
+      "sid": 86,
+      "location": 2,
+      "content": "等船历经十几天",
+      "music": 0.0
+    },
+    {
+      "from": 182.32,
+      "to": 183.48,
+      "sid": 87,
+      "location": 2,
+      "content": "风浪到了伦敦港",
+      "music": 0.0
+    },
+    {
+      "from": 183.48,
+      "to": 186.959,
+      "sid": 88,
+      "location": 2,
+      "content": "上面这一套流程还得原封不动的倒着再来一遍",
+      "music": 0.0
+    },
+    {
+      "from": 186.959,
+      "to": 189.939,
+      "sid": 89,
+      "location": 2,
+      "content": "船舱卸货调网调出入库清点",
+      "music": 0.0
+    },
+    {
+      "from": 189.939,
+      "to": 191.059,
+      "sid": 90,
+      "location": 2,
+      "content": "装上英国火车",
+      "music": 0.0
+    },
+    {
+      "from": 191.059,
+      "to": 191.919,
+      "sid": 91,
+      "location": 2,
+      "content": "卸下火车",
+      "music": 0.0
+    },
+    {
+      "from": 191.919,
+      "to": 193.099,
+      "sid": 92,
+      "location": 2,
+      "content": "装上英国卡车",
+      "music": 0.0
+    },
+    {
+      "from": 193.099,
+      "to": 195.24,
+      "sid": 93,
+      "location": 2,
+      "content": "最后才送到伦敦的百货商店",
+      "music": 0.0
+    },
+    {
+      "from": 195.24,
+      "to": 196.72,
+      "sid": 94,
+      "location": 2,
+      "content": "一趟跨国运输",
+      "music": 0.0
+    },
+    {
+      "from": 196.72,
+      "to": 198.72,
+      "sid": 95,
+      "location": 2,
+      "content": "同一批货物要被不同的人",
+      "music": 0.0
+    },
+    {
+      "from": 198.72,
+      "to": 201.74,
+      "sid": 96,
+      "location": 2,
+      "content": "用不同的工具整整拆装6~8次",
+      "music": 0.0
+    },
+    {
+      "from": 201.74,
+      "to": 204.26,
+      "sid": 97,
+      "location": 2,
+      "content": "这种运输方式在经济学家眼里",
+      "music": 0.0
+    },
+    {
+      "from": 204.26,
+      "to": 207.59,
+      "sid": 98,
+      "location": 2,
+      "content": "只有一个词可以形容高昂的交易成本",
+      "music": 0.0
+    },
+    {
+      "from": 207.59,
+      "to": 208.75,
+      "sid": 99,
+      "location": 2,
+      "content": "在经济学里",
+      "music": 0.0
+    },
+    {
+      "from": 208.75,
+      "to": 210.95,
+      "sid": 100,
+      "location": 2,
+      "content": "诺贝尔奖得主罗纳德科斯",
+      "music": 0.0
+    },
+    {
+      "from": 210.95,
+      "to": 212.39,
+      "sid": 101,
+      "location": 2,
+      "content": "提出过一个著名的概念",
+      "music": 0.0
+    },
+    {
+      "from": 212.39,
+      "to": 213.71,
+      "sid": 102,
+      "location": 2,
+      "content": "叫交易成本",
+      "music": 0.0
+    },
+    {
+      "from": 213.71,
+      "to": 216.399,
+      "sid": 103,
+      "location": 2,
+      "content": "通俗点说就是你做成一笔买卖",
+      "music": 0.0
+    },
+    {
+      "from": 216.399,
+      "to": 218.599,
+      "sid": 104,
+      "location": 2,
+      "content": "除了商品本身的生产成本之外",
+      "music": 0.0
+    },
+    {
+      "from": 218.599,
+      "to": 221.819,
+      "sid": 105,
+      "location": 2,
+      "content": "化在寻找买家谈判运输保险",
+      "music": 0.0
+    },
+    {
+      "from": 221.819,
+      "to": 223.82,
+      "sid": 106,
+      "location": 2,
+      "content": "防盗上的所有额外费用",
+      "music": 0.0
+    },
+    {
+      "from": 223.82,
+      "to": 226.6,
+      "sid": 107,
+      "location": 2,
+      "content": "你可以把它理解成机器运转时的摩擦力",
+      "music": 0.0
+    },
+    {
+      "from": 226.6,
+      "to": 227.6,
+      "sid": 108,
+      "location": 2,
+      "content": "摩擦力越大",
+      "music": 0.0
+    },
+    {
+      "from": 227.6,
+      "to": 229.15,
+      "sid": 109,
+      "location": 2,
+      "content": "损耗的能量就越多",
+      "music": 0.0
+    },
+    {
+      "from": 229.15,
+      "to": 231.31,
+      "sid": 110,
+      "location": 2,
+      "content": "在1950年代的全球贸易中",
+      "music": 0.0
+    },
+    {
+      "from": 231.31,
+      "to": 234.3,
+      "sid": 111,
+      "location": 2,
+      "content": "海运的摩擦力大到了令人发指的地步",
+      "music": 0.0
+    },
+    {
+      "from": 234.3,
+      "to": 237.48,
+      "sid": 112,
+      "location": 2,
+      "content": "经济学家马克莱文森在研究这段历史时",
+      "music": 0.0
+    },
+    {
+      "from": 237.48,
+      "to": 238.94,
+      "sid": 113,
+      "location": 2,
+      "content": "算过一笔惊人的账",
+      "music": 0.0
+    },
+    {
+      "from": 238.94,
+      "to": 240.74,
+      "sid": 114,
+      "location": 2,
+      "content": "在集装箱出现之前",
+      "music": 0.0
+    },
+    {
+      "from": 240.74,
+      "to": 244.0,
+      "sid": 115,
+      "location": 2,
+      "content": "一艘中型货船一年365天里",
+      "music": 0.0
+    },
+    {
+      "from": 244.0,
+      "to": 246.84,
+      "sid": 116,
+      "location": 2,
+      "content": "有超过一半的时间不是在海上航行",
+      "music": 0.0
+    },
+    {
+      "from": 246.84,
+      "to": 249.019,
+      "sid": 117,
+      "location": 2,
+      "content": "而是趴在港口里装卸货",
+      "music": 0.0
+    },
+    {
+      "from": 249.019,
+      "to": 250.879,
+      "sid": 118,
+      "location": 2,
+      "content": "更夸张的是成本结构",
+      "music": 0.0
+    },
+    {
+      "from": 250.879,
+      "to": 253.499,
+      "sid": 119,
+      "location": 2,
+      "content": "当时把亿吨货物从美国运到欧洲",
+      "music": 0.0
+    },
+    {
+      "from": 253.499,
+      "to": 255.04,
+      "sid": 120,
+      "location": 2,
+      "content": "真正划在海上烧油",
+      "music": 0.0
+    },
+    {
+      "from": 255.04,
+      "to": 255.84,
+      "sid": 121,
+      "location": 2,
+      "content": "开船的钱",
+      "music": 0.0
+    },
+    {
+      "from": 255.84,
+      "to": 258.92,
+      "sid": 122,
+      "location": 2,
+      "content": "只占总运费的25%到40%",
+      "music": 0.0
+    },
+    {
+      "from": 258.92,
+      "to": 261.909,
+      "sid": 123,
+      "location": 2,
+      "content": "而高达60%到75%的钱",
+      "music": 0.0
+    },
+    {
+      "from": 261.909,
+      "to": 264.799,
+      "sid": 124,
+      "location": 2,
+      "content": "全花在了码头装卸和港口停留上",
+      "music": 0.0
+    },
+    {
+      "from": 264.799,
+      "to": 265.899,
+      "sid": 125,
+      "location": 2,
+      "content": "这还没完",
+      "music": 0.0
+    },
+    {
+      "from": 265.899,
+      "to": 267.559,
+      "sid": 126,
+      "location": 2,
+      "content": "除了明面上的装卸费",
+      "music": 0.0
+    },
+    {
+      "from": 267.559,
+      "to": 269.419,
+      "sid": 127,
+      "location": 2,
+      "content": "还有两笔隐形的暗亏",
+      "music": 0.0
+    },
+    {
+      "from": 269.419,
+      "to": 272.13,
+      "sid": 128,
+      "location": 2,
+      "content": "让全世界的货主恨得牙痒痒",
+      "music": 0.0
+    },
+    {
+      "from": 272.13,
+      "to": 273.97,
+      "sid": 129,
+      "location": 2,
+      "content": "第一笔是时间成本",
+      "music": 0.0
+    },
+    {
+      "from": 273.97,
+      "to": 276.46,
+      "sid": 130,
+      "location": 2,
+      "content": "一艘船在港口趴窝一个星期",
+      "music": 0.0
+    },
+    {
+      "from": 276.46,
+      "to": 279.08,
+      "sid": 131,
+      "location": 2,
+      "content": "船东就要多付一个星期的船员工资",
+      "music": 0.0
+    },
+    {
+      "from": 279.08,
+      "to": 280.22,
+      "sid": 132,
+      "location": 2,
+      "content": "港口停泊费",
+      "music": 0.0
+    },
+    {
+      "from": 280.22,
+      "to": 282.539,
+      "sid": 133,
+      "location": 2,
+      "content": "货主的资金就要多压一个星期",
+      "music": 0.0
+    },
+    {
+      "from": 282.539,
+      "to": 285.13,
+      "sid": 134,
+      "location": 2,
+      "content": "第二笔是损耗与盗窃成本",
+      "music": 0.0
+    },
+    {
+      "from": 285.13,
+      "to": 288.09,
+      "sid": 135,
+      "location": 2,
+      "content": "货物在码头被反复搬来搬去摔坏",
+      "music": 0.0
+    },
+    {
+      "from": 288.09,
+      "to": 290.27,
+      "sid": 136,
+      "location": 2,
+      "content": "淋雨受潮是家常便饭",
+      "music": 0.0
+    },
+    {
+      "from": 290.27,
+      "to": 292.41,
+      "sid": 137,
+      "location": 2,
+      "content": "但比自燃损耗更可怕的是",
+      "music": 0.0
+    },
+    {
+      "from": 292.41,
+      "to": 294.34,
+      "sid": 138,
+      "location": 2,
+      "content": "码头工人的顺手牵羊",
+      "music": 0.0
+    },
+    {
+      "from": 294.34,
+      "to": 296.42,
+      "sid": 139,
+      "location": 2,
+      "content": "在1950年代的纽约港",
+      "music": 0.0
+    },
+    {
+      "from": 296.42,
+      "to": 300.049,
+      "sid": 140,
+      "location": 2,
+      "content": "码头盗窃已经形成了一条完整的地下产业链",
+      "music": 0.0
+    },
+    {
+      "from": 300.049,
+      "to": 303.2,
+      "sid": 141,
+      "location": 2,
+      "content": "当时纽约码头上流传着一句著名的黑话",
+      "music": 0.0
+    },
+    {
+      "from": 303.2,
+      "to": 305.64,
+      "sid": 142,
+      "location": 2,
+      "content": "码头工人的工资是一天20美元",
+      "music": 0.0
+    },
+    {
+      "from": 305.64,
+      "to": 307.5,
+      "sid": 143,
+      "location": 2,
+      "content": "外加你能带走的任何东西",
+      "music": 0.0
+    },
+    {
+      "from": 307.5,
+      "to": 309.16,
+      "sid": 144,
+      "location": 2,
+      "content": "整箱的苏格兰威士忌",
+      "music": 0.0
+    },
+    {
+      "from": 309.16,
+      "to": 310.1,
+      "sid": 145,
+      "location": 2,
+      "content": "瑞士手表",
+      "music": 0.0
+    },
+    {
+      "from": 310.1,
+      "to": 313.82,
+      "sid": 146,
+      "location": 2,
+      "content": "高档相机在装卸过程中莫名其妙就蒸发了",
+      "music": 0.0
+    },
+    {
+      "from": 313.82,
+      "to": 315.04,
+      "sid": 147,
+      "location": 2,
+      "content": "货主们为了防盗",
+      "music": 0.0
+    },
+    {
+      "from": 315.04,
+      "to": 317.03,
+      "sid": 148,
+      "location": 2,
+      "content": "不得不买天价的货运保险",
+      "music": 0.0
+    },
+    {
+      "from": 317.03,
+      "to": 319.99,
+      "sid": 149,
+      "location": 2,
+      "content": "甚至花钱雇私人侦探去码头盯梢",
+      "music": 0.0
+    },
+    {
+      "from": 319.99,
+      "to": 321.73,
+      "sid": 150,
+      "location": 2,
+      "content": "所以在那个年代",
+      "music": 0.0
+    },
+    {
+      "from": 321.73,
+      "to": 324.43,
+      "sid": 151,
+      "location": 2,
+      "content": "如果一种商品不是像黄金钻石",
+      "music": 0.0
+    },
+    {
+      "from": 324.43,
+      "to": 327.03,
+      "sid": 152,
+      "location": 2,
+      "content": "高档手表这样利润极高的奢侈品",
+      "music": 0.0
+    },
+    {
+      "from": 327.03,
+      "to": 328.44,
+      "sid": 153,
+      "location": 2,
+      "content": "或者不是像石油",
+      "music": 0.0
+    },
+    {
+      "from": 328.44,
+      "to": 329.24,
+      "sid": 154,
+      "location": 2,
+      "content": "小麦这样",
+      "music": 0.0
+    },
+    {
+      "from": 329.24,
+      "to": 332.48,
+      "sid": 155,
+      "location": 2,
+      "content": "可以直接用管道和西粮机装卸的大宗商品",
+      "music": 0.0
+    },
+    {
+      "from": 332.48,
+      "to": 335.48,
+      "sid": 156,
+      "location": 2,
+      "content": "那么它几乎不可能进行跨国贸易",
+      "music": 0.0
+    },
+    {
+      "from": 335.48,
+      "to": 337.7,
+      "sid": 157,
+      "location": 2,
+      "content": "你想把中国生产的廉价衬衫",
+      "music": 0.0
+    },
+    {
+      "from": 337.7,
+      "to": 340.38,
+      "sid": 158,
+      "location": 2,
+      "content": "塑料玩具卖到美国门都没有",
+      "music": 0.0
+    },
+    {
+      "from": 340.38,
+      "to": 342.76,
+      "sid": 159,
+      "location": 2,
+      "content": "哪怕你的生产成本只要一美元",
+      "music": 0.0
+    },
+    {
+      "from": 342.76,
+      "to": 345.36,
+      "sid": 160,
+      "location": 2,
+      "content": "光是在中美两个港口拆装停留",
+      "music": 0.0
+    },
+    {
+      "from": 345.36,
+      "to": 347.96,
+      "sid": 161,
+      "location": 2,
+      "content": "被盗的物流成本就能飙到三美元",
+      "music": 0.0
+    },
+    {
+      "from": 347.96,
+      "to": 349.3,
+      "sid": 162,
+      "location": 2,
+      "content": "运费比造价还贵",
+      "music": 0.0
+    },
+    {
+      "from": 349.3,
+      "to": 350.95,
+      "sid": 163,
+      "location": 2,
+      "content": "这生意根本没法做",
+      "music": 0.0
+    },
+    {
+      "from": 350.95,
+      "to": 354.59,
+      "sid": 164,
+      "location": 2,
+      "content": "整个世界的经济就这样被高昂的港口摩擦",
+      "music": 0.0
+    },
+    {
+      "from": 354.59,
+      "to": 357.88,
+      "sid": 165,
+      "location": 2,
+      "content": "死死地锁在了一个个孤立的区域市场里",
+      "music": 0.0
+    },
+    {
+      "from": 357.88,
+      "to": 361.58,
+      "sid": 166,
+      "location": 2,
+      "content": "直到那个开卡车的乡巴佬被堵在码头上",
+      "music": 0.0
+    },
+    {
+      "from": 361.58,
+      "to": 362.78,
+      "sid": 167,
+      "location": 2,
+      "content": "发了一通脾气",
+      "music": 0.0
+    },
+    {
+      "from": 362.78,
+      "to": 364.88,
+      "sid": 168,
+      "location": 2,
+      "content": "时间回到1937年",
+      "music": 0.0
+    },
+    {
+      "from": 364.88,
+      "to": 365.669,
+      "sid": 169,
+      "location": 2,
+      "content": "那一年",
+      "music": 0.0
+    },
+    {
+      "from": 365.669,
+      "to": 366.589,
+      "sid": 170,
+      "location": 2,
+      "content": "马尔科姆",
+      "music": 0.0
+    },
+    {
+      "from": 366.589,
+      "to": 370.229,
+      "sid": 171,
+      "location": 2,
+      "content": "麦克莱恩还是个24岁的年轻卡车司机",
+      "music": 0.0
+    },
+    {
+      "from": 370.229,
+      "to": 370.969,
+      "sid": 172,
+      "location": 2,
+      "content": "有一天",
+      "music": 0.0
+    },
+    {
+      "from": 370.969,
+      "to": 373.75,
+      "sid": 173,
+      "location": 2,
+      "content": "他拉着一车北卡罗来纳州的棉花",
+      "music": 0.0
+    },
+    {
+      "from": 373.75,
+      "to": 376.03,
+      "sid": 174,
+      "location": 2,
+      "content": "来到新泽西州霍博肯码头",
+      "music": 0.0
+    },
+    {
+      "from": 376.03,
+      "to": 377.07,
+      "sid": 175,
+      "location": 2,
+      "content": "天气很热",
+      "music": 0.0
+    },
+    {
+      "from": 377.07,
+      "to": 378.38,
+      "sid": 176,
+      "location": 2,
+      "content": "前面排着长队",
+      "music": 0.0
+    },
+    {
+      "from": 378.38,
+      "to": 380.16,
+      "sid": 177,
+      "location": 2,
+      "content": "他坐在闷热的驾驶室里",
+      "music": 0.0
+    },
+    {
+      "from": 380.16,
+      "to": 382.4,
+      "sid": 178,
+      "location": 2,
+      "content": "看工人把棉花一捆捆卸下",
+      "music": 0.0
+    },
+    {
+      "from": 382.4,
+      "to": 383.18,
+      "sid": 179,
+      "location": 2,
+      "content": "搬进吊网",
+      "music": 0.0
+    },
+    {
+      "from": 383.18,
+      "to": 384.1,
+      "sid": 180,
+      "location": 2,
+      "content": "再吊上船",
+      "music": 0.0
+    },
+    {
+      "from": 384.1,
+      "to": 385.94,
+      "sid": 181,
+      "location": 2,
+      "content": "这一等就是大半天",
+      "music": 0.0
+    },
+    {
+      "from": 385.94,
+      "to": 388.02,
+      "sid": 182,
+      "location": 2,
+      "content": "他当时盯着那辆卡车车厢",
+      "music": 0.0
+    },
+    {
+      "from": 388.02,
+      "to": 390.99,
+      "sid": 183,
+      "location": 2,
+      "content": "脑子里突然冒出一个极其朴素的念头",
+      "music": 0.0
+    },
+    {
+      "from": 390.99,
+      "to": 394.55,
+      "sid": 184,
+      "location": 2,
+      "content": "要是能把我的整辆卡车拖车直接吊上那艘船",
+      "music": 0.0
+    },
+    {
+      "from": 394.55,
+      "to": 395.65,
+      "sid": 185,
+      "location": 2,
+      "content": "省得这么倒腾",
+      "music": 0.0
+    },
+    {
+      "from": 395.65,
+      "to": 396.89,
+      "sid": 186,
+      "location": 2,
+      "content": "该多省事啊",
+      "music": 0.0
+    },
+    {
+      "from": 396.89,
+      "to": 400.98,
+      "sid": 187,
+      "location": 2,
+      "content": "这个念头在麦克莱恩脑子里整整盘旋了19年",
+      "music": 0.0
+    },
+    {
+      "from": 400.98,
+      "to": 402.16,
+      "sid": 188,
+      "location": 2,
+      "content": "这19年里",
+      "music": 0.0
+    },
+    {
+      "from": 402.16,
+      "to": 405.04,
+      "sid": 189,
+      "location": 2,
+      "content": "麦克莱恩展现出了惊人的商业执行力",
+      "music": 0.0
+    },
+    {
+      "from": 405.04,
+      "to": 406.58,
+      "sid": 190,
+      "location": 2,
+      "content": "他从一辆卡车做起",
+      "music": 0.0
+    },
+    {
+      "from": 406.58,
+      "to": 408.06,
+      "sid": 191,
+      "location": 2,
+      "content": "到1950年代初",
+      "music": 0.0
+    },
+    {
+      "from": 408.06,
+      "to": 410.68,
+      "sid": 192,
+      "location": 2,
+      "content": "已经把自己的麦克莱恩卡车运输公司",
+      "music": 0.0
+    },
+    {
+      "from": 410.68,
+      "to": 412.9,
+      "sid": 193,
+      "location": 2,
+      "content": "做成了全美第五大卡车公司",
+      "music": 0.0
+    },
+    {
+      "from": 412.9,
+      "to": 414.82,
+      "sid": 194,
+      "location": 2,
+      "content": "拥有1700多辆卡车",
+      "music": 0.0
+    },
+    {
+      "from": 414.82,
+      "to": 415.93,
+      "sid": 195,
+      "location": 2,
+      "content": "身家百万",
+      "music": 0.0
+    },
+    {
+      "from": 415.93,
+      "to": 417.19,
+      "sid": 196,
+      "location": 2,
+      "content": "守着这门生意",
+      "music": 0.0
+    },
+    {
+      "from": 417.19,
+      "to": 418.61,
+      "sid": 197,
+      "location": 2,
+      "content": "本来已经可以过得不错",
+      "music": 0.0
+    },
+    {
+      "from": 418.61,
+      "to": 420.01,
+      "sid": 198,
+      "location": 2,
+      "content": "但他始终惦记着货",
+      "music": 0.0
+    },
+    {
+      "from": 420.01,
+      "to": 420.75,
+      "sid": 199,
+      "location": 2,
+      "content": "到了码头",
+      "music": 0.0
+    },
+    {
+      "from": 420.75,
+      "to": 422.63,
+      "sid": 200,
+      "location": 2,
+      "content": "为什么非得再倒腾一遍",
+      "music": 0.0
+    },
+    {
+      "from": 422.63,
+      "to": 424.41,
+      "sid": 201,
+      "location": 2,
+      "content": "船东关心船能开多快",
+      "music": 0.0
+    },
+    {
+      "from": 424.41,
+      "to": 425.31,
+      "sid": 202,
+      "location": 2,
+      "content": "耗多少油",
+      "music": 0.0
+    },
+    {
+      "from": 425.31,
+      "to": 428.67,
+      "sid": 203,
+      "location": 2,
+      "content": "他则从发货的工厂一路算到收货的仓库",
+      "music": 0.0
+    },
+    {
+      "from": 428.67,
+      "to": 432.35,
+      "sid": 204,
+      "location": 2,
+      "content": "卡车运输和海运之间恰好有一道接不上的口货",
+      "music": 0.0
+    },
+    {
+      "from": 432.35,
+      "to": 434.29,
+      "sid": 205,
+      "location": 2,
+      "content": "到了水边就得离开车厢",
+      "music": 0.0
+    },
+    {
+      "from": 434.29,
+      "to": 435.61,
+      "sid": 206,
+      "location": 2,
+      "content": "变回一件件杂货",
+      "music": 0.0
+    },
+    {
+      "from": 435.61,
+      "to": 436.97,
+      "sid": 207,
+      "location": 2,
+      "content": "能不能做一种货箱",
+      "music": 0.0
+    },
+    {
+      "from": 436.97,
+      "to": 438.31,
+      "sid": 208,
+      "location": 2,
+      "content": "卡车能拉火车",
+      "music": 0.0
+    },
+    {
+      "from": 438.31,
+      "to": 438.99,
+      "sid": 209,
+      "location": 2,
+      "content": "能载船",
+      "music": 0.0
+    },
+    {
+      "from": 438.99,
+      "to": 440.41,
+      "sid": 210,
+      "location": 2,
+      "content": "也能装在工厂",
+      "music": 0.0
+    },
+    {
+      "from": 440.41,
+      "to": 441.17,
+      "sid": 211,
+      "location": 2,
+      "content": "关上箱门",
+      "music": 0.0
+    },
+    {
+      "from": 441.17,
+      "to": 443.01,
+      "sid": 212,
+      "location": 2,
+      "content": "到买家的仓库再打开",
+      "music": 0.0
+    },
+    {
+      "from": 443.01,
+      "to": 446.18,
+      "sid": 213,
+      "location": 2,
+      "content": "中间换多少次交通工具都只动箱子",
+      "music": 0.0
+    },
+    {
+      "from": 446.18,
+      "to": 447.28,
+      "sid": 214,
+      "location": 2,
+      "content": "1955年",
+      "music": 0.0
+    },
+    {
+      "from": 447.28,
+      "to": 449.98,
+      "sid": 215,
+      "location": 2,
+      "content": "麦克莱恩卖掉了自己创办的卡车企业",
+      "music": 0.0
+    },
+    {
+      "from": 449.98,
+      "to": 451.52,
+      "sid": 216,
+      "location": 2,
+      "content": "按当时的监管要求",
+      "music": 0.0
+    },
+    {
+      "from": 451.52,
+      "to": 455.31,
+      "sid": 217,
+      "location": 2,
+      "content": "公路运输和沿海航运不能由他随意合并经营",
+      "music": 0.0
+    },
+    {
+      "from": 455.31,
+      "to": 457.99,
+      "sid": 218,
+      "location": 2,
+      "content": "他以约600万美元出售卡车业务",
+      "music": 0.0
+    },
+    {
+      "from": 457.99,
+      "to": 462.14,
+      "sid": 219,
+      "location": 2,
+      "content": "随后投入700万美元买下泛大西洋轮船公司",
+      "music": 0.0
+    },
+    {
+      "from": 462.14,
+      "to": 464.96,
+      "sid": 220,
+      "location": 2,
+      "content": "开始把想法变成航线和设备",
+      "music": 0.0
+    },
+    {
+      "from": 464.96,
+      "to": 467.85,
+      "sid": 221,
+      "location": 2,
+      "content": "于是就有了我们开头看到的那一幕",
+      "music": 0.0
+    },
+    {
+      "from": 467.85,
+      "to": 470.03,
+      "sid": 222,
+      "location": 2,
+      "content": "木1956年4月26日",
+      "music": 0.0
+    },
+    {
+      "from": 470.03,
+      "to": 473.79,
+      "sid": 223,
+      "location": 2,
+      "content": "理想X号载着58个旅制货箱离开纽瓦克",
+      "music": 0.0
+    },
+    {
+      "from": 473.79,
+      "to": 475.62,
+      "sid": 224,
+      "location": 2,
+      "content": "六天后抵达休斯顿",
+      "music": 0.0
+    },
+    {
+      "from": 475.62,
+      "to": 479.26,
+      "sid": 225,
+      "location": 2,
+      "content": "这一趟航行直接在航运界投下了一颗核弹",
+      "music": 0.0
+    },
+    {
+      "from": 479.26,
+      "to": 480.82,
+      "sid": 226,
+      "location": 2,
+      "content": "财务报表出来的时候",
+      "music": 0.0
+    },
+    {
+      "from": 480.82,
+      "to": 482.14,
+      "sid": 227,
+      "location": 2,
+      "content": "所有人都看傻了",
+      "music": 0.0
+    },
+    {
+      "from": 482.14,
+      "to": 485.16,
+      "sid": 228,
+      "location": 2,
+      "content": "理想X号的货物装卸成本降到了每吨吨",
+      "music": 0.0
+    },
+    {
+      "from": 485.16,
+      "to": 486.18,
+      "sid": 229,
+      "location": 2,
+      "content": "15.8美分",
+      "music": 0.0
+    },
+    {
+      "from": 486.18,
+      "to": 487.46,
+      "sid": 230,
+      "location": 2,
+      "content": "而就在同一天",
+      "music": 0.0
+    },
+    {
+      "from": 487.46,
+      "to": 490.6,
+      "sid": 231,
+      "location": 2,
+      "content": "隔壁传统散货船的装卸成本是多少呢",
+      "music": 0.0
+    },
+    {
+      "from": 490.6,
+      "to": 492.6,
+      "sid": 232,
+      "location": 2,
+      "content": "每吨5.83美元",
+      "music": 0.0
+    },
+    {
+      "from": 492.6,
+      "to": 495.26,
+      "sid": 233,
+      "location": 2,
+      "content": "整整下降了97%以上",
+      "music": 0.0
+    },
+    {
+      "from": 495.26,
+      "to": 496.5,
+      "sid": 234,
+      "location": 2,
+      "content": "但这只是第一步",
+      "music": 0.0
+    },
+    {
+      "from": 496.5,
+      "to": 499.6,
+      "sid": 235,
+      "location": 2,
+      "content": "一个商业点子的成功距离改变全世界",
+      "music": 0.0
+    },
+    {
+      "from": 499.6,
+      "to": 501.74,
+      "sid": 236,
+      "location": 2,
+      "content": "还插着一道最难跨越的鸿沟",
+      "music": 0.0
+    },
+    {
+      "from": 501.74,
+      "to": 504.67,
+      "sid": 237,
+      "location": 2,
+      "content": "标准化集装箱刚刚兴起的那几年",
+      "music": 0.0
+    },
+    {
+      "from": 504.67,
+      "to": 507.83,
+      "sid": 238,
+      "location": 2,
+      "content": "整个行业陷入了一场混乱的战国时代",
+      "music": 0.0
+    },
+    {
+      "from": 507.83,
+      "to": 510.95,
+      "sid": 239,
+      "location": 2,
+      "content": "各大航运公司看到集装箱真能省钱",
+      "music": 0.0
+    },
+    {
+      "from": 510.95,
+      "to": 512.19,
+      "sid": 240,
+      "location": 2,
+      "content": "纷纷一拥而上",
+      "music": 0.0
+    },
+    {
+      "from": 512.19,
+      "to": 514.05,
+      "sid": 241,
+      "location": 2,
+      "content": "但大家各造各的箱子",
+      "music": 0.0
+    },
+    {
+      "from": 514.05,
+      "to": 515.27,
+      "sid": 242,
+      "location": 2,
+      "content": "谁也不服谁",
+      "music": 0.0
+    },
+    {
+      "from": 515.27,
+      "to": 517.43,
+      "sid": 243,
+      "location": 2,
+      "content": "麦克莱恩自己的海陆公司",
+      "music": 0.0
+    },
+    {
+      "from": 517.43,
+      "to": 519.51,
+      "sid": 244,
+      "location": 2,
+      "content": "用的是35英尺的箱子",
+      "music": 0.0
+    },
+    {
+      "from": 519.51,
+      "to": 521.17,
+      "sid": 245,
+      "location": 2,
+      "content": "为什么是35英尺",
+      "music": 0.0
+    },
+    {
+      "from": 521.17,
+      "to": 524.51,
+      "sid": 246,
+      "location": 2,
+      "content": "因为当时美国宾夕法尼亚州等地的公路法规",
+      "music": 0.0
+    },
+    {
+      "from": 524.51,
+      "to": 528.19,
+      "sid": 247,
+      "location": 2,
+      "content": "限制卡车拖车的最大长度就是35英尺",
+      "music": 0.0
+    },
+    {
+      "from": 528.19,
+      "to": 531.25,
+      "sid": 248,
+      "location": 2,
+      "content": "可美国西海岸的另一家巨头美森轮船",
+      "music": 0.0
+    },
+    {
+      "from": 531.25,
+      "to": 532.71,
+      "sid": 249,
+      "location": 2,
+      "content": "主营夏威夷航线",
+      "music": 0.0
+    },
+    {
+      "from": 532.71,
+      "to": 535.25,
+      "sid": 250,
+      "location": 2,
+      "content": "他们算了算菠萝和甘蔗的密度",
+      "music": 0.0
+    },
+    {
+      "from": 535.25,
+      "to": 536.49,
+      "sid": 251,
+      "location": 2,
+      "content": "发现箱子太长",
+      "music": 0.0
+    },
+    {
+      "from": 536.49,
+      "to": 537.49,
+      "sid": 252,
+      "location": 2,
+      "content": "装满了会超重",
+      "music": 0.0
+    },
+    {
+      "from": 537.49,
+      "to": 539.97,
+      "sid": 253,
+      "location": 2,
+      "content": "而且加州公路允许更短的组合",
+      "music": 0.0
+    },
+    {
+      "from": 539.97,
+      "to": 542.39,
+      "sid": 254,
+      "location": 2,
+      "content": "于是他们订做了24英尺的箱子",
+      "music": 0.0
+    },
+    {
+      "from": 542.39,
+      "to": 543.39,
+      "sid": 255,
+      "location": 2,
+      "content": "与此同时",
+      "music": 0.0
+    },
+    {
+      "from": 543.39,
+      "to": 547.339,
+      "sid": 256,
+      "location": 2,
+      "content": "欧洲的铁路公司习惯用十英尺甚至更小的箱子",
+      "music": 0.0
+    },
+    {
+      "from": 547.339,
+      "to": 549.639,
+      "sid": 257,
+      "location": 2,
+      "content": "其他船公司还有用17英尺",
+      "music": 0.0
+    },
+    {
+      "from": 549.639,
+      "to": 550.659,
+      "sid": 258,
+      "location": 2,
+      "content": "27英尺",
+      "music": 0.0
+    },
+    {
+      "from": 550.659,
+      "to": 551.81,
+      "sid": 259,
+      "location": 2,
+      "content": "30英尺的",
+      "music": 0.0
+    },
+    {
+      "from": 551.81,
+      "to": 553.61,
+      "sid": 260,
+      "location": 2,
+      "content": "你可以想象一下那个画面",
+      "music": 0.0
+    },
+    {
+      "from": 553.61,
+      "to": 555.87,
+      "sid": 261,
+      "location": 2,
+      "content": "不同公司的箱子长短不一",
+      "music": 0.0
+    },
+    {
+      "from": 555.87,
+      "to": 556.87,
+      "sid": 262,
+      "location": 2,
+      "content": "高矮不同",
+      "music": 0.0
+    },
+    {
+      "from": 556.87,
+      "to": 559.43,
+      "sid": 263,
+      "location": 2,
+      "content": "吊装的挂钩位置也五花八门",
+      "music": 0.0
+    },
+    {
+      "from": 559.43,
+      "to": 562.87,
+      "sid": 264,
+      "location": 2,
+      "content": "海陆公司的起重机吊不起美森轮船的箱子",
+      "music": 0.0
+    },
+    {
+      "from": 562.87,
+      "to": 566.87,
+      "sid": 265,
+      "location": 2,
+      "content": "欧洲的火车平板车卡不住美国卡车的货柜",
+      "music": 0.0
+    },
+    {
+      "from": 566.87,
+      "to": 568.79,
+      "sid": 266,
+      "location": 2,
+      "content": "就像早年的手机充电器",
+      "music": 0.0
+    },
+    {
+      "from": 568.79,
+      "to": 569.91,
+      "sid": 267,
+      "location": 2,
+      "content": "诺基亚一个口",
+      "music": 0.0
+    },
+    {
+      "from": 569.91,
+      "to": 571.25,
+      "sid": 268,
+      "location": 2,
+      "content": "摩托罗拉一个口",
+      "music": 0.0
+    },
+    {
+      "from": 571.25,
+      "to": 572.93,
+      "sid": 269,
+      "location": 2,
+      "content": "苹果又是另一个",
+      "music": 0.0
+    },
+    {
+      "from": 572.93,
+      "to": 575.01,
+      "sid": 270,
+      "location": 2,
+      "content": "每家设备单独用都没问题",
+      "music": 0.0
+    },
+    {
+      "from": 575.01,
+      "to": 577.71,
+      "sid": 271,
+      "location": 2,
+      "content": "放到一起就得找转接头箱子",
+      "music": 0.0
+    },
+    {
+      "from": 577.71,
+      "to": 580.65,
+      "sid": 272,
+      "location": 2,
+      "content": "如果始终只能在自家公司的一套设备里流转",
+      "music": 0.0
+    },
+    {
+      "from": 580.65,
+      "to": 581.69,
+      "sid": 273,
+      "location": 2,
+      "content": "门到门运输",
+      "music": 0.0
+    },
+    {
+      "from": 581.69,
+      "to": 583.23,
+      "sid": 274,
+      "location": 2,
+      "content": "就很难真正做起来",
+      "music": 0.0
+    },
+    {
+      "from": 583.23,
+      "to": 584.89,
+      "sid": 275,
+      "location": 2,
+      "content": "从1958年开始",
+      "music": 0.0
+    },
+    {
+      "from": 584.89,
+      "to": 588.23,
+      "sid": 276,
+      "location": 2,
+      "content": "美国标准协会以及后来的国际标准化组织",
+      "music": 0.0
+    },
+    {
+      "from": 588.23,
+      "to": 592.23,
+      "sid": 277,
+      "location": 2,
+      "content": "展开了一场长达10年的集装箱尺寸大战",
+      "music": 0.0
+    },
+    {
+      "from": 592.23,
+      "to": 593.87,
+      "sid": 278,
+      "location": 2,
+      "content": "这场谈判极其惨烈",
+      "music": 0.0
+    },
+    {
+      "from": 593.87,
+      "to": 595.41,
+      "sid": 279,
+      "location": 2,
+      "content": "因为每改一英尺的标准",
+      "music": 0.0
+    },
+    {
+      "from": 595.41,
+      "to": 598.8,
+      "sid": 280,
+      "location": 2,
+      "content": "就意味着航运公司之前花几千万美元买的箱子",
+      "music": 0.0
+    },
+    {
+      "from": 598.8,
+      "to": 599.68,
+      "sid": 281,
+      "location": 2,
+      "content": "改装的船",
+      "music": 0.0
+    },
+    {
+      "from": 599.68,
+      "to": 602.19,
+      "sid": 282,
+      "location": 2,
+      "content": "建好的起重机全都要报废重来",
+      "music": 0.0
+    },
+    {
+      "from": 602.19,
+      "to": 604.25,
+      "sid": 283,
+      "location": 2,
+      "content": "麦克莱恩和美森轮船的代表",
+      "music": 0.0
+    },
+    {
+      "from": 604.25,
+      "to": 605.95,
+      "sid": 284,
+      "location": 2,
+      "content": "在会议室里拍桌子瞪眼",
+      "music": 0.0
+    },
+    {
+      "from": 605.95,
+      "to": 607.43,
+      "sid": 285,
+      "location": 2,
+      "content": "谁都不肯让步",
+      "music": 0.0
+    },
+    {
+      "from": 607.43,
+      "to": 610.62,
+      "sid": 286,
+      "location": 2,
+      "content": "最终经过无数轮利益博弈与妥协",
+      "music": 0.0
+    },
+    {
+      "from": 610.62,
+      "to": 612.5,
+      "sid": 287,
+      "location": 2,
+      "content": "ISO在1960年代中期",
+      "music": 0.0
+    },
+    {
+      "from": 612.5,
+      "to": 613.28,
+      "sid": 288,
+      "location": 2,
+      "content": "一锤定音",
+      "music": 0.0
+    },
+    {
+      "from": 613.28,
+      "to": 615.54,
+      "sid": 289,
+      "location": 2,
+      "content": "确立了全球通用的集装箱标准",
+      "music": 0.0
+    },
+    {
+      "from": 615.54,
+      "to": 617.32,
+      "sid": 290,
+      "location": 2,
+      "content": "而在这场标准化进程中",
+      "music": 0.0
+    },
+    {
+      "from": 617.32,
+      "to": 620.84,
+      "sid": 291,
+      "location": 2,
+      "content": "还有一个足以载入商业史册的伟大瞬间",
+      "music": 0.0
+    },
+    {
+      "from": 620.84,
+      "to": 623.42,
+      "sid": 292,
+      "location": 2,
+      "content": "集装箱要想被起重机稳稳吊起",
+      "music": 0.0
+    },
+    {
+      "from": 623.42,
+      "to": 626.86,
+      "sid": 293,
+      "location": 2,
+      "content": "又要在船舱里像乐高积木一样一层层叠起来",
+      "music": 0.0
+    },
+    {
+      "from": 626.86,
+      "to": 627.86,
+      "sid": 294,
+      "location": 2,
+      "content": "在风浪中不散",
+      "music": 0.0
+    },
+    {
+      "from": 627.86,
+      "to": 629.38,
+      "sid": 295,
+      "location": 2,
+      "content": "架箱子的八个角上",
+      "music": 0.0
+    },
+    {
+      "from": 629.38,
+      "to": 631.69,
+      "sid": 296,
+      "location": 2,
+      "content": "必须有一个极其坚固的金属结构",
+      "music": 0.0
+    },
+    {
+      "from": 631.69,
+      "to": 632.71,
+      "sid": 297,
+      "location": 2,
+      "content": "这就是矫健",
+      "music": 0.0
+    },
+    {
+      "from": 632.71,
+      "to": 634.35,
+      "sid": 298,
+      "location": 2,
+      "content": "上面有标准化的椭圆孔",
+      "music": 0.0
+    },
+    {
+      "from": 634.35,
+      "to": 636.35,
+      "sid": 299,
+      "location": 2,
+      "content": "用来卡住起重机的悬索",
+      "music": 0.0
+    },
+    {
+      "from": 636.35,
+      "to": 639.3,
+      "sid": 300,
+      "location": 2,
+      "content": "这个矫健是由海陆公司的总工程师",
+      "music": 0.0
+    },
+    {
+      "from": 639.3,
+      "to": 641.08,
+      "sid": 301,
+      "location": 2,
+      "content": "基斯坦特林格发明的",
+      "music": 0.0
+    },
+    {
+      "from": 641.08,
+      "to": 644.32,
+      "sid": 302,
+      "location": 2,
+      "content": "在1965年ICO讨论矫健标准的关键时刻",
+      "music": 0.0
+    },
+    {
+      "from": 644.32,
+      "to": 647.02,
+      "sid": 303,
+      "location": 2,
+      "content": "坦特林格成功说服了老板麦克莱恩",
+      "music": 0.0
+    },
+    {
+      "from": 647.02,
+      "to": 649.4,
+      "sid": 304,
+      "location": 2,
+      "content": "宣布无偿放弃矫健的专利权",
+      "music": 0.0
+    },
+    {
+      "from": 649.4,
+      "to": 652.05,
+      "sid": 305,
+      "location": 2,
+      "content": "向全世界所有企业免费公开",
+      "music": 0.0
+    },
+    {
+      "from": 652.05,
+      "to": 653.01,
+      "sid": 306,
+      "location": 2,
+      "content": "这个决定",
+      "music": 0.0
+    },
+    {
+      "from": 653.01,
+      "to": 654.41,
+      "sid": 307,
+      "location": 2,
+      "content": "直接扫清了集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 654.41,
+      "to": 656.76,
+      "sid": 308,
+      "location": 2,
+      "content": "全球推广的最后一个技术壁垒",
+      "music": 0.0
+    },
+    {
+      "from": 656.76,
+      "to": 659.62,
+      "sid": 309,
+      "location": 2,
+      "content": "当然任何一场颠覆性的效率革命",
+      "music": 0.0
+    },
+    {
+      "from": 659.62,
+      "to": 661.32,
+      "sid": 310,
+      "location": 2,
+      "content": "在带来巨大红利的同时",
+      "music": 0.0
+    },
+    {
+      "from": 661.32,
+      "to": 663.589,
+      "sid": 311,
+      "location": 2,
+      "content": "也必然伴随着血与火的阵痛",
+      "music": 0.0
+    },
+    {
+      "from": 663.589,
+      "to": 665.389,
+      "sid": 312,
+      "location": 2,
+      "content": "集装箱最直接的冲击",
+      "music": 0.0
+    },
+    {
+      "from": 665.389,
+      "to": 667.91,
+      "sid": 313,
+      "location": 2,
+      "content": "砸在了全世界码头工人的饭碗上",
+      "music": 0.0
+    },
+    {
+      "from": 667.91,
+      "to": 669.15,
+      "sid": 314,
+      "location": 2,
+      "content": "在散货时代",
+      "music": 0.0
+    },
+    {
+      "from": 669.15,
+      "to": 673.04,
+      "sid": 315,
+      "location": 2,
+      "content": "一艘船靠岸需要上百名码头工人干上一整周",
+      "music": 0.0
+    },
+    {
+      "from": 673.04,
+      "to": 674.5,
+      "sid": 316,
+      "location": 2,
+      "content": "而集装箱化之后",
+      "music": 0.0
+    },
+    {
+      "from": 674.5,
+      "to": 677.28,
+      "sid": 317,
+      "location": 2,
+      "content": "同样吨位的货物只需要十几名工人",
+      "music": 0.0
+    },
+    {
+      "from": 677.28,
+      "to": 678.75,
+      "sid": 318,
+      "location": 2,
+      "content": "操作几台起重机",
+      "music": 0.0
+    },
+    {
+      "from": 678.75,
+      "to": 681.2,
+      "sid": 319,
+      "location": 2,
+      "content": "十几个小时就能全部搞定",
+      "music": 0.0
+    },
+    {
+      "from": 681.2,
+      "to": 682.4,
+      "sid": 320,
+      "location": 2,
+      "content": "面对生存危机",
+      "music": 0.0
+    },
+    {
+      "from": 682.4,
+      "to": 684.44,
+      "sid": 321,
+      "location": 2,
+      "content": "码头工会爆发了激烈的反抗",
+      "music": 0.0
+    },
+    {
+      "from": 684.44,
+      "to": 685.62,
+      "sid": 322,
+      "location": 2,
+      "content": "1960年代",
+      "music": 0.0
+    },
+    {
+      "from": 685.62,
+      "to": 686.28,
+      "sid": 323,
+      "location": 2,
+      "content": "纽约港",
+      "music": 0.0
+    },
+    {
+      "from": 686.28,
+      "to": 686.94,
+      "sid": 324,
+      "location": 2,
+      "content": "伦敦港",
+      "music": 0.0
+    },
+    {
+      "from": 686.94,
+      "to": 689.18,
+      "sid": 325,
+      "location": 2,
+      "content": "旧金山港接连爆发大规模罢工",
+      "music": 0.0
+    },
+    {
+      "from": 689.18,
+      "to": 691.2,
+      "sid": 326,
+      "location": 2,
+      "content": "工人们拒绝装卸集装箱船",
+      "music": 0.0
+    },
+    {
+      "from": 692.76,
+      "to": 695.44,
+      "sid": 327,
+      "location": 2,
+      "content": "试图用行政命令禁止集装箱的使用",
+      "music": 0.0
+    },
+    {
+      "from": 695.44,
+      "to": 698.0,
+      "sid": 328,
+      "location": 2,
+      "content": "在这场不可逆转的技术浪潮面前",
+      "music": 0.0
+    },
+    {
+      "from": 698.0,
+      "to": 699.42,
+      "sid": 329,
+      "location": 2,
+      "content": "不同港口的选择",
+      "music": 0.0
+    },
+    {
+      "from": 699.42,
+      "to": 702.34,
+      "sid": 330,
+      "location": 2,
+      "content": "直接决定了他们未来半个世纪的命运",
+      "music": 0.0
+    },
+    {
+      "from": 702.34,
+      "to": 705.62,
+      "sid": 331,
+      "location": 2,
+      "content": "美国西海岸的码头工会领袖哈里布里奇斯",
+      "music": 0.0
+    },
+    {
+      "from": 705.62,
+      "to": 706.56,
+      "sid": 332,
+      "location": 2,
+      "content": "非常清醒",
+      "music": 0.0
+    },
+    {
+      "from": 706.56,
+      "to": 709.2,
+      "sid": 333,
+      "location": 2,
+      "content": "他知道机器取代人力是挡不住的",
+      "music": 0.0
+    },
+    {
+      "from": 709.2,
+      "to": 710.7,
+      "sid": 334,
+      "location": 2,
+      "content": "于是他没有死磕",
+      "music": 0.0
+    },
+    {
+      "from": 710.7,
+      "to": 711.65,
+      "sid": 335,
+      "location": 2,
+      "content": "保住岗位",
+      "music": 0.0
+    },
+    {
+      "from": 711.65,
+      "to": 713.17,
+      "sid": 336,
+      "location": 2,
+      "content": "而是和船公司谈判",
+      "music": 0.0
+    },
+    {
+      "from": 713.17,
+      "to": 714.31,
+      "sid": 337,
+      "location": 2,
+      "content": "在1960年",
+      "music": 0.0
+    },
+    {
+      "from": 714.31,
+      "to": 717.4,
+      "sid": 338,
+      "location": 2,
+      "content": "签下了著名的机械化与现代化协议",
+      "music": 0.0
+    },
+    {
+      "from": 717.4,
+      "to": 719.52,
+      "sid": 339,
+      "location": 2,
+      "content": "工会同意放行集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 719.52,
+      "to": 722.86,
+      "sid": 340,
+      "location": 2,
+      "content": "但船公司必须拿出几千万美元成立基金",
+      "music": 0.0
+    },
+    {
+      "from": 724.9,
+      "to": 727.03,
+      "sid": 341,
+      "location": 2,
+      "content": "工龄补偿和高额退休金",
+      "music": 0.0
+    },
+    {
+      "from": 727.03,
+      "to": 729.05,
+      "sid": 342,
+      "location": 2,
+      "content": "结果西海岸的洛杉矶港",
+      "music": 0.0
+    },
+    {
+      "from": 729.05,
+      "to": 731.53,
+      "sid": 343,
+      "location": 2,
+      "content": "长滩港迅速完成了现代化转型",
+      "music": 0.0
+    },
+    {
+      "from": 731.53,
+      "to": 733.6,
+      "sid": 344,
+      "location": 2,
+      "content": "一跃成为太平洋第一大港",
+      "music": 0.0
+    },
+    {
+      "from": 733.6,
+      "to": 734.52,
+      "sid": 345,
+      "location": 2,
+      "content": "而另一边",
+      "music": 0.0
+    },
+    {
+      "from": 734.52,
+      "to": 737.72,
+      "sid": 346,
+      "location": 2,
+      "content": "老牌霸主纽约港的工会却选择死扛到底",
+      "music": 0.0
+    },
+    {
+      "from": 737.72,
+      "to": 739.72,
+      "sid": 347,
+      "location": 2,
+      "content": "不仅严格限制集装箱作业",
+      "music": 0.0
+    },
+    {
+      "from": 739.72,
+      "to": 742.1,
+      "sid": 348,
+      "location": 2,
+      "content": "还要求即使货箱不需要拆开",
+      "music": 0.0
+    },
+    {
+      "from": 742.1,
+      "to": 745.55,
+      "sid": 349,
+      "location": 2,
+      "content": "码头工人也必须按拆箱重装的标准拿工资",
+      "music": 0.0
+    },
+    {
+      "from": 745.55,
+      "to": 749.17,
+      "sid": 350,
+      "location": 2,
+      "content": "结果呢船公司用脚投票纷纷撤离曼哈顿",
+      "music": 0.0
+    },
+    {
+      "from": 749.17,
+      "to": 752.45,
+      "sid": 351,
+      "location": 2,
+      "content": "把码头建到了对岸的新泽西伊丽莎白港",
+      "music": 0.0
+    },
+    {
+      "from": 752.45,
+      "to": 754.19,
+      "sid": 352,
+      "location": 2,
+      "content": "曾经不可一世的纽约",
+      "music": 0.0
+    },
+    {
+      "from": 754.19,
+      "to": 757.33,
+      "sid": 353,
+      "location": 2,
+      "content": "曼哈顿码头在短短十几年内彻底荒废",
+      "music": 0.0
+    },
+    {
+      "from": 757.33,
+      "to": 759.97,
+      "sid": 354,
+      "location": 2,
+      "content": "变成了一片杂草丛生的废墟",
+      "music": 0.0
+    },
+    {
+      "from": 759.97,
+      "to": 762.45,
+      "sid": 355,
+      "location": 2,
+      "content": "这就是经济学里标准化的威力",
+      "music": 0.0
+    },
+    {
+      "from": 762.45,
+      "to": 764.57,
+      "sid": 356,
+      "location": 2,
+      "content": "标准化看起来枯燥无味",
+      "music": 0.0
+    },
+    {
+      "from": 764.57,
+      "to": 766.31,
+      "sid": 357,
+      "location": 2,
+      "content": "不就是规定长宽高",
+      "music": 0.0
+    },
+    {
+      "from": 766.31,
+      "to": 768.01,
+      "sid": 358,
+      "location": 2,
+      "content": "规定螺丝孔的位置吗",
+      "music": 0.0
+    },
+    {
+      "from": 768.01,
+      "to": 770.13,
+      "sid": 359,
+      "location": 2,
+      "content": "但它在商业上的本质是",
+      "music": 0.0
+    },
+    {
+      "from": 770.13,
+      "to": 773.84,
+      "sid": 360,
+      "location": 2,
+      "content": "彻底消除了系统与系统之间的接口转换成本",
+      "music": 0.0
+    },
+    {
+      "from": 773.84,
+      "to": 775.12,
+      "sid": 361,
+      "location": 2,
+      "content": "一旦尺寸和矫健",
+      "music": 0.0
+    },
+    {
+      "from": 775.12,
+      "to": 778.27,
+      "sid": 362,
+      "location": 2,
+      "content": "全球锁定集装箱就变成了一种工业乐高",
+      "music": 0.0
+    },
+    {
+      "from": 778.27,
+      "to": 779.11,
+      "sid": 363,
+      "location": 2,
+      "content": "从此以后",
+      "music": 0.0
+    },
+    {
+      "from": 779.11,
+      "to": 780.93,
+      "sid": 364,
+      "location": 2,
+      "content": "无论是在中国义乌的工厂",
+      "music": 0.0
+    },
+    {
+      "from": 780.93,
+      "to": 782.13,
+      "sid": 365,
+      "location": 2,
+      "content": "西伯利亚的铁路",
+      "music": 0.0
+    },
+    {
+      "from": 782.13,
+      "to": 783.82,
+      "sid": 366,
+      "location": 2,
+      "content": "还是荷兰鹿特丹的码头",
+      "music": 0.0
+    },
+    {
+      "from": 783.82,
+      "to": 785.3,
+      "sid": 367,
+      "location": 2,
+      "content": "全世界的卡车底盘",
+      "music": 0.0
+    },
+    {
+      "from": 785.3,
+      "to": 786.82,
+      "sid": 368,
+      "location": 2,
+      "content": "火车平板起重机",
+      "music": 0.0
+    },
+    {
+      "from": 786.82,
+      "to": 790.87,
+      "sid": 369,
+      "location": 2,
+      "content": "吊具货轮船舱全部按照同一套参数设计制造",
+      "music": 0.0
+    },
+    {
+      "from": 790.87,
+      "to": 792.77,
+      "sid": 370,
+      "location": 2,
+      "content": "整个地球的物流系统",
+      "music": 0.0
+    },
+    {
+      "from": 792.77,
+      "to": 796.579,
+      "sid": 371,
+      "location": 2,
+      "content": "第一次被拧成了一台严丝合缝的超级机器",
+      "music": 0.0
+    },
+    {
+      "from": 796.579,
+      "to": 798.179,
+      "sid": 372,
+      "location": 2,
+      "content": "当标准确立之后",
+      "music": 0.0
+    },
+    {
+      "from": 798.179,
+      "to": 801.879,
+      "sid": 373,
+      "location": 2,
+      "content": "集装箱立刻释放出了第二种恐怖的经济学力量",
+      "music": 0.0
+    },
+    {
+      "from": 801.879,
+      "to": 804.84,
+      "sid": 374,
+      "location": 2,
+      "content": "规模经济在1960年代后期",
+      "music": 0.0
+    },
+    {
+      "from": 804.84,
+      "to": 806.64,
+      "sid": 375,
+      "location": 2,
+      "content": "一场意想不到的历史事件",
+      "music": 0.0
+    },
+    {
+      "from": 806.64,
+      "to": 808.98,
+      "sid": 376,
+      "location": 2,
+      "content": "按下了集装箱全球化的快进键",
+      "music": 0.0
+    },
+    {
+      "from": 808.98,
+      "to": 810.78,
+      "sid": 377,
+      "location": 2,
+      "content": "那就是越南战争",
+      "music": 0.0
+    },
+    {
+      "from": 810.78,
+      "to": 811.96,
+      "sid": 378,
+      "location": 2,
+      "content": "1965年",
+      "music": 0.0
+    },
+    {
+      "from": 811.96,
+      "to": 813.94,
+      "sid": 379,
+      "location": 2,
+      "content": "美军大规模介入越南战争",
+      "music": 0.0
+    },
+    {
+      "from": 813.94,
+      "to": 815.76,
+      "sid": 380,
+      "location": 2,
+      "content": "几10万大军开进东南亚",
+      "music": 0.0
+    },
+    {
+      "from": 815.76,
+      "to": 818.24,
+      "sid": 381,
+      "location": 2,
+      "content": "每天需要消耗海量的武器弹药",
+      "music": 0.0
+    },
+    {
+      "from": 818.24,
+      "to": 819.72,
+      "sid": 382,
+      "location": 2,
+      "content": "食物和生活物资",
+      "music": 0.0
+    },
+    {
+      "from": 819.72,
+      "to": 822.2,
+      "sid": 383,
+      "location": 2,
+      "content": "但越南当时是个落后的农业国",
+      "music": 0.0
+    },
+    {
+      "from": 822.2,
+      "to": 825.39,
+      "sid": 384,
+      "location": 2,
+      "content": "金兰湾西贡的港口设施极其简陋",
+      "music": 0.0
+    },
+    {
+      "from": 825.39,
+      "to": 828.87,
+      "sid": 385,
+      "location": 2,
+      "content": "美军的传统三货船一到越南根本卸不下来",
+      "music": 0.0
+    },
+    {
+      "from": 828.87,
+      "to": 831.55,
+      "sid": 386,
+      "location": 2,
+      "content": "上百艘货轮排着长队堵在海上",
+      "music": 0.0
+    },
+    {
+      "from": 831.55,
+      "to": 833.09,
+      "sid": 387,
+      "location": 2,
+      "content": "一等就是两三个月",
+      "music": 0.0
+    },
+    {
+      "from": 833.09,
+      "to": 834.37,
+      "sid": 388,
+      "location": 2,
+      "content": "前线士兵没子弹",
+      "music": 0.0
+    },
+    {
+      "from": 834.37,
+      "to": 838.12,
+      "sid": 389,
+      "location": 2,
+      "content": "后方码头上的物资却在热带暴雨里烂成了泥",
+      "music": 0.0
+    },
+    {
+      "from": 838.12,
+      "to": 840.38,
+      "sid": 390,
+      "location": 2,
+      "content": "五角大楼急得焦头烂额",
+      "music": 0.0
+    },
+    {
+      "from": 840.38,
+      "to": 841.14,
+      "sid": 391,
+      "location": 2,
+      "content": "这时候",
+      "music": 0.0
+    },
+    {
+      "from": 841.14,
+      "to": 842.68,
+      "sid": 392,
+      "location": 2,
+      "content": "麦克莱恩找上门去",
+      "music": 0.0
+    },
+    {
+      "from": 842.68,
+      "to": 843.56,
+      "sid": 393,
+      "location": 2,
+      "content": "拍着胸脯",
+      "music": 0.0
+    },
+    {
+      "from": 843.56,
+      "to": 844.58,
+      "sid": 394,
+      "location": 2,
+      "content": "立下军令状",
+      "music": 0.0
+    },
+    {
+      "from": 844.58,
+      "to": 845.9,
+      "sid": 395,
+      "location": 2,
+      "content": "把后勤交给我",
+      "music": 0.0
+    },
+    {
+      "from": 845.9,
+      "to": 846.98,
+      "sid": 396,
+      "location": 2,
+      "content": "用集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 846.98,
+      "to": 848.14,
+      "sid": 397,
+      "location": 2,
+      "content": "1967年",
+      "music": 0.0
+    },
+    {
+      "from": 848.14,
+      "to": 850.83,
+      "sid": 398,
+      "location": 2,
+      "content": "麦克莱恩的集装箱船队开进金兰湾",
+      "music": 0.0
+    },
+    {
+      "from": 850.83,
+      "to": 854.07,
+      "sid": 399,
+      "location": 2,
+      "content": "他直接把一整套现代化的岸边起重机和卡车",
+      "music": 0.0
+    },
+    {
+      "from": 854.07,
+      "to": 855.23,
+      "sid": 400,
+      "location": 2,
+      "content": "底盘运了过去",
+      "music": 0.0
+    },
+    {
+      "from": 855.23,
+      "to": 856.65,
+      "sid": 401,
+      "location": 2,
+      "content": "甚至把集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 856.65,
+      "to": 859.7,
+      "sid": 402,
+      "location": 2,
+      "content": "直接当成前线的临时仓库和野战医院",
+      "music": 0.0
+    },
+    {
+      "from": 859.7,
+      "to": 860.8,
+      "sid": 403,
+      "location": 2,
+      "content": "短短几个月",
+      "music": 0.0
+    },
+    {
+      "from": 860.8,
+      "to": 864.15,
+      "sid": 404,
+      "location": 2,
+      "content": "困扰美军数年的后勤大拥堵彻底消失",
+      "music": 0.0
+    },
+    {
+      "from": 864.15,
+      "to": 865.21,
+      "sid": 405,
+      "location": 2,
+      "content": "更绝的是",
+      "music": 0.0
+    },
+    {
+      "from": 865.21,
+      "to": 867.73,
+      "sid": 406,
+      "location": 2,
+      "content": "麦克莱恩是个绝顶聪明的商人",
+      "music": 0.0
+    },
+    {
+      "from": 867.73,
+      "to": 871.98,
+      "sid": 407,
+      "location": 2,
+      "content": "他看着船队从美国西海岸满载军火开往越南",
+      "music": 0.0
+    },
+    {
+      "from": 871.98,
+      "to": 873.8,
+      "sid": 408,
+      "location": 2,
+      "content": "回程的时候却是空船",
+      "music": 0.0
+    },
+    {
+      "from": 873.8,
+      "to": 874.82,
+      "sid": 409,
+      "location": 2,
+      "content": "白白烧油",
+      "music": 0.0
+    },
+    {
+      "from": 874.82,
+      "to": 876.19,
+      "sid": 410,
+      "location": 2,
+      "content": "心疼的直滴血",
+      "music": 0.0
+    },
+    {
+      "from": 876.19,
+      "to": 877.83,
+      "sid": 411,
+      "location": 2,
+      "content": "于是他想了个主意",
+      "music": 0.0
+    },
+    {
+      "from": 877.83,
+      "to": 879.07,
+      "sid": 412,
+      "location": 2,
+      "content": "既然回程顺路",
+      "music": 0.0
+    },
+    {
+      "from": 879.07,
+      "to": 880.91,
+      "sid": 413,
+      "location": 2,
+      "content": "为什么不绕道去一趟日本",
+      "music": 0.0
+    },
+    {
+      "from": 880.91,
+      "to": 882.45,
+      "sid": 414,
+      "location": 2,
+      "content": "把日本产的收音机",
+      "music": 0.0
+    },
+    {
+      "from": 882.45,
+      "to": 884.23,
+      "sid": 415,
+      "location": 2,
+      "content": "电视机相机装回来",
+      "music": 0.0
+    },
+    {
+      "from": 884.23,
+      "to": 885.31,
+      "sid": 416,
+      "location": 2,
+      "content": "卖到美国呢",
+      "music": 0.0
+    },
+    {
+      "from": 885.31,
+      "to": 888.55,
+      "sid": 417,
+      "location": 2,
+      "content": "这一绕道直接开辟了人类历史上第一条",
+      "music": 0.0
+    },
+    {
+      "from": 888.55,
+      "to": 891.11,
+      "sid": 418,
+      "location": 2,
+      "content": "定期跨太平洋商业集装箱航线",
+      "music": 0.0
+    },
+    {
+      "from": 891.11,
+      "to": 893.859,
+      "sid": 419,
+      "location": 2,
+      "content": "当时正在飞速崛起的日本制造业",
+      "music": 0.0
+    },
+    {
+      "from": 893.859,
+      "to": 895.379,
+      "sid": 420,
+      "location": 2,
+      "content": "等于白白捡到了一条",
+      "music": 0.0
+    },
+    {
+      "from": 895.379,
+      "to": 897.99,
+      "sid": 421,
+      "location": 2,
+      "content": "通往美国市场的超级高速公路",
+      "music": 0.0
+    },
+    {
+      "from": 897.99,
+      "to": 899.85,
+      "sid": 422,
+      "location": 2,
+      "content": "随着跨大洋航线的打通",
+      "music": 0.0
+    },
+    {
+      "from": 899.85,
+      "to": 902.19,
+      "sid": 423,
+      "location": 2,
+      "content": "一个明显的商业规律开始显现",
+      "music": 0.0
+    },
+    {
+      "from": 902.19,
+      "to": 903.05,
+      "sid": 424,
+      "location": 2,
+      "content": "船越大",
+      "music": 0.0
+    },
+    {
+      "from": 903.05,
+      "to": 905.12,
+      "sid": 425,
+      "location": 2,
+      "content": "运一个箱子的成本就越低",
+      "music": 0.0
+    },
+    {
+      "from": 905.12,
+      "to": 907.9,
+      "sid": 426,
+      "location": 2,
+      "content": "这就是经济学里最核心的规模经济",
+      "music": 0.0
+    },
+    {
+      "from": 907.9,
+      "to": 909.77,
+      "sid": 427,
+      "location": 2,
+      "content": "为什么船越大越省钱",
+      "music": 0.0
+    },
+    {
+      "from": 909.77,
+      "to": 911.35,
+      "sid": 428,
+      "location": 2,
+      "content": "首先在几何学上",
+      "music": 0.0
+    },
+    {
+      "from": 911.35,
+      "to": 912.67,
+      "sid": 429,
+      "location": 2,
+      "content": "一艘船的载货量",
+      "music": 0.0
+    },
+    {
+      "from": 912.67,
+      "to": 916.04,
+      "sid": 430,
+      "location": 2,
+      "content": "是随着船体长宽高的三次方增长的",
+      "music": 0.0
+    },
+    {
+      "from": 916.04,
+      "to": 917.94,
+      "sid": 431,
+      "location": 2,
+      "content": "而造船需要的钢板面积",
+      "music": 0.0
+    },
+    {
+      "from": 917.94,
+      "to": 921.3,
+      "sid": 432,
+      "location": 2,
+      "content": "航行时的水流阻力大致是随二次方增长的",
+      "music": 0.0
+    },
+    {
+      "from": 921.3,
+      "to": 923.5,
+      "sid": 433,
+      "location": 2,
+      "content": "也就是说船造大一倍",
+      "music": 0.0
+    },
+    {
+      "from": 923.5,
+      "to": 925.38,
+      "sid": 434,
+      "location": 2,
+      "content": "载货量可能翻两三倍",
+      "music": 0.0
+    },
+    {
+      "from": 925.38,
+      "to": 928.63,
+      "sid": 435,
+      "location": 2,
+      "content": "但造船成本和油耗并不会翻两三倍",
+      "music": 0.0
+    },
+    {
+      "from": 928.63,
+      "to": 930.91,
+      "sid": 436,
+      "location": 2,
+      "content": "其次更关键的是人力成本",
+      "music": 0.0
+    },
+    {
+      "from": 930.91,
+      "to": 934.29,
+      "sid": 437,
+      "location": 2,
+      "content": "一艘装2000个集装箱的货船在海上航行",
+      "music": 0.0
+    },
+    {
+      "from": 934.29,
+      "to": 936.579,
+      "sid": 438,
+      "location": 2,
+      "content": "需要大约20~25名船员",
+      "music": 0.0
+    },
+    {
+      "from": 936.579,
+      "to": 940.379,
+      "sid": 439,
+      "location": 2,
+      "content": "而今天一艘装2万4000个集装箱的海上巨无霸",
+      "music": 0.0
+    },
+    {
+      "from": 940.379,
+      "to": 942.819,
+      "sid": 440,
+      "location": 2,
+      "content": "在海上航行需要多少船员呢",
+      "music": 0.0
+    },
+    {
+      "from": 942.819,
+      "to": 945.27,
+      "sid": 441,
+      "location": 2,
+      "content": "还是20~25名船员",
+      "music": 0.0
+    },
+    {
+      "from": 945.27,
+      "to": 948.77,
+      "sid": 442,
+      "location": 2,
+      "content": "这意味着平摊到每一个集装箱上的船员工资",
+      "music": 0.0
+    },
+    {
+      "from": 948.77,
+      "to": 949.55,
+      "sid": 443,
+      "location": 2,
+      "content": "燃油费",
+      "music": 0.0
+    },
+    {
+      "from": 949.55,
+      "to": 952.81,
+      "sid": 444,
+      "location": 2,
+      "content": "折旧费被稀释到了近乎为零的地步",
+      "music": 0.0
+    },
+    {
+      "from": 952.81,
+      "to": 954.81,
+      "sid": 445,
+      "location": 2,
+      "content": "咱们来看看这60多年来",
+      "music": 0.0
+    },
+    {
+      "from": 954.81,
+      "to": 958.089,
+      "sid": 446,
+      "location": 2,
+      "content": "集装箱船经历了怎样疯狂的巨型化演进",
+      "music": 0.0
+    },
+    {
+      "from": 958.089,
+      "to": 961.549,
+      "sid": 447,
+      "location": 2,
+      "content": "1956年的理想X号装了58个箱子",
+      "music": 0.0
+    },
+    {
+      "from": 961.549,
+      "to": 962.789,
+      "sid": 448,
+      "location": 2,
+      "content": "1970年代",
+      "music": 0.0
+    },
+    {
+      "from": 962.789,
+      "to": 965.17,
+      "sid": 449,
+      "location": 2,
+      "content": "能装2000到3000个箱子的",
+      "music": 0.0
+    },
+    {
+      "from": 965.17,
+      "to": 967.36,
+      "sid": 450,
+      "location": 2,
+      "content": "二代集装箱船成了主流",
+      "music": 0.0
+    },
+    {
+      "from": 967.36,
+      "to": 969.2,
+      "sid": 451,
+      "location": 2,
+      "content": "1980年代出现了",
+      "music": 0.0
+    },
+    {
+      "from": 969.2,
+      "to": 972.24,
+      "sid": 452,
+      "location": 2,
+      "content": "刚好能挤过巴拿马运河的巴拿马型巨轮",
+      "music": 0.0
+    },
+    {
+      "from": 972.24,
+      "to": 974.78,
+      "sid": 453,
+      "location": 2,
+      "content": "载销量突破4000~5000箱",
+      "music": 0.0
+    },
+    {
+      "from": 974.78,
+      "to": 976.1,
+      "sid": 454,
+      "location": 2,
+      "content": "2000年代",
+      "music": 0.0
+    },
+    {
+      "from": 976.1,
+      "to": 978.26,
+      "sid": 455,
+      "location": 2,
+      "content": "马士基推出了突破1万箱",
+      "music": 0.0
+    },
+    {
+      "from": 978.26,
+      "to": 980.06,
+      "sid": 456,
+      "location": 2,
+      "content": "甚至1.8万箱的巨轮",
+      "music": 0.0
+    },
+    {
+      "from": 980.06,
+      "to": 980.94,
+      "sid": 457,
+      "location": 2,
+      "content": "到了今天",
+      "music": 0.0
+    },
+    {
+      "from": 980.94,
+      "to": 981.97,
+      "sid": 458,
+      "location": 2,
+      "content": "中原海运",
+      "music": 0.0
+    },
+    {
+      "from": 981.97,
+      "to": 984.79,
+      "sid": 459,
+      "location": 2,
+      "content": "地中海航运旗下的超大型集装箱船",
+      "music": 0.0
+    },
+    {
+      "from": 984.79,
+      "to": 988.2,
+      "sid": 460,
+      "location": 2,
+      "content": "最大载箱量已经突破了2万4000个标准箱",
+      "music": 0.0
+    },
+    {
+      "from": 988.2,
+      "to": 990.88,
+      "sid": 461,
+      "location": 2,
+      "content": "如果把一艘船上的集装箱首尾相连",
+      "music": 0.0
+    },
+    {
+      "from": 990.88,
+      "to": 991.66,
+      "sid": 462,
+      "location": 2,
+      "content": "排成一排",
+      "music": 0.0
+    },
+    {
+      "from": 991.66,
+      "to": 993.7,
+      "sid": 463,
+      "location": 2,
+      "content": "长度足足有145km",
+      "music": 0.0
+    },
+    {
+      "from": 993.7,
+      "to": 995.579,
+      "sid": 464,
+      "location": 2,
+      "content": "能从上海一路排到苏州",
+      "music": 0.0
+    },
+    {
+      "from": 995.579,
+      "to": 996.699,
+      "sid": 465,
+      "location": 2,
+      "content": "巨轮的出现",
+      "music": 0.0
+    },
+    {
+      "from": 996.699,
+      "to": 999.55,
+      "sid": 466,
+      "location": 2,
+      "content": "直接引发了全球港口地理版图的大洗牌",
+      "music": 0.0
+    },
+    {
+      "from": 999.55,
+      "to": 1000.57,
+      "sid": 467,
+      "location": 2,
+      "content": "在散货时代",
+      "music": 0.0
+    },
+    {
+      "from": 1000.57,
+      "to": 1002.81,
+      "sid": 468,
+      "location": 2,
+      "content": "港口必须建在繁华的大城市中心",
+      "music": 0.0
+    },
+    {
+      "from": 1002.81,
+      "to": 1004.53,
+      "sid": 469,
+      "location": 2,
+      "content": "比如伦敦的泰晤士河沿岸",
+      "music": 0.0
+    },
+    {
+      "from": 1004.53,
+      "to": 1005.59,
+      "sid": 470,
+      "location": 2,
+      "content": "纽约的曼哈顿",
+      "music": 0.0
+    },
+    {
+      "from": 1005.59,
+      "to": 1006.67,
+      "sid": 471,
+      "location": 2,
+      "content": "上海的外滩",
+      "music": 0.0
+    },
+    {
+      "from": 1006.67,
+      "to": 1009.23,
+      "sid": 472,
+      "location": 2,
+      "content": "因为那里有密集的仓库和消费市场",
+      "music": 0.0
+    },
+    {
+      "from": 1009.23,
+      "to": 1011.84,
+      "sid": 473,
+      "location": 2,
+      "content": "方便马车和卡车短途配送",
+      "music": 0.0
+    },
+    {
+      "from": 1011.84,
+      "to": 1014.3,
+      "sid": 474,
+      "location": 2,
+      "content": "但2万4000箱的巨轮吃水极深",
+      "music": 0.0
+    },
+    {
+      "from": 1014.3,
+      "to": 1015.56,
+      "sid": 475,
+      "location": 2,
+      "content": "往往超过16米",
+      "music": 0.0
+    },
+    {
+      "from": 1015.56,
+      "to": 1017.56,
+      "sid": 476,
+      "location": 2,
+      "content": "老市中心的河道根本开不进去",
+      "music": 0.0
+    },
+    {
+      "from": 1017.56,
+      "to": 1021.1,
+      "sid": 477,
+      "location": 2,
+      "content": "而且巨轮靠岸后几小时内就要吞吐上万个箱子",
+      "music": 0.0
+    },
+    {
+      "from": 1021.1,
+      "to": 1024.21,
+      "sid": 478,
+      "location": 2,
+      "content": "市中心根本没有那么大的空地来堆放集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1024.21,
+      "to": 1027.51,
+      "sid": 479,
+      "location": 2,
+      "content": "更容不下每天上万辆重型卡车进进出出",
+      "music": 0.0
+    },
+    {
+      "from": 1027.51,
+      "to": 1029.39,
+      "sid": 480,
+      "location": 2,
+      "content": "于是全世界的港口",
+      "music": 0.0
+    },
+    {
+      "from": 1029.39,
+      "to": 1032.53,
+      "sid": 481,
+      "location": 2,
+      "content": "开始了一场轰轰烈烈地向深水迁徙",
+      "music": 0.0
+    },
+    {
+      "from": 1032.53,
+      "to": 1033.97,
+      "sid": 482,
+      "location": 2,
+      "content": "伦敦港衰落了",
+      "music": 0.0
+    },
+    {
+      "from": 1033.97,
+      "to": 1037.11,
+      "sid": 483,
+      "location": 2,
+      "content": "取而代之的是东海岸的菲利克斯托港",
+      "music": 0.0
+    },
+    {
+      "from": 1037.11,
+      "to": 1038.41,
+      "sid": 484,
+      "location": 2,
+      "content": "纽约曼哈顿码头",
+      "music": 0.0
+    },
+    {
+      "from": 1038.41,
+      "to": 1040.49,
+      "sid": 485,
+      "location": 2,
+      "content": "废弃了信泽系的深水港",
+      "music": 0.0
+    },
+    {
+      "from": 1040.49,
+      "to": 1041.51,
+      "sid": 486,
+      "location": 2,
+      "content": "取而代之",
+      "music": 0.0
+    },
+    {
+      "from": 1041.51,
+      "to": 1044.65,
+      "sid": 487,
+      "location": 2,
+      "content": "上海的港口重心也从黄浦江一路外移",
+      "music": 0.0
+    },
+    {
+      "from": 1044.65,
+      "to": 1046.57,
+      "sid": 488,
+      "location": 2,
+      "content": "最终在东海的荒岛上",
+      "music": 0.0
+    },
+    {
+      "from": 1046.57,
+      "to": 1049.01,
+      "sid": 489,
+      "location": 2,
+      "content": "建起了震撼世界的洋山深水港",
+      "music": 0.0
+    },
+    {
+      "from": 1049.01,
+      "to": 1050.17,
+      "sid": 490,
+      "location": 2,
+      "content": "荷兰的鹿特丹",
+      "music": 0.0
+    },
+    {
+      "from": 1050.17,
+      "to": 1050.93,
+      "sid": 491,
+      "location": 2,
+      "content": "新加坡",
+      "music": 0.0
+    },
+    {
+      "from": 1050.93,
+      "to": 1051.79,
+      "sid": 492,
+      "location": 2,
+      "content": "中国香港",
+      "music": 0.0
+    },
+    {
+      "from": 1051.79,
+      "to": 1052.73,
+      "sid": 493,
+      "location": 2,
+      "content": "韩国釜山",
+      "music": 0.0
+    },
+    {
+      "from": 1052.73,
+      "to": 1053.78,
+      "sid": 494,
+      "location": 2,
+      "content": "深圳盐田",
+      "music": 0.0
+    },
+    {
+      "from": 1053.78,
+      "to": 1055.26,
+      "sid": 495,
+      "location": 2,
+      "content": "一批拥有深水航道",
+      "music": 0.0
+    },
+    {
+      "from": 1055.26,
+      "to": 1056.44,
+      "sid": 496,
+      "location": 2,
+      "content": "巨大堆场面积",
+      "music": 0.0
+    },
+    {
+      "from": 1056.44,
+      "to": 1059.1,
+      "sid": 497,
+      "location": 2,
+      "content": "以及全自动无人化吊装系统的超级大港",
+      "music": 0.0
+    },
+    {
+      "from": 1059.1,
+      "to": 1060.95,
+      "sid": 498,
+      "location": 2,
+      "content": "成为了全球贸易的新心脏",
+      "music": 0.0
+    },
+    {
+      "from": 1060.95,
+      "to": 1063.13,
+      "sid": 499,
+      "location": 2,
+      "content": "规模经济带来的最终结果是什么",
+      "music": 0.0
+    },
+    {
+      "from": 1063.13,
+      "to": 1065.47,
+      "sid": 500,
+      "location": 2,
+      "content": "是海运成本的彻底坍塌",
+      "music": 0.0
+    },
+    {
+      "from": 1065.47,
+      "to": 1066.73,
+      "sid": 501,
+      "location": 2,
+      "content": "到20世纪末",
+      "music": 0.0
+    },
+    {
+      "from": 1066.73,
+      "to": 1069.08,
+      "sid": 502,
+      "location": 2,
+      "content": "跨洋海运的运费低到了什么程度",
+      "music": 0.0
+    },
+    {
+      "from": 1069.08,
+      "to": 1070.62,
+      "sid": 503,
+      "location": 2,
+      "content": "根据经济学家测算",
+      "music": 0.0
+    },
+    {
+      "from": 1070.62,
+      "to": 1073.91,
+      "sid": 504,
+      "location": 2,
+      "content": "把一台中国生产的微波炉或者一双运动鞋",
+      "music": 0.0
+    },
+    {
+      "from": 1073.91,
+      "to": 1075.07,
+      "sid": 505,
+      "location": 2,
+      "content": "装在集装箱里",
+      "music": 0.0
+    },
+    {
+      "from": 1075.07,
+      "to": 1078.35,
+      "sid": 506,
+      "location": 2,
+      "content": "跨越1万多公里的太平洋运到美国洛杉矶",
+      "music": 0.0
+    },
+    {
+      "from": 1078.35,
+      "to": 1080.79,
+      "sid": 507,
+      "location": 2,
+      "content": "平摊到这件商品上的海运运费",
+      "music": 0.0
+    },
+    {
+      "from": 1080.79,
+      "to": 1084.52,
+      "sid": 508,
+      "location": 2,
+      "content": "只占它零售价格的1%到2%",
+      "music": 0.0
+    },
+    {
+      "from": 1084.52,
+      "to": 1086.96,
+      "sid": 509,
+      "location": 2,
+      "content": "一双在美国卖100美元的鞋",
+      "music": 0.0
+    },
+    {
+      "from": 1086.96,
+      "to": 1089.9,
+      "sid": 510,
+      "location": 2,
+      "content": "海运这段的费用可能不到1.5美元",
+      "music": 0.0
+    },
+    {
+      "from": 1089.9,
+      "to": 1091.68,
+      "sid": 511,
+      "location": 2,
+      "content": "相比这双鞋本身的价格",
+      "music": 0.0
+    },
+    {
+      "from": 1091.68,
+      "to": 1095.15,
+      "sid": 512,
+      "location": 2,
+      "content": "跨越太平洋已经不算一笔特别大的开支",
+      "music": 0.0
+    },
+    {
+      "from": 1095.15,
+      "to": 1096.63,
+      "sid": 513,
+      "location": 2,
+      "content": "距离仍然在那里",
+      "music": 0.0
+    },
+    {
+      "from": 1096.63,
+      "to": 1099.95,
+      "sid": 514,
+      "location": 2,
+      "content": "可他对很多商品售价的影响比从前小得多",
+      "music": 0.0
+    },
+    {
+      "from": 1099.95,
+      "to": 1101.59,
+      "sid": 515,
+      "location": 2,
+      "content": "过去运不划算的东西",
+      "music": 0.0
+    },
+    {
+      "from": 1101.59,
+      "to": 1103.75,
+      "sid": 516,
+      "location": 2,
+      "content": "现在也可以做成跨国生意",
+      "music": 0.0
+    },
+    {
+      "from": 1103.75,
+      "to": 1105.71,
+      "sid": 517,
+      "location": 2,
+      "content": "学过一点经济学的人都知道",
+      "music": 0.0
+    },
+    {
+      "from": 1105.71,
+      "to": 1107.719,
+      "sid": 518,
+      "location": 2,
+      "content": "大卫李嘉图的比较优势理论",
+      "music": 0.0
+    },
+    {
+      "from": 1107.719,
+      "to": 1110.619,
+      "sid": 519,
+      "location": 2,
+      "content": "简单来说就是各地按相对优势分工",
+      "music": 0.0
+    },
+    {
+      "from": 1110.619,
+      "to": 1111.739,
+      "sid": 520,
+      "location": 2,
+      "content": "再通过贸易交换",
+      "music": 0.0
+    },
+    {
+      "from": 1111.739,
+      "to": 1112.94,
+      "sid": 521,
+      "location": 2,
+      "content": "从而取得收益",
+      "music": 0.0
+    },
+    {
+      "from": 1112.94,
+      "to": 1114.26,
+      "sid": 522,
+      "location": 2,
+      "content": "拿今天的产业举例",
+      "music": 0.0
+    },
+    {
+      "from": 1114.26,
+      "to": 1116.12,
+      "sid": 523,
+      "location": 2,
+      "content": "有的地区擅长芯片设计",
+      "music": 0.0
+    },
+    {
+      "from": 1116.12,
+      "to": 1117.54,
+      "sid": 524,
+      "location": 2,
+      "content": "有的地区擅长服装",
+      "music": 0.0
+    },
+    {
+      "from": 1117.54,
+      "to": 1118.96,
+      "sid": 525,
+      "location": 2,
+      "content": "家电或精密组装",
+      "music": 0.0
+    },
+    {
+      "from": 1118.96,
+      "to": 1120.86,
+      "sid": 526,
+      "location": 2,
+      "content": "各自做好有优势的环节",
+      "music": 0.0
+    },
+    {
+      "from": 1120.86,
+      "to": 1122.3,
+      "sid": 527,
+      "location": 2,
+      "content": "再把产品卖出去",
+      "music": 0.0
+    },
+    {
+      "from": 1122.3,
+      "to": 1123.54,
+      "sid": 528,
+      "location": 2,
+      "content": "可分工要划算",
+      "music": 0.0
+    },
+    {
+      "from": 1123.54,
+      "to": 1125.4,
+      "sid": 529,
+      "location": 2,
+      "content": "运输费就必须足够低",
+      "music": 0.0
+    },
+    {
+      "from": 1125.4,
+      "to": 1127.84,
+      "sid": 530,
+      "location": 2,
+      "content": "传统件杂货运输下东亚工厂",
+      "music": 0.0
+    },
+    {
+      "from": 1127.84,
+      "to": 1128.9,
+      "sid": 531,
+      "location": 2,
+      "content": "即使人工便宜",
+      "music": 0.0
+    },
+    {
+      "from": 1128.9,
+      "to": 1130.24,
+      "sid": 532,
+      "location": 2,
+      "content": "港口装卸漫长",
+      "music": 0.0
+    },
+    {
+      "from": 1130.24,
+      "to": 1131.88,
+      "sid": 533,
+      "location": 2,
+      "content": "周转以及破损和被盗",
+      "music": 0.0
+    },
+    {
+      "from": 1131.88,
+      "to": 1133.58,
+      "sid": 534,
+      "location": 2,
+      "content": "都可能把省下的钱吃掉",
+      "music": 0.0
+    },
+    {
+      "from": 1133.58,
+      "to": 1134.78,
+      "sid": 535,
+      "location": 2,
+      "content": "对一些货物来说",
+      "music": 0.0
+    },
+    {
+      "from": 1134.78,
+      "to": 1137.08,
+      "sid": 536,
+      "location": 2,
+      "content": "损耗比例还可能超过10%",
+      "music": 0.0
+    },
+    {
+      "from": 1137.08,
+      "to": 1138.44,
+      "sid": 537,
+      "location": 2,
+      "content": "生产端便宜一点",
+      "music": 0.0
+    },
+    {
+      "from": 1138.44,
+      "to": 1139.9,
+      "sid": 538,
+      "location": 2,
+      "content": "送到消费者手里时",
+      "music": 0.0
+    },
+    {
+      "from": 1139.9,
+      "to": 1141.33,
+      "sid": 539,
+      "location": 2,
+      "content": "却未必还有优势",
+      "music": 0.0
+    },
+    {
+      "from": 1141.33,
+      "to": 1143.95,
+      "sid": 540,
+      "location": 2,
+      "content": "集装箱把这些成本大幅压低之后",
+      "music": 0.0
+    },
+    {
+      "from": 1143.95,
+      "to": 1145.23,
+      "sid": 541,
+      "location": 2,
+      "content": "企业的账就变了",
+      "music": 0.0
+    },
+    {
+      "from": 1145.23,
+      "to": 1147.21,
+      "sid": 542,
+      "location": 2,
+      "content": "把原料从澳洲运到东亚",
+      "music": 0.0
+    },
+    {
+      "from": 1147.21,
+      "to": 1147.93,
+      "sid": 543,
+      "location": 2,
+      "content": "加工后",
+      "music": 0.0
+    },
+    {
+      "from": 1147.93,
+      "to": 1149.53,
+      "sid": 544,
+      "location": 2,
+      "content": "再把成品运去欧美",
+      "music": 0.0
+    },
+    {
+      "from": 1149.53,
+      "to": 1151.21,
+      "sid": 545,
+      "location": 2,
+      "content": "即使多走一大段海路",
+      "music": 0.0
+    },
+    {
+      "from": 1151.21,
+      "to": 1154.09,
+      "sid": 546,
+      "location": 2,
+      "content": "总成本仍可能低于在消费国生产",
+      "music": 0.0
+    },
+    {
+      "from": 1154.09,
+      "to": 1157.33,
+      "sid": 547,
+      "location": 2,
+      "content": "于是一场波澜壮阔的全球产业大转移",
+      "music": 0.0
+    },
+    {
+      "from": 1157.33,
+      "to": 1159.909,
+      "sid": 548,
+      "location": 2,
+      "content": "顺着集装箱航线正式拉开了序幕",
+      "music": 0.0
+    },
+    {
+      "from": 1159.909,
+      "to": 1161.829,
+      "sid": 549,
+      "location": 2,
+      "content": "最先吃到这波红利的是",
+      "music": 0.0
+    },
+    {
+      "from": 1161.829,
+      "to": 1164.02,
+      "sid": 550,
+      "location": 2,
+      "content": "1960~1980年代的日本",
+      "music": 0.0
+    },
+    {
+      "from": 1164.02,
+      "to": 1165.28,
+      "sid": 551,
+      "location": 2,
+      "content": "紧接着是韩国",
+      "music": 0.0
+    },
+    {
+      "from": 1165.28,
+      "to": 1166.1,
+      "sid": 552,
+      "location": 2,
+      "content": "中国台湾",
+      "music": 0.0
+    },
+    {
+      "from": 1166.1,
+      "to": 1167.7,
+      "sid": 553,
+      "location": 2,
+      "content": "中国香港和新加坡",
+      "music": 0.0
+    },
+    {
+      "from": 1167.7,
+      "to": 1169.62,
+      "sid": 554,
+      "location": 2,
+      "content": "也就是著名的亚洲四小龙",
+      "music": 0.0
+    },
+    {
+      "from": 1169.62,
+      "to": 1171.0,
+      "sid": 555,
+      "location": 2,
+      "content": "日本的索尼电视",
+      "music": 0.0
+    },
+    {
+      "from": 1171.0,
+      "to": 1172.0,
+      "sid": 556,
+      "location": 2,
+      "content": "丰田汽车",
+      "music": 0.0
+    },
+    {
+      "from": 1172.0,
+      "to": 1173.34,
+      "sid": 557,
+      "location": 2,
+      "content": "韩国的三星电子",
+      "music": 0.0
+    },
+    {
+      "from": 1173.34,
+      "to": 1175.72,
+      "sid": 558,
+      "location": 2,
+      "content": "台湾的纺织品和代工电子产品",
+      "music": 0.0
+    },
+    {
+      "from": 1175.72,
+      "to": 1179.3,
+      "sid": 559,
+      "location": 2,
+      "content": "源源不断地装进20英尺和40英尺的铁箱子",
+      "music": 0.0
+    },
+    {
+      "from": 1179.3,
+      "to": 1182.4,
+      "sid": 560,
+      "location": 2,
+      "content": "顺着太平洋航线涌向欧美超市的货架",
+      "music": 0.0
+    },
+    {
+      "from": 1182.4,
+      "to": 1184.34,
+      "sid": 561,
+      "location": 2,
+      "content": "而到了1990年代末",
+      "music": 0.0
+    },
+    {
+      "from": 1184.34,
+      "to": 1185.96,
+      "sid": 562,
+      "location": 2,
+      "content": "尤其是2001年",
+      "music": 0.0
+    },
+    {
+      "from": 1185.96,
+      "to": 1188.67,
+      "sid": 563,
+      "location": 2,
+      "content": "中国正式加入世界贸易组织之后",
+      "music": 0.0
+    },
+    {
+      "from": 1188.67,
+      "to": 1191.55,
+      "sid": 564,
+      "location": 2,
+      "content": "这场由集装箱驱动的工业化浪潮",
+      "music": 0.0
+    },
+    {
+      "from": 1191.55,
+      "to": 1193.79,
+      "sid": 565,
+      "location": 2,
+      "content": "迎来了史上最壮观的高潮",
+      "music": 0.0
+    },
+    {
+      "from": 1193.79,
+      "to": 1196.21,
+      "sid": 566,
+      "location": 2,
+      "content": "中国拥有世界上规模最庞大",
+      "music": 0.0
+    },
+    {
+      "from": 1196.21,
+      "to": 1197.63,
+      "sid": 567,
+      "location": 2,
+      "content": "受教育程度最高",
+      "music": 0.0
+    },
+    {
+      "from": 1197.63,
+      "to": 1199.98,
+      "sid": 568,
+      "location": 2,
+      "content": "最具勤劳精神的产业工人队伍",
+      "music": 0.0
+    },
+    {
+      "from": 1203.67,
+      "to": 1205.63,
+      "sid": 569,
+      "location": 2,
+      "content": "必须先打通出海的血管",
+      "music": 0.0
+    },
+    {
+      "from": 1205.63,
+      "to": 1207.13,
+      "sid": 570,
+      "location": 2,
+      "content": "从1990年代开始",
+      "music": 0.0
+    },
+    {
+      "from": 1207.13,
+      "to": 1210.27,
+      "sid": 571,
+      "location": 2,
+      "content": "中国开启了人类历史上规模最大的现代化港口",
+      "music": 0.0
+    },
+    {
+      "from": 1210.27,
+      "to": 1211.24,
+      "sid": 572,
+      "location": 2,
+      "content": "基建狂潮",
+      "music": 0.0
+    },
+    {
+      "from": 1211.24,
+      "to": 1212.02,
+      "sid": 573,
+      "location": 2,
+      "content": "上海港",
+      "music": 0.0
+    },
+    {
+      "from": 1212.02,
+      "to": 1213.04,
+      "sid": 574,
+      "location": 2,
+      "content": "宁波舟山港",
+      "music": 0.0
+    },
+    {
+      "from": 1213.04,
+      "to": 1214.02,
+      "sid": 575,
+      "location": 2,
+      "content": "深圳盐田港",
+      "music": 0.0
+    },
+    {
+      "from": 1214.02,
+      "to": 1214.7,
+      "sid": 576,
+      "location": 2,
+      "content": "广州港",
+      "music": 0.0
+    },
+    {
+      "from": 1214.7,
+      "to": 1215.34,
+      "sid": 577,
+      "location": 2,
+      "content": "青岛港",
+      "music": 0.0
+    },
+    {
+      "from": 1215.34,
+      "to": 1216.15,
+      "sid": 578,
+      "location": 2,
+      "content": "天津港",
+      "music": 0.0
+    },
+    {
+      "from": 1216.15,
+      "to": 1218.33,
+      "sid": 579,
+      "location": 2,
+      "content": "一个个世界级的深水集装箱大港",
+      "music": 0.0
+    },
+    {
+      "from": 1218.33,
+      "to": 1220.33,
+      "sid": 580,
+      "location": 2,
+      "content": "在海岸线上拔地而起",
+      "music": 0.0
+    },
+    {
+      "from": 1220.33,
+      "to": 1221.09,
+      "sid": 581,
+      "location": 2,
+      "content": "到今天",
+      "music": 0.0
+    },
+    {
+      "from": 1221.09,
+      "to": 1223.84,
+      "sid": 582,
+      "location": 2,
+      "content": "全球集装箱吞吐量排名前十的港口中",
+      "music": 0.0
+    },
+    {
+      "from": 1223.84,
+      "to": 1226.56,
+      "sid": 583,
+      "location": 2,
+      "content": "内地长期稳稳占据着七个席位",
+      "music": 0.0
+    },
+    {
+      "from": 1226.56,
+      "to": 1227.8,
+      "sid": 584,
+      "location": 2,
+      "content": "如果算上香港",
+      "music": 0.0
+    },
+    {
+      "from": 1227.8,
+      "to": 1228.6,
+      "sid": 585,
+      "location": 2,
+      "content": "则是八个",
+      "music": 0.0
+    },
+    {
+      "from": 1228.6,
+      "to": 1230.84,
+      "sid": 586,
+      "location": 2,
+      "content": "全世界超过1/3的集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1230.84,
+      "to": 1233.25,
+      "sid": 587,
+      "location": 2,
+      "content": "都要在中国的港口里起起落落",
+      "music": 0.0
+    },
+    {
+      "from": 1233.25,
+      "to": 1234.17,
+      "sid": 588,
+      "location": 2,
+      "content": "在这里",
+      "music": 0.0
+    },
+    {
+      "from": 1234.17,
+      "to": 1238.43,
+      "sid": 589,
+      "location": 2,
+      "content": "集装箱展现出了他的第四个核心经济学机制",
+      "music": 0.0
+    },
+    {
+      "from": 1238.43,
+      "to": 1240.74,
+      "sid": 590,
+      "location": 2,
+      "content": "那就是网络外部性",
+      "music": 0.0
+    },
+    {
+      "from": 1240.74,
+      "to": 1242.44,
+      "sid": 591,
+      "location": 2,
+      "content": "什么叫网络外部性",
+      "music": 0.0
+    },
+    {
+      "from": 1242.44,
+      "to": 1243.28,
+      "sid": 592,
+      "location": 2,
+      "content": "举个例子",
+      "music": 0.0
+    },
+    {
+      "from": 1243.28,
+      "to": 1245.72,
+      "sid": 593,
+      "location": 2,
+      "content": "最典型的就是电话或者微信",
+      "music": 0.0
+    },
+    {
+      "from": 1245.72,
+      "to": 1247.88,
+      "sid": 594,
+      "location": 2,
+      "content": "如果全世界只有你一个人有微信",
+      "music": 0.0
+    },
+    {
+      "from": 1247.88,
+      "to": 1249.35,
+      "sid": 595,
+      "location": 2,
+      "content": "那微信一文不值",
+      "music": 0.0
+    },
+    {
+      "from": 1249.35,
+      "to": 1250.79,
+      "sid": 596,
+      "location": 2,
+      "content": "但用微信的人越多",
+      "music": 0.0
+    },
+    {
+      "from": 1250.79,
+      "to": 1253.35,
+      "sid": 597,
+      "location": 2,
+      "content": "这个网络的价值就呈指数级暴涨",
+      "music": 0.0
+    },
+    {
+      "from": 1253.35,
+      "to": 1254.69,
+      "sid": 598,
+      "location": 2,
+      "content": "你就越离不开它",
+      "music": 0.0
+    },
+    {
+      "from": 1254.69,
+      "to": 1257.33,
+      "sid": 599,
+      "location": 2,
+      "content": "集装箱航运网络和微信一模一样",
+      "music": 0.0
+    },
+    {
+      "from": 1257.33,
+      "to": 1259.29,
+      "sid": 600,
+      "location": 2,
+      "content": "拥有极强的网络外部性",
+      "music": 0.0
+    },
+    {
+      "from": 1259.29,
+      "to": 1261.63,
+      "sid": 601,
+      "location": 2,
+      "content": "一个港口的集装箱吞吐量越大",
+      "music": 0.0
+    },
+    {
+      "from": 1261.63,
+      "to": 1264.15,
+      "sid": 602,
+      "location": 2,
+      "content": "来这里停靠的班轮航线就越密集",
+      "music": 0.0
+    },
+    {
+      "from": 1264.15,
+      "to": 1266.17,
+      "sid": 603,
+      "location": 2,
+      "content": "比如从深圳盐田港出发",
+      "music": 0.0
+    },
+    {
+      "from": 1266.17,
+      "to": 1269.13,
+      "sid": 604,
+      "location": 2,
+      "content": "几乎每天都有支大欧美主要港口的快船",
+      "music": 0.0
+    },
+    {
+      "from": 1269.13,
+      "to": 1270.389,
+      "sid": 605,
+      "location": 2,
+      "content": "不用绕道中转",
+      "music": 0.0
+    },
+    {
+      "from": 1270.389,
+      "to": 1271.429,
+      "sid": 606,
+      "location": 2,
+      "content": "航线越密集",
+      "music": 0.0
+    },
+    {
+      "from": 1271.429,
+      "to": 1273.189,
+      "sid": 607,
+      "location": 2,
+      "content": "船公司的竞争就越充分",
+      "music": 0.0
+    },
+    {
+      "from": 1273.189,
+      "to": 1275.089,
+      "sid": 608,
+      "location": 2,
+      "content": "单个集装箱的运费就越低",
+      "music": 0.0
+    },
+    {
+      "from": 1275.089,
+      "to": 1276.46,
+      "sid": 609,
+      "location": 2,
+      "content": "运达时间就越快",
+      "music": 0.0
+    },
+    {
+      "from": 1276.46,
+      "to": 1277.44,
+      "sid": 610,
+      "location": 2,
+      "content": "而运费越低",
+      "music": 0.0
+    },
+    {
+      "from": 1277.44,
+      "to": 1278.2,
+      "sid": 611,
+      "location": 2,
+      "content": "效率越高",
+      "music": 0.0
+    },
+    {
+      "from": 1278.2,
+      "to": 1279.7,
+      "sid": 612,
+      "location": 2,
+      "content": "就会吸引更多的工厂",
+      "music": 0.0
+    },
+    {
+      "from": 1279.7,
+      "to": 1281.46,
+      "sid": 613,
+      "location": 2,
+      "content": "把厂房建在港口周边",
+      "music": 0.0
+    },
+    {
+      "from": 1281.46,
+      "to": 1284.37,
+      "sid": 614,
+      "location": 2,
+      "content": "比如长三角和珠三角的产业集群",
+      "music": 0.0
+    },
+    {
+      "from": 1284.37,
+      "to": 1287.63,
+      "sid": 615,
+      "location": 2,
+      "content": "这形成了一个恐怖的正向循环和马太效应",
+      "music": 0.0
+    },
+    {
+      "from": 1287.63,
+      "to": 1290.55,
+      "sid": 616,
+      "location": 2,
+      "content": "因为一旦你的工厂离开了东亚沿海",
+      "music": 0.0
+    },
+    {
+      "from": 1290.55,
+      "to": 1292.92,
+      "sid": 617,
+      "location": 2,
+      "content": "这张高密度的集装箱物流网络",
+      "music": 0.0
+    },
+    {
+      "from": 1292.92,
+      "to": 1296.02,
+      "sid": 618,
+      "location": 2,
+      "content": "哪怕你那个地方的人工工资只有中国的一半",
+      "music": 0.0
+    },
+    {
+      "from": 1296.02,
+      "to": 1298.98,
+      "sid": 619,
+      "location": 2,
+      "content": "你也会痛苦的发现你的原材料运不进来",
+      "music": 0.0
+    },
+    {
+      "from": 1298.98,
+      "to": 1300.52,
+      "sid": 620,
+      "location": 2,
+      "content": "你的成品造出来之后",
+      "music": 0.0
+    },
+    {
+      "from": 1300.52,
+      "to": 1303.29,
+      "sid": 621,
+      "location": 2,
+      "content": "要在码头上等两个星期才有一班船",
+      "music": 0.0
+    },
+    {
+      "from": 1303.29,
+      "to": 1306.09,
+      "sid": 622,
+      "location": 2,
+      "content": "而且还要去新加坡或釜山中转",
+      "music": 0.0
+    },
+    {
+      "from": 1306.09,
+      "to": 1307.99,
+      "sid": 623,
+      "location": 2,
+      "content": "单箱运费直接翻倍",
+      "music": 0.0
+    },
+    {
+      "from": 1307.99,
+      "to": 1310.21,
+      "sid": 624,
+      "location": 2,
+      "content": "交货期完全没法保证",
+      "music": 0.0
+    },
+    {
+      "from": 1310.21,
+      "to": 1311.65,
+      "sid": 625,
+      "location": 2,
+      "content": "没有集装箱网络",
+      "music": 0.0
+    },
+    {
+      "from": 1313.76,
+      "to": 1316.28,
+      "sid": 626,
+      "location": 2,
+      "content": "那些整齐码放在货轮上的铁箱子",
+      "music": 0.0
+    },
+    {
+      "from": 1316.28,
+      "to": 1318.08,
+      "sid": 627,
+      "location": 2,
+      "content": "就像一条条钢铁大动脉",
+      "music": 0.0
+    },
+    {
+      "from": 1318.08,
+      "to": 1320.37,
+      "sid": 628,
+      "location": 2,
+      "content": "把东亚工厂里的每一颗螺丝钉",
+      "music": 0.0
+    },
+    {
+      "from": 1320.37,
+      "to": 1323.9,
+      "sid": 629,
+      "location": 2,
+      "content": "精准地输送到了全球几10亿消费者的客厅里",
+      "music": 0.0
+    },
+    {
+      "from": 1323.9,
+      "to": 1328.38,
+      "sid": 630,
+      "location": 2,
+      "content": "当集装箱把全球海运变成像地铁一样准时廉价",
+      "music": 0.0
+    },
+    {
+      "from": 1328.38,
+      "to": 1330.05,
+      "sid": 631,
+      "location": 2,
+      "content": "高频的公共交通之后",
+      "music": 0.0
+    },
+    {
+      "from": 1330.05,
+      "to": 1333.85,
+      "sid": 632,
+      "location": 2,
+      "content": "全世界的制造业巨头们又开始动起了新的脑筋",
+      "music": 0.0
+    },
+    {
+      "from": 1333.85,
+      "to": 1335.82,
+      "sid": 633,
+      "location": 2,
+      "content": "在20世纪80年代以前",
+      "music": 0.0
+    },
+    {
+      "from": 1335.82,
+      "to": 1338.72,
+      "sid": 634,
+      "location": 2,
+      "content": "跨国大企业最头疼的问题之一是库存",
+      "music": 0.0
+    },
+    {
+      "from": 1338.72,
+      "to": 1341.3,
+      "sid": 635,
+      "location": 2,
+      "content": "比如美国的通用汽车或者沃尔玛",
+      "music": 0.0
+    },
+    {
+      "from": 1341.3,
+      "to": 1344.35,
+      "sid": 636,
+      "location": 2,
+      "content": "为了防止零部件断供或者货架缺货",
+      "music": 0.0
+    },
+    {
+      "from": 1344.35,
+      "to": 1347.29,
+      "sid": 637,
+      "location": 2,
+      "content": "不得不在美国本土修建巨大的仓库",
+      "music": 0.0
+    },
+    {
+      "from": 1347.29,
+      "to": 1349.89,
+      "sid": 638,
+      "location": 2,
+      "content": "囤积够用好几个月的零件和商品",
+      "music": 0.0
+    },
+    {
+      "from": 1349.89,
+      "to": 1351.47,
+      "sid": 639,
+      "location": 2,
+      "content": "但囤货意味着什么",
+      "music": 0.0
+    },
+    {
+      "from": 1351.47,
+      "to": 1354.43,
+      "sid": 640,
+      "location": 2,
+      "content": "意味着海量资金被死死压在仓库里",
+      "music": 0.0
+    },
+    {
+      "from": 1354.43,
+      "to": 1356.44,
+      "sid": 641,
+      "location": 2,
+      "content": "意味着高昂的仓库租金",
+      "music": 0.0
+    },
+    {
+      "from": 1356.44,
+      "to": 1357.16,
+      "sid": 642,
+      "location": 2,
+      "content": "还意味着",
+      "music": 0.0
+    },
+    {
+      "from": 1357.16,
+      "to": 1358.8,
+      "sid": 643,
+      "location": 2,
+      "content": "一旦市场风向变了",
+      "music": 0.0
+    },
+    {
+      "from": 1358.8,
+      "to": 1362.3,
+      "sid": 644,
+      "location": 2,
+      "content": "囤在仓库里的货就会变成卖不出去的废品",
+      "music": 0.0
+    },
+    {
+      "from": 1362.3,
+      "to": 1365.09,
+      "sid": 645,
+      "location": 2,
+      "content": "随着集装箱传奇表变得越来越精确",
+      "music": 0.0
+    },
+    {
+      "from": 1365.09,
+      "to": 1367.11,
+      "sid": 646,
+      "location": 2,
+      "content": "企业主们突然悟出了一个道理",
+      "music": 0.0
+    },
+    {
+      "from": 1367.11,
+      "to": 1369.47,
+      "sid": 647,
+      "location": 2,
+      "content": "既然海上每天都有按时出发",
+      "music": 0.0
+    },
+    {
+      "from": 1369.47,
+      "to": 1371.45,
+      "sid": 648,
+      "location": 2,
+      "content": "按时到达的集装箱巨轮",
+      "music": 0.0
+    },
+    {
+      "from": 1371.45,
+      "to": 1373.55,
+      "sid": 649,
+      "location": 2,
+      "content": "我为什么还要花钱建仓库",
+      "music": 0.0
+    },
+    {
+      "from": 1373.55,
+      "to": 1376.97,
+      "sid": 650,
+      "location": 2,
+      "content": "我直接把海上的集装箱当成我的移动仓库",
+      "music": 0.0
+    },
+    {
+      "from": 1376.97,
+      "to": 1377.99,
+      "sid": 651,
+      "location": 2,
+      "content": "不就行了吗",
+      "music": 0.0
+    },
+    {
+      "from": 1377.99,
+      "to": 1379.83,
+      "sid": 652,
+      "location": 2,
+      "content": "这就是大名鼎鼎的丰田",
+      "music": 0.0
+    },
+    {
+      "from": 1379.83,
+      "to": 1381.79,
+      "sid": 653,
+      "location": 2,
+      "content": "精益生产的全球化升级版",
+      "music": 0.0
+    },
+    {
+      "from": 1381.79,
+      "to": 1382.95,
+      "sid": 654,
+      "location": 2,
+      "content": "在这套逻辑下",
+      "music": 0.0
+    },
+    {
+      "from": 1382.95,
+      "to": 1385.55,
+      "sid": 655,
+      "location": 2,
+      "content": "现代制造业的供应链被推向了极致",
+      "music": 0.0
+    },
+    {
+      "from": 1385.55,
+      "to": 1387.5,
+      "sid": 656,
+      "location": 2,
+      "content": "一家位于德国的汽车工厂",
+      "music": 0.0
+    },
+    {
+      "from": 1387.5,
+      "to": 1389.82,
+      "sid": 657,
+      "location": 2,
+      "content": "它的仪表盘芯片可能来自中国",
+      "music": 0.0
+    },
+    {
+      "from": 1389.82,
+      "to": 1391.06,
+      "sid": 658,
+      "location": 2,
+      "content": "台湾橡胶轮胎",
+      "music": 0.0
+    },
+    {
+      "from": 1391.06,
+      "to": 1391.88,
+      "sid": 659,
+      "location": 2,
+      "content": "来自泰国",
+      "music": 0.0
+    },
+    {
+      "from": 1391.88,
+      "to": 1392.64,
+      "sid": 660,
+      "location": 2,
+      "content": "座椅皮革",
+      "music": 0.0
+    },
+    {
+      "from": 1392.64,
+      "to": 1394.04,
+      "sid": 661,
+      "location": 2,
+      "content": "来自巴西线束",
+      "music": 0.0
+    },
+    {
+      "from": 1394.04,
+      "to": 1395.3,
+      "sid": 662,
+      "location": 2,
+      "content": "来自中国江苏",
+      "music": 0.0
+    },
+    {
+      "from": 1395.3,
+      "to": 1398.18,
+      "sid": 663,
+      "location": 2,
+      "content": "这些零件在各自的国家装进集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1398.18,
+      "to": 1399.2,
+      "sid": 664,
+      "location": 2,
+      "content": "算好船期",
+      "music": 0.0
+    },
+    {
+      "from": 1399.2,
+      "to": 1401.05,
+      "sid": 665,
+      "location": 2,
+      "content": "分秒不差地漂洋过海",
+      "music": 0.0
+    },
+    {
+      "from": 1401.05,
+      "to": 1404.81,
+      "sid": 666,
+      "location": 2,
+      "content": "在汽车总装线需要他们的前几个小时准时送到",
+      "music": 0.0
+    },
+    {
+      "from": 1404.81,
+      "to": 1407.54,
+      "sid": 667,
+      "location": 2,
+      "content": "德国工厂的流水线旁拆箱集装",
+      "music": 0.0
+    },
+    {
+      "from": 1407.54,
+      "to": 1410.36,
+      "sid": 668,
+      "location": 2,
+      "content": "整个供应链上几乎实现了零库存",
+      "music": 0.0
+    },
+    {
+      "from": 1410.36,
+      "to": 1413.82,
+      "sid": 669,
+      "location": 2,
+      "content": "资金周转率被榨取到了人类商业史的巅峰",
+      "music": 0.0
+    },
+    {
+      "from": 1413.82,
+      "to": 1415.38,
+      "sid": 670,
+      "location": 2,
+      "content": "根据经济学家统计",
+      "music": 0.0
+    },
+    {
+      "from": 1415.38,
+      "to": 1416.46,
+      "sid": 671,
+      "location": 2,
+      "content": "在20世纪末",
+      "music": 0.0
+    },
+    {
+      "from": 1416.46,
+      "to": 1419.1,
+      "sid": 672,
+      "location": 2,
+      "content": "到21世纪初的超级全球化时期",
+      "music": 0.0
+    },
+    {
+      "from": 1419.1,
+      "to": 1420.52,
+      "sid": 673,
+      "location": 2,
+      "content": "一件普通工业品",
+      "music": 0.0
+    },
+    {
+      "from": 1420.52,
+      "to": 1423.84,
+      "sid": 674,
+      "location": 2,
+      "content": "比如一部智能手机或一辆汽车的零部件",
+      "music": 0.0
+    },
+    {
+      "from": 1423.84,
+      "to": 1426.11,
+      "sid": 675,
+      "location": 2,
+      "content": "在最终送到消费者手里之前",
+      "music": 0.0
+    },
+    {
+      "from": 1426.11,
+      "to": 1429.75,
+      "sid": 676,
+      "location": 2,
+      "content": "平均要在不同国家的港口之间装在集装箱里",
+      "music": 0.0
+    },
+    {
+      "from": 1429.75,
+      "to": 1432.56,
+      "sid": 677,
+      "location": 2,
+      "content": "往返穿梭3~4次集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1432.56,
+      "to": 1435.48,
+      "sid": 678,
+      "location": 2,
+      "content": "彻底重构了全球的产业链分工",
+      "music": 0.0
+    },
+    {
+      "from": 1435.48,
+      "to": 1438.18,
+      "sid": 679,
+      "location": 2,
+      "content": "然而经济学里有一个永恒的铁律",
+      "music": 0.0
+    },
+    {
+      "from": 1438.18,
+      "to": 1439.06,
+      "sid": 680,
+      "location": 2,
+      "content": "任何系统",
+      "music": 0.0
+    },
+    {
+      "from": 1439.06,
+      "to": 1441.34,
+      "sid": 681,
+      "location": 2,
+      "content": "当你把它的效率推向极致的时候",
+      "music": 0.0
+    },
+    {
+      "from": 1441.34,
+      "to": 1443.9,
+      "sid": 682,
+      "location": 2,
+      "content": "它的韧性往往就会变得极其脆弱",
+      "music": 0.0
+    },
+    {
+      "from": 1443.9,
+      "to": 1445.94,
+      "sid": 683,
+      "location": 2,
+      "content": "就像一根绷得太紧的琴弦",
+      "music": 0.0
+    },
+    {
+      "from": 1445.94,
+      "to": 1447.9,
+      "sid": 684,
+      "location": 2,
+      "content": "平时能弹出最美妙的音乐",
+      "music": 0.0
+    },
+    {
+      "from": 1447.9,
+      "to": 1450.04,
+      "sid": 685,
+      "location": 2,
+      "content": "但只要稍微受到一点外力撞击",
+      "music": 0.0
+    },
+    {
+      "from": 1450.04,
+      "to": 1451.58,
+      "sid": 686,
+      "location": 2,
+      "content": "就会啪的一声断裂",
+      "music": 0.0
+    },
+    {
+      "from": 1451.58,
+      "to": 1454.86,
+      "sid": 687,
+      "location": 2,
+      "content": "过去几年接连发生的几场黑天鹅事件",
+      "music": 0.0
+    },
+    {
+      "from": 1454.86,
+      "to": 1456.62,
+      "sid": 688,
+      "location": 2,
+      "content": "让全世界亲眼目睹了",
+      "music": 0.0
+    },
+    {
+      "from": 1456.62,
+      "to": 1459.29,
+      "sid": 689,
+      "location": 2,
+      "content": "这套集装箱驱动的精密供应链",
+      "music": 0.0
+    },
+    {
+      "from": 1459.29,
+      "to": 1461.51,
+      "sid": 690,
+      "location": 2,
+      "content": "一旦卡壳会是多么可怕",
+      "music": 0.0
+    },
+    {
+      "from": 1461.51,
+      "to": 1462.85,
+      "sid": 691,
+      "location": 2,
+      "content": "最戏剧性的一幕",
+      "music": 0.0
+    },
+    {
+      "from": 1462.85,
+      "to": 1465.139,
+      "sid": 692,
+      "location": 2,
+      "content": "发生在2021年3月23日",
+      "music": 0.0
+    },
+    {
+      "from": 1465.139,
+      "to": 1465.859,
+      "sid": 693,
+      "location": 2,
+      "content": "那一天",
+      "music": 0.0
+    },
+    {
+      "from": 1465.859,
+      "to": 1468.419,
+      "sid": 694,
+      "location": 2,
+      "content": "一艘名叫长赐号的超大型集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1468.419,
+      "to": 1469.779,
+      "sid": 695,
+      "location": 2,
+      "content": "船长400米",
+      "music": 0.0
+    },
+    {
+      "from": 1469.779,
+      "to": 1471.61,
+      "sid": 696,
+      "location": 2,
+      "content": "载着将近2万个集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1471.61,
+      "to": 1474.03,
+      "sid": 697,
+      "location": 2,
+      "content": "在穿过埃及苏伊士运河时",
+      "music": 0.0
+    },
+    {
+      "from": 1474.03,
+      "to": 1476.05,
+      "sid": 698,
+      "location": 2,
+      "content": "突然遭遇强风和沙尘暴",
+      "music": 0.0
+    },
+    {
+      "from": 1476.05,
+      "to": 1477.09,
+      "sid": 699,
+      "location": 2,
+      "content": "船身一歪",
+      "music": 0.0
+    },
+    {
+      "from": 1477.09,
+      "to": 1478.93,
+      "sid": 700,
+      "location": 2,
+      "content": "像一根巨大的蝎子一样",
+      "music": 0.0
+    },
+    {
+      "from": 1478.93,
+      "to": 1481.92,
+      "sid": 701,
+      "location": 2,
+      "content": "死死地横着卡在了运河河道里",
+      "music": 0.0
+    },
+    {
+      "from": 1481.92,
+      "to": 1485.5,
+      "sid": 702,
+      "location": 2,
+      "content": "苏伊士运河是连接亚洲和欧洲的咽喉要道",
+      "music": 0.0
+    },
+    {
+      "from": 1485.5,
+      "to": 1488.92,
+      "sid": 703,
+      "location": 2,
+      "content": "全球大约12%的贸易都要从这里经过",
+      "music": 0.0
+    },
+    {
+      "from": 1488.92,
+      "to": 1489.72,
+      "sid": 704,
+      "location": 2,
+      "content": "这一艘船",
+      "music": 0.0
+    },
+    {
+      "from": 1489.72,
+      "to": 1492.42,
+      "sid": 705,
+      "location": 2,
+      "content": "一卡后面几百艘满载着集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1492.42,
+      "to": 1495.22,
+      "sid": 706,
+      "location": 2,
+      "content": "原油粮食的巨轮瞬间动弹不得",
+      "music": 0.0
+    },
+    {
+      "from": 1495.22,
+      "to": 1498.6,
+      "sid": 707,
+      "location": 2,
+      "content": "在红海和地中海上排起了几10km的长队",
+      "music": 0.0
+    },
+    {
+      "from": 1498.6,
+      "to": 1499.8,
+      "sid": 708,
+      "location": 2,
+      "content": "那六天时间里",
+      "music": 0.0
+    },
+    {
+      "from": 1499.8,
+      "to": 1500.36,
+      "sid": 709,
+      "location": 2,
+      "content": "全世界",
+      "music": 0.0
+    },
+    {
+      "from": 1500.36,
+      "to": 1503.72,
+      "sid": 710,
+      "location": 2,
+      "content": "每小时就有价值4亿美元的货物被卡在路上",
+      "music": 0.0
+    },
+    {
+      "from": 1503.72,
+      "to": 1507.08,
+      "sid": 711,
+      "location": 2,
+      "content": "每天冻结的全球贸易额高达96亿美元",
+      "music": 0.0
+    },
+    {
+      "from": 1507.08,
+      "to": 1509.38,
+      "sid": 712,
+      "location": 2,
+      "content": "欧洲的宜家家具买不到家具了",
+      "music": 0.0
+    },
+    {
+      "from": 1509.38,
+      "to": 1511.29,
+      "sid": 713,
+      "location": 2,
+      "content": "英国的超市货架开始空了",
+      "music": 0.0
+    },
+    {
+      "from": 1511.29,
+      "to": 1513.81,
+      "sid": 714,
+      "location": 2,
+      "content": "甚至连制造卫生纸的木浆都断供了",
+      "music": 0.0
+    },
+    {
+      "from": 1513.81,
+      "to": 1516.28,
+      "sid": 715,
+      "location": 2,
+      "content": "全世界第一次如此直观地意识到",
+      "music": 0.0
+    },
+    {
+      "from": 1516.28,
+      "to": 1518.76,
+      "sid": 716,
+      "location": 2,
+      "content": "原来我们的现代生活竟然脆弱到",
+      "music": 0.0
+    },
+    {
+      "from": 1518.76,
+      "to": 1521.88,
+      "sid": 717,
+      "location": 2,
+      "content": "可以被一艘卡在泥巴里的集装箱船给按下",
+      "music": 0.0
+    },
+    {
+      "from": 1521.88,
+      "to": 1522.739,
+      "sid": 718,
+      "location": 2,
+      "content": "暂停键",
+      "music": 0.0
+    },
+    {
+      "from": 1522.739,
+      "to": 1525.139,
+      "sid": 719,
+      "location": 2,
+      "content": "如果说苏伊士运河搁浅",
+      "music": 0.0
+    },
+    {
+      "from": 1525.139,
+      "to": 1527.35,
+      "sid": 720,
+      "location": 2,
+      "content": "还只是一次局部的血管血栓",
+      "music": 0.0
+    },
+    {
+      "from": 1527.35,
+      "to": 1529.57,
+      "sid": 721,
+      "location": 2,
+      "content": "那么2020~2022年",
+      "music": 0.0
+    },
+    {
+      "from": 1529.57,
+      "to": 1532.0,
+      "sid": 722,
+      "location": 2,
+      "content": "全球疫情期间的供应链大混乱",
+      "music": 0.0
+    },
+    {
+      "from": 1532.0,
+      "to": 1534.92,
+      "sid": 723,
+      "location": 2,
+      "content": "则是一场席卷全球的系统性休克",
+      "music": 0.0
+    },
+    {
+      "from": 1534.92,
+      "to": 1537.53,
+      "sid": 724,
+      "location": 2,
+      "content": "当时由于欧美港口工人短缺",
+      "music": 0.0
+    },
+    {
+      "from": 1537.53,
+      "to": 1539.29,
+      "sid": 725,
+      "location": 2,
+      "content": "卡车司机不足无数",
+      "music": 0.0
+    },
+    {
+      "from": 1539.29,
+      "to": 1540.89,
+      "sid": 726,
+      "location": 2,
+      "content": "满载着中国商品的集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1540.89,
+      "to": 1542.79,
+      "sid": 727,
+      "location": 2,
+      "content": "船到了洛杉矶和长滩港",
+      "music": 0.0
+    },
+    {
+      "from": 1542.79,
+      "to": 1543.86,
+      "sid": 728,
+      "location": 2,
+      "content": "却卸不下来",
+      "music": 0.0
+    },
+    {
+      "from": 1543.86,
+      "to": 1547.14,
+      "sid": 729,
+      "location": 2,
+      "content": "上百艘巨轮在加州海岸外排起长队",
+      "music": 0.0
+    },
+    {
+      "from": 1547.14,
+      "to": 1549.94,
+      "sid": 730,
+      "location": 2,
+      "content": "一等就是几个星期卸不下来",
+      "music": 0.0
+    },
+    {
+      "from": 1549.94,
+      "to": 1553.62,
+      "sid": 731,
+      "location": 2,
+      "content": "就意味着这些集装箱没法变成空箱子运回亚洲",
+      "music": 0.0
+    },
+    {
+      "from": 1553.62,
+      "to": 1556.78,
+      "sid": 732,
+      "location": 2,
+      "content": "结果全世界的集装箱出现了荒诞的空间",
+      "music": 0.0
+    },
+    {
+      "from": 1556.78,
+      "to": 1559.37,
+      "sid": 733,
+      "location": 2,
+      "content": "错配欧美港口空箱堆积如山",
+      "music": 0.0
+    },
+    {
+      "from": 1559.37,
+      "to": 1560.75,
+      "sid": 734,
+      "location": 2,
+      "content": "占满了每一寸土地",
+      "music": 0.0
+    },
+    {
+      "from": 1560.75,
+      "to": 1564.19,
+      "sid": 735,
+      "location": 2,
+      "content": "而中国沿海的工厂里几百万吨造好的商品",
+      "music": 0.0
+    },
+    {
+      "from": 1564.19,
+      "to": 1566.09,
+      "sid": 736,
+      "location": 2,
+      "content": "却因为找不到一个空箱子",
+      "music": 0.0
+    },
+    {
+      "from": 1566.09,
+      "to": 1568.159,
+      "sid": 737,
+      "location": 2,
+      "content": "只能干瞪眼发不出货",
+      "music": 0.0
+    },
+    {
+      "from": 1571.739,
+      "to": 1575.08,
+      "sid": 738,
+      "location": 2,
+      "content": "原本从中国运一个40英尺集装箱到美西",
+      "music": 0.0
+    },
+    {
+      "from": 1575.08,
+      "to": 1577.78,
+      "sid": 739,
+      "location": 2,
+      "content": "运费只要1500到2000美元",
+      "music": 0.0
+    },
+    {
+      "from": 1577.78,
+      "to": 1579.42,
+      "sid": 740,
+      "location": 2,
+      "content": "在异乡难求的最高峰",
+      "music": 0.0
+    },
+    {
+      "from": 1579.42,
+      "to": 1581.82,
+      "sid": 741,
+      "location": 2,
+      "content": "运费直接飙升到了2万美元以上",
+      "music": 0.0
+    },
+    {
+      "from": 1581.82,
+      "to": 1583.2,
+      "sid": 742,
+      "location": 2,
+      "content": "足足暴涨了十倍",
+      "music": 0.0
+    },
+    {
+      "from": 1583.2,
+      "to": 1584.74,
+      "sid": 743,
+      "location": 2,
+      "content": "即便你愿意出天价",
+      "music": 0.0
+    },
+    {
+      "from": 1584.74,
+      "to": 1586.38,
+      "sid": 744,
+      "location": 2,
+      "content": "也未必抢得到仓位",
+      "music": 0.0
+    },
+    {
+      "from": 1586.38,
+      "to": 1589.1,
+      "sid": 745,
+      "location": 2,
+      "content": "运费的暴涨迅速传导到了全球",
+      "music": 0.0
+    },
+    {
+      "from": 1589.1,
+      "to": 1589.83,
+      "sid": 746,
+      "location": 2,
+      "content": "消费端",
+      "music": 0.0
+    },
+    {
+      "from": 1589.83,
+      "to": 1593.739,
+      "sid": 747,
+      "location": 2,
+      "content": "直接引爆了欧美几十年未见的恶性通货膨胀",
+      "music": 0.0
+    },
+    {
+      "from": 1593.739,
+      "to": 1595.239,
+      "sid": 748,
+      "location": 2,
+      "content": "经历过这些冲击之后",
+      "music": 0.0
+    },
+    {
+      "from": 1595.239,
+      "to": 1595.919,
+      "sid": 749,
+      "location": 2,
+      "content": "这两年",
+      "music": 0.0
+    },
+    {
+      "from": 1595.919,
+      "to": 1599.179,
+      "sid": 750,
+      "location": 2,
+      "content": "全球商业界正在经历一场深刻的反思与重构",
+      "music": 0.0
+    },
+    {
+      "from": 1599.179,
+      "to": 1602.84,
+      "sid": 751,
+      "location": 2,
+      "content": "过去几十年跨国企业的唯一信条是谁便宜谁快",
+      "music": 0.0
+    },
+    {
+      "from": 1602.84,
+      "to": 1604.04,
+      "sid": 752,
+      "location": 2,
+      "content": "我就把厂建在那",
+      "music": 0.0
+    },
+    {
+      "from": 1604.04,
+      "to": 1605.86,
+      "sid": 753,
+      "location": 2,
+      "content": "而现在地缘政治摩擦",
+      "music": 0.0
+    },
+    {
+      "from": 1605.86,
+      "to": 1608.24,
+      "sid": 754,
+      "location": 2,
+      "content": "极端天气突发公共卫生事件",
+      "music": 0.0
+    },
+    {
+      "from": 1608.24,
+      "to": 1609.74,
+      "sid": 755,
+      "location": 2,
+      "content": "迫使各国和企业",
+      "music": 0.0
+    },
+    {
+      "from": 1609.74,
+      "to": 1612.32,
+      "sid": 756,
+      "location": 2,
+      "content": "不得不在极致效率和供应链安全之间",
+      "music": 0.0
+    },
+    {
+      "from": 1612.32,
+      "to": 1613.72,
+      "sid": 757,
+      "location": 2,
+      "content": "重新寻找平衡",
+      "music": 0.0
+    },
+    {
+      "from": 1613.72,
+      "to": 1615.86,
+      "sid": 758,
+      "location": 2,
+      "content": "很多人开始谈论近按外包",
+      "music": 0.0
+    },
+    {
+      "from": 1615.86,
+      "to": 1616.87,
+      "sid": 759,
+      "location": 2,
+      "content": "有案外包",
+      "music": 0.0
+    },
+    {
+      "from": 1616.87,
+      "to": 1620.47,
+      "sid": 760,
+      "location": 2,
+      "content": "试图把一部分生产线搬到离消费市场更近的",
+      "music": 0.0
+    },
+    {
+      "from": 1620.47,
+      "to": 1621.19,
+      "sid": 761,
+      "location": 2,
+      "content": "墨西哥",
+      "music": 0.0
+    },
+    {
+      "from": 1621.19,
+      "to": 1623.08,
+      "sid": 762,
+      "location": 2,
+      "content": "东欧或者东南亚",
+      "music": 0.0
+    },
+    {
+      "from": 1623.08,
+      "to": 1624.18,
+      "sid": 763,
+      "location": 2,
+      "content": "但有趣的是",
+      "music": 0.0
+    },
+    {
+      "from": 1624.18,
+      "to": 1626.02,
+      "sid": 764,
+      "location": 2,
+      "content": "无论全球产业链怎么重组",
+      "music": 0.0
+    },
+    {
+      "from": 1626.02,
+      "to": 1627.64,
+      "sid": 765,
+      "location": 2,
+      "content": "无论工厂是建在广东",
+      "music": 0.0
+    },
+    {
+      "from": 1627.64,
+      "to": 1629.02,
+      "sid": 766,
+      "location": 2,
+      "content": "越南还是墨西哥",
+      "music": 0.0
+    },
+    {
+      "from": 1629.02,
+      "to": 1631.139,
+      "sid": 767,
+      "location": 2,
+      "content": "有一点是永远不会改变的",
+      "music": 0.0
+    },
+    {
+      "from": 1631.139,
+      "to": 1633.819,
+      "sid": 768,
+      "location": 2,
+      "content": "只要货物还需要跨越大洋和大陆",
+      "music": 0.0
+    },
+    {
+      "from": 1633.819,
+      "to": 1636.699,
+      "sid": 769,
+      "location": 2,
+      "content": "他们就依然必须老老实实地装进那个长",
+      "music": 0.0
+    },
+    {
+      "from": 1636.699,
+      "to": 1638.339,
+      "sid": 770,
+      "location": 2,
+      "content": "20英尺或40英尺",
+      "music": 0.0
+    },
+    {
+      "from": 1638.339,
+      "to": 1640.389,
+      "sid": 771,
+      "location": 2,
+      "content": "宽八英尺的铁皮箱子里",
+      "music": 0.0
+    },
+    {
+      "from": 1640.389,
+      "to": 1643.469,
+      "sid": 772,
+      "location": 2,
+      "content": "只要人类还需要全球贸易集装箱",
+      "music": 0.0
+    },
+    {
+      "from": 1643.469,
+      "to": 1647.02,
+      "sid": 773,
+      "location": 2,
+      "content": "就依然是这个星球上最不可替代的物理底座",
+      "music": 0.0
+    },
+    {
+      "from": 1647.02,
+      "to": 1648.26,
+      "sid": 774,
+      "location": 2,
+      "content": "2001年",
+      "music": 0.0
+    },
+    {
+      "from": 1648.26,
+      "to": 1650.82,
+      "sid": 775,
+      "location": 2,
+      "content": "马尔科姆麦克莱恩在纽约去世",
+      "music": 0.0
+    },
+    {
+      "from": 1650.82,
+      "to": 1652.22,
+      "sid": 776,
+      "location": 2,
+      "content": "享年87岁",
+      "music": 0.0
+    },
+    {
+      "from": 1652.22,
+      "to": 1653.4,
+      "sid": 777,
+      "location": 2,
+      "content": "他葬礼当天",
+      "music": 0.0
+    },
+    {
+      "from": 1653.4,
+      "to": 1655.38,
+      "sid": 778,
+      "location": 2,
+      "content": "世界多地的集装箱船鸣笛",
+      "music": 0.0
+    },
+    {
+      "from": 1655.38,
+      "to": 1656.3,
+      "sid": 779,
+      "location": 2,
+      "content": "致以纪念",
+      "music": 0.0
+    },
+    {
+      "from": 1656.3,
+      "to": 1659.33,
+      "sid": 780,
+      "location": 2,
+      "content": "这位从卡车运输转入航运的创业者",
+      "music": 0.0
+    },
+    {
+      "from": 1659.33,
+      "to": 1663.03,
+      "sid": 781,
+      "location": 2,
+      "content": "他最初想省下的不过是码头上把一车货搬下来",
+      "music": 0.0
+    },
+    {
+      "from": 1663.03,
+      "to": 1664.65,
+      "sid": 782,
+      "location": 2,
+      "content": "再搬上船的那番折腾",
+      "music": 0.0
+    },
+    {
+      "from": 1664.65,
+      "to": 1667.98,
+      "sid": 783,
+      "location": 2,
+      "content": "后来全球围绕同样的箱子改造了卡车",
+      "music": 0.0
+    },
+    {
+      "from": 1667.98,
+      "to": 1668.62,
+      "sid": 784,
+      "location": 2,
+      "content": "铁路",
+      "music": 0.0
+    },
+    {
+      "from": 1668.62,
+      "to": 1670.02,
+      "sid": 785,
+      "location": 2,
+      "content": "船舶和港口",
+      "music": 0.0
+    },
+    {
+      "from": 1670.02,
+      "to": 1670.94,
+      "sid": 786,
+      "location": 2,
+      "content": "装卸更快",
+      "music": 0.0
+    },
+    {
+      "from": 1670.94,
+      "to": 1671.9,
+      "sid": 787,
+      "location": 2,
+      "content": "损耗更少",
+      "music": 0.0
+    },
+    {
+      "from": 1671.9,
+      "to": 1672.96,
+      "sid": 788,
+      "location": 2,
+      "content": "等待也缩短",
+      "music": 0.0
+    },
+    {
+      "from": 1672.96,
+      "to": 1676.31,
+      "sid": 789,
+      "location": 2,
+      "content": "过去做不划算的跨国生意逐渐有了利润",
+      "music": 0.0
+    },
+    {
+      "from": 1676.31,
+      "to": 1678.63,
+      "sid": 790,
+      "location": 2,
+      "content": "一个看起来毫不起眼的铁箱子",
+      "music": 0.0
+    },
+    {
+      "from": 1678.63,
+      "to": 1682.07,
+      "sid": 791,
+      "location": 2,
+      "content": "用最朴素的标准化逻辑抚平了地里的鸿沟",
+      "music": 0.0
+    },
+    {
+      "from": 1682.07,
+      "to": 1683.679,
+      "sid": 792,
+      "location": 2,
+      "content": "打掉了交易的摩擦",
+      "music": 0.0
+    },
+    {
+      "from": 1683.679,
+      "to": 1686.299,
+      "sid": 793,
+      "location": 2,
+      "content": "也把地球上原本孤立的几10亿人",
+      "music": 0.0
+    }
+  ]
+}
