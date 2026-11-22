@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Check wiki drift
+        run: pnpm wiki:check
+
       - name: Test with coverage
         run: pnpm test:coverage
 
