@@ -36,6 +36,15 @@ pnpm build      # prebuild 重新生成图谱，再 tsc + vite build
 pnpm preview
 ```
 
+## 测试
+
+```bash
+pnpm test            # 115 个用例
+pnpm test:coverage   # v8 覆盖率，报告输出到 coverage/
+```
+
+覆盖范围：拓扑度量与视界状态机、frontmatter/双链解析、Markdown 消毒、数据加载 composable、HUD/抽屉/悬浮卡组件、G6 图组件交互（mock Graph）、构建管线端到端。覆盖率阈值：语句 90%、分支 80%、函数 90%、行 90%。
+
 ## 数据约定
 
 一期从 `docs/wiki/` 读取 Markdown（目录不存在或为空时依次回退 `wiki/`、`scripts/fixtures/wiki`）：

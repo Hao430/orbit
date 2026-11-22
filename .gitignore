@@ -16,6 +16,9 @@ dist-ssr
 public/graph.json
 public/wiki/
 
+# 测试覆盖率报告
+coverage/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

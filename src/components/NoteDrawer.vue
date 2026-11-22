@@ -25,6 +25,7 @@ watch(
   ([open, notePath]) => {
     void load(open ? notePath : null);
   },
+  { immediate: true },
 );
 
 function onBodyClick(event: MouseEvent): void {
