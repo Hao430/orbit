@@ -12,6 +12,7 @@ import {
   type NodeData,
 } from '@antv/g6';
 import type { CelestialEdge, CelestialGraph, CelestialNode } from '@/types/celestial';
+import StarfieldBackdrop from '@/components/graph/StarfieldBackdrop.vue';
 import { edgeStyle, nodeStyle, type Hop } from '@/utils/graph-visual';
 import { CLUSTER_HUES, clusterHue, withAlpha } from '@/utils/palette';
 import {
@@ -61,17 +62,79 @@ const activeRings = ref<Array<{ id: string; cx: number; cy: number; r1: number; 
 const highlightTargetPos = ref<{ x: number; y: number } | null>(null);
 let currentHighlightId: string | null = null;
 
-function updateRings(): void {
+type OrbitRing = { id: string; cx: number; cy: number; r1: number; r2: number };
+
+/** 拖拽/缩放时 afterrender 与 aftertransform 会连着触发：每帧只写一次 DOM，值没变就不写。 */
+let overlayFrame = 0;
+
+function sameRings(a: OrbitRing[], b: OrbitRing[]): boolean {
+  if (a.length !== b.length) return false;
+  return a.every((ring, index) => {
+    const prev = b[index];
+    return (
+      prev.id === ring.id &&
+      prev.cx === ring.cx &&
+      prev.cy === ring.cy &&
+      prev.r1 === ring.r1 &&
+      prev.r2 === ring.r2
+    );
+  });
+}
+
+const OVERLAY_RETRY_LIMIT = 30;
+let overlayRetry = 0;
+
+function scheduleOverlaySync(): void {
+  if (overlayFrame !== 0) return;
+  overlayFrame = window.requestAnimationFrame(() => {
+    overlayFrame = 0;
+    const ringsOk = updateRings();
+    const highlightOk = refreshHighlight();
+    // 元素刚加入时位置查询会落空，而之后不一定还有渲染事件：主动重试几帧兜底
+    if ((!ringsOk || !highlightOk) && overlayRetry < OVERLAY_RETRY_LIMIT) {
+      overlayRetry += 1;
+      scheduleOverlaySync();
+    } else {
+      overlayRetry = 0;
+    }
+  });
+}
+
+let overlayTicker = 0;
+
+/** G6 的展开动画期间不会派发 afterrender/aftertransform，环和雷达点靠这个短时 ticker 跟住星体。 */
+function startOverlayTicker(durationMs = 1800): void {
+  if (overlayTicker !== 0) window.cancelAnimationFrame(overlayTicker);
+  const deadline = performance.now() + durationMs;
+  const tick = (now: number): void => {
+    updateRings();
+    refreshHighlight();
+    overlayTicker = now < deadline ? window.requestAnimationFrame(tick) : 0;
+  };
+  overlayTicker = window.requestAnimationFrame(tick);
+}
+
+function retryOverlay(): void {
+  if (overlayRetry >= OVERLAY_RETRY_LIMIT) return;
+  overlayRetry += 1;
+  scheduleOverlaySync();
+}
+
+function updateRings(): boolean {
   if (!graphInstance) {
-    activeRings.value = [];
-    return;
+    if (activeRings.value.length > 0) activeRings.value = [];
+    return true;
   }
   const zoom = typeof graphInstance.getZoom === 'function' ? graphInstance.getZoom() : 1;
-  const rings: Array<{ id: string; cx: number; cy: number; r1: number; r2: number }> = [];
+  const rings: OrbitRing[] = [];
+  let unresolved = false;
   for (const centerId of horizon.centers) {
     try {
       const pos = graphInstance.getElementPosition?.(centerId) as [number, number] | undefined;
-      if (!pos || !Array.isArray(pos)) continue;
+      if (!pos || !Array.isArray(pos)) {
+        unresolved = true;
+        continue;
+      }
       const vp = (typeof graphInstance.getViewportByCanvas === 'function'
         ? graphInstance.getViewportByCanvas(pos)
         : pos) as [number, number];
@@ -83,34 +146,45 @@ function updateRings(): void {
           r1: 85 * zoom,
           r2: 175 * zoom,
         });
+      } else {
+        unresolved = true;
       }
     } catch {
-      // ignore
+      unresolved = true;
     }
   }
-  activeRings.value = rings;
+  if (!sameRings(rings, activeRings.value)) activeRings.value = rings;
+  if (unresolved) retryOverlay();
+  return !unresolved;
 }
 
-function refreshHighlight(): void {
+function refreshHighlight(): boolean {
   if (!currentHighlightId || !graphInstance) {
     highlightTargetPos.value = null;
-    return;
+    return true;
   }
   try {
     const pos = graphInstance.getElementPosition?.(currentHighlightId) as [number, number] | undefined;
     if (!pos || !Array.isArray(pos)) {
       highlightTargetPos.value = null;
-      return;
+      retryOverlay();
+      return false;
     }
     const vp = (typeof graphInstance.getViewportByCanvas === 'function'
       ? graphInstance.getViewportByCanvas(pos)
       : pos) as [number, number];
     if (vp && Array.isArray(vp)) {
-      highlightTargetPos.value = { x: vp[0], y: vp[1] };
+      const prev = highlightTargetPos.value;
+      if (!prev || prev.x !== vp[0] || prev.y !== vp[1]) {
+        highlightTargetPos.value = { x: vp[0], y: vp[1] };
+      }
     }
   } catch {
     highlightTargetPos.value = null;
+    retryOverlay();
+    return false;
   }
+  return true;
 }
 
 function highlightNode(id: string | null): void {
@@ -283,6 +357,8 @@ async function applySnapshot(next: HorizonSnapshot, animate: boolean): Promise<v
   if (!graph) return;
   clearRevealTimer();
   const token = ++applyToken;
+  // 展开/收拢整条动画链（含 2 阶延迟）期间都让环跟住
+  if (animate) startOverlayTicker(2600);
 
   const removedEdgeIds = [...shownEdgeHops.keys()].filter((id) => !next.edges.has(id));
   const removedNodeIds = [...shownHops.keys()].filter((id) => !next.nodes.has(id));
@@ -434,15 +510,8 @@ function bindEvents(graph: Graph): void {
     emit('canvas-click');
   });
 
-  graph.on(GraphEvent.AFTER_TRANSFORM, () => {
-    updateRings();
-    refreshHighlight();
-  });
-
-  graph.on(GraphEvent.AFTER_RENDER, () => {
-    updateRings();
-    refreshHighlight();
-  });
+  graph.on(GraphEvent.AFTER_TRANSFORM, scheduleOverlaySync);
+  graph.on(GraphEvent.AFTER_RENDER, scheduleOverlaySync);
 
   graph.on(NodeEvent.POINTER_OVER, (event: IElementEvent) => {
     const id = event.target?.id;
@@ -470,6 +539,8 @@ onMounted(async () => {
     container: containerRef.value,
     autoResize: true,
     background: 'transparent',
+    // 限制缩放区间：缩太远整图变一个点，放太近只剩糊
+    zoomRange: [0.4, 2.4],
     data: buildGraphData(initial),
     node: {
       type: 'circle',
@@ -516,7 +587,7 @@ onMounted(async () => {
     behaviors: [
       'drag-canvas',
       { type: 'drag-element', dropEffect: 'move', shadow: false },
-      { type: 'zoom-canvas', sensitivity: 1.15 },
+      { type: 'zoom-canvas', sensitivity: 1.15, animation: { duration: 120 } },
       {
         type: 'hover-activate',
         degree: 1,
@@ -540,6 +611,14 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
+  if (overlayFrame !== 0) {
+    window.cancelAnimationFrame(overlayFrame);
+    overlayFrame = 0;
+  }
+  if (overlayTicker !== 0) {
+    window.cancelAnimationFrame(overlayTicker);
+    overlayTicker = 0;
+  }
   clearRevealTimer();
   clearHoverTimer();
   if (dragTimer !== undefined) {
@@ -561,7 +640,7 @@ async function zoomOut(): Promise<void> {
 }
 
 async function fitView(): Promise<void> {
-  await graphInstance?.fitView();
+  await graphInstance?.fitView(undefined, { duration: 420, easing: 'ease-in-out' });
 }
 
 async function resetHorizon(): Promise<void> {
@@ -570,7 +649,7 @@ async function resetHorizon(): Promise<void> {
   await applySnapshot(snapshotHorizon(horizon, props.data.edges, backbone), false);
   emit('select', { node: null, active: false });
   updateRings();
-  await graphInstance?.fitView();
+  await graphInstance?.fitView(undefined, { duration: 420, easing: 'ease-in-out' });
 }
 
 async function exploreNode(id: string): Promise<boolean> {
@@ -591,6 +670,7 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode, highlightNod
 
 <template>
   <div class="orbit-graph-container">
+    <StarfieldBackdrop />
     <div ref="containerRef" class="orbit-graph" />
     <svg v-if="activeRings.length || highlightTargetPos" class="orbit-overlay" aria-hidden="true">
       <g v-for="ring in activeRings" :key="ring.id">
@@ -610,30 +690,38 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode, highlightNod
   position: absolute;
   inset: 0;
   overflow: hidden;
+  background: var(--space-void);
+}
+
+/* 星云独立成层做 transform 漂移：只走合成器，不再每帧重绘整屏背景 */
+.orbit-graph-container::before {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.07), transparent 42%),
+    radial-gradient(circle at 78% 72%, rgba(168, 85, 247, 0.08), transparent 48%),
+    radial-gradient(circle at 55% 45%, rgba(52, 211, 153, 0.04), transparent 55%);
+  will-change: transform;
+  animation: nebula-drift 42s ease-in-out infinite alternate;
 }
 
 .orbit-graph {
   position: absolute;
   inset: 0;
+  z-index: 2;
   cursor: grab;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.07), transparent 42%),
-    radial-gradient(circle at 78% 72%, rgba(168, 85, 247, 0.08), transparent 48%),
-    radial-gradient(circle at 55% 45%, rgba(52, 211, 153, 0.04), transparent 55%),
-    var(--space-void);
-  background-size: 130% 130%;
-  animation: nebula-drift 30s ease-in-out infinite alternate;
+  background: transparent;
 }
 
 @keyframes nebula-drift {
-  0% {
-    background-position: 0% 0%;
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.02);
   }
-  50% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 100% 100%;
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.06);
   }
 }
 
@@ -651,6 +739,7 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode, highlightNod
     linear-gradient(90deg, var(--space-grid) 1px, transparent 1px);
   background-size: 120px 120px;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.9), transparent 78%);
+  will-change: opacity;
   animation: grid-breathe 10s ease-in-out infinite alternate;
 }
 
@@ -675,6 +764,18 @@ defineExpose({ zoomIn, zoomOut, fitView, resetHorizon, exploreNode, highlightNod
 .orbit-ring {
   fill: none;
   transition: r 120ms ease, cx 120ms ease, cy 120ms ease;
+  animation: orbit-ring-spin 9s linear infinite;
+}
+
+.orbit-ring--outer {
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+@keyframes orbit-ring-spin {
+  to {
+    stroke-dashoffset: -40;
+  }
 }
 
 .orbit-ring--inner {

@@ -31,3 +31,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* 尊重系统「减少动态效果」：一次性关掉所有无限呼吸、漂移与过渡 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
