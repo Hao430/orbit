@@ -17,6 +17,8 @@ class MockGraph {
   handlers = new Map<string, Array<(event: unknown) => void>>();
   pluginUpdates: Array<Record<string, unknown>> = [];
   focusCalls: string[] = [];
+  layoutCalls: Array<Record<string, unknown>> = [];
+  layoutStops = 0;
   zoomRatios: number[] = [];
   fitCalls = 0;
   destroys = 0;
@@ -52,6 +54,20 @@ class MockGraph {
 
   async zoomBy(ratio: number): Promise<void> {
     this.zoomRatios.push(ratio);
+  }
+
+  async layout(options?: Record<string, unknown>): Promise<void> {
+    this.layoutCalls.push(options ?? {});
+    // 模拟布局把节点搬到新位置
+    for (const node of this.data.nodes) {
+      if (!node.style) continue;
+      node.style.x = Number(node.style.x ?? 0) + 10;
+      node.style.y = Number(node.style.y ?? 0) + 5;
+    }
+  }
+
+  stopLayout(): void {
+    this.layoutStops += 1;
   }
 
   getZoom(): number {
@@ -132,6 +148,7 @@ vi.mock('@antv/g6', () => ({
   },
   CanvasEvent: { CLICK: 'canvas:click' },
   GraphEvent: {
+    AFTER_LAYOUT: 'afterlayout',
     AFTER_TRANSFORM: 'aftertransform',
     AFTER_RENDER: 'afterrender',
   },
@@ -230,6 +247,44 @@ describe('OrbitGraph', () => {
     graph.emit('node:pointerout', { target: { id: 'a' }, client: { x: 0, y: 0 } });
     expect(wrapper.emitted('hover-end')).toHaveLength(1);
     wrapper.unmount();
+  });
+
+  it('展开后按星团做力导重排，并把实时坐标写回节点', async () => {
+    const original = nodes.map((node) => ({ x: node.x, y: node.y }));
+    const { wrapper, graph } = await mountGraph();
+    graph.emit('node:click', { target: { id: 'a' }, client: { x: 0, y: 0 } });
+    await flushPromises();
+    await vi.advanceTimersByTimeAsync(300);
+    await flushPromises();
+
+    expect(graph.layoutStops).toBeGreaterThan(0);
+    expect(graph.layoutCalls.length).toBeGreaterThan(0);
+    const options = graph.layoutCalls.at(-1)!;
+    expect(options).toMatchObject({ type: 'force', clustering: true });
+
+    const nodeSize = options.nodeSize as (node: unknown) => number;
+    const linkDistance = options.linkDistance as (edge: unknown) => number;
+    const clusterOf = options.nodeClusterBy as (node: unknown) => string;
+    expect(nodeSize({ style: { size: 12 } })).toBe(14);
+    expect(nodeSize({})).toBe(12);
+    expect(linkDistance({ data: { weight: 5 } })).toBe(330);
+    expect(linkDistance({})).toBe(434);
+    expect(clusterOf({ data: { clusterId: 'c0' } })).toBe('c0');
+    expect(clusterOf({})).toBe('none');
+
+    // afterlayout 后把布局结果写回节点，下一次动画才不会从旧坐标起飞
+    graph.emit('afterlayout', { type: 'post' });
+    await flushPromises();
+    const moved = graph.data.nodes.find((node) => node.id === 'a');
+    const propsNode = nodes.find((node) => node.id === 'a');
+    expect(propsNode?.x).toBe(Number(moved?.style?.x));
+    expect(propsNode?.y).toBe(Number(moved?.style?.y));
+
+    wrapper.unmount();
+    nodes.forEach((node, index) => {
+      node.x = original[index].x;
+      node.y = original[index].y;
+    });
   });
 
   it('从抽屉跳转到未点亮的笔记时会将其设为焦点', async () => {

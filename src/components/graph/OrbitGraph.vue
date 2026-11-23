@@ -227,6 +227,33 @@ function setFilter(filter: { clusterId?: string | null; role?: string | null }):
 }
 
 const ORIGIN = { x: 1000, y: 600 };
+
+/**
+ * 运行时力导布局：以构建期坐标为起点做局部重排，并按星团聚类，形成"自生长"。
+ * 节点数只有几十个，一次 120 迭代足够收敛，不会卡住主线程。
+ */
+const FORCE_LAYOUT = {
+  type: 'force' as const,
+  animation: true,
+  iterations: 80,
+  minMovement: 3,
+  preventOverlap: true,
+  // 布局结果会写回 style.size，这里必须返回真实视觉尺寸，否则节点会被放大
+  nodeSize: (node: { style?: unknown }) => {
+    const size = (node.style as { size?: number } | undefined)?.size ?? 10;
+    return size + 2;
+  },
+  linkDistance: (edge: { data?: unknown }) => {
+    const weight = (edge.data as { weight?: number } | undefined)?.weight ?? 1;
+    return Math.max(180, 460 - weight * 26);
+  },
+  nodeStrength: -900,
+  edgeStrength: 40,
+  clustering: true,
+  nodeClusterBy: (node: { data?: unknown }) =>
+    String((node.data as { clusterId?: string } | undefined)?.clusterId ?? 'none'),
+  clusterNodeStrength: 40,
+};
 const HOP2_DELAY = 160;
 const HOVER_DELAY = 280;
 
@@ -237,7 +264,11 @@ function toNodeData(node: CelestialNode, hop: Hop, origin?: { x: number; y: numb
     style.y = origin.y;
     style.opacity = 0;
   }
-  return { id: node.id, data: { hop }, style: style as NodeData['style'] };
+  return {
+    id: node.id,
+    data: { hop, clusterId: node.clusterId },
+    style: style as NodeData['style'],
+  };
 }
 
 function toEdgeData(edge: CelestialEdge, hop: Hop): EdgeData {
@@ -337,6 +368,34 @@ watch(
   { deep: false },
 );
 
+/** 把运行时布局/拖拽后的实时坐标写回节点数据，避免下次动画从陈旧坐标起飞。 */
+function syncNodePositions(): void {
+  if (!graphInstance) return;
+  for (const [id, node] of nodeById) {
+    if (!shownHops.has(id)) continue;
+    try {
+      const pos = graphInstance.getElementPosition(id) as [number, number] | undefined;
+      if (pos && Array.isArray(pos)) {
+        node.x = pos[0];
+        node.y = pos[1];
+      }
+    } catch {
+      // 元素还没创建，跳过
+    }
+  }
+}
+
+async function runLayout(): Promise<void> {
+  const graph = graphInstance;
+  if (!graph) return;
+  graph.stopLayout?.();
+  try {
+    await graph.layout?.(FORCE_LAYOUT);
+  } catch {
+    // 布局失败只是没重排，不影响视界与交互
+  }
+}
+
 function emitStats(): void {
   emit('stats', {
     visibleNodes: shownHops.size,
@@ -356,6 +415,8 @@ async function applySnapshot(next: HorizonSnapshot, animate: boolean): Promise<v
   const graph = graphInstance;
   if (!graph) return;
   clearRevealTimer();
+  // 上一次布局还在迭代就先停掉，避免两套力互相拉扯
+  graphInstance?.stopLayout?.();
   const token = ++applyToken;
   // 展开/收拢整条动画链（含 2 阶延迟）期间都让环跟住
   if (animate) startOverlayTicker(2600);
@@ -439,6 +500,7 @@ async function applySnapshot(next: HorizonSnapshot, animate: boolean): Promise<v
         if (token !== applyToken) return;
         updateHulls();
         emitStats();
+        void runLayout();
       });
     }, HOP2_DELAY);
   } else if (delayed.length > 0) {
@@ -447,6 +509,7 @@ async function applySnapshot(next: HorizonSnapshot, animate: boolean): Promise<v
 
   updateHulls();
   emitStats();
+  void runLayout();
 }
 
 async function handleNodeClick(event: IElementEvent): Promise<void> {
@@ -508,6 +571,12 @@ function bindEvents(graph: Graph): void {
 
   graph.on(CanvasEvent.CLICK, () => {
     emit('canvas-click');
+  });
+
+  graph.on(GraphEvent.AFTER_LAYOUT, () => {
+    syncNodePositions();
+    updateHulls();
+    scheduleOverlaySync();
   });
 
   graph.on(GraphEvent.AFTER_TRANSFORM, scheduleOverlaySync);
